@@ -1,0 +1,74 @@
+// TEST GASTAP VS SOLC COMPILER
+
+/ CryptoPhoenix.sol
+
+  selezionando il main method GASTAP restituisce:
+  ../../bin/ethirweb   /tmp/ei_filesgfCwog/CryptoPhoenix.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+
+  Selezionando invece i singoli metododi riusciamo ad ottenere una stima piuttosto precisa.
+
+  ~ BASE_PRICE()
+  GASTAP: 15+663 = 678
+  solc: 678
+
+  Quindi la stima di GASTAP coincide perfettamente con i consumi calcolati da solc.
+
+  Le stesse considerazioni sono valide per i seguenti metodi:
+  ~ owner()
+  ~ paused()
+  ~ subDevOne()
+  ~ SCORES(uint256)
+  ~ PHOENIXES(uint256)
+  ~ POOLS(uint256)
+  ~ devFunds(address)
+  ~ GAME_STARTED()
+  ~ userFunds(address)
+  ~ DENOMINATOR()
+  ~ GAME_END()
+  ~ subDevTwo()
+  ~
+
+  Nei casi in cui invece non si riesce a fare una stima precisa,
+  GASTAP si comporta diversamente da solc.
+
+  ~ useAbility(uint256)
+  GASTAP: ../../bin/ethirweb   /tmp/ei_filesWfPcDn/CryptoPhoenix.sol  -entries  CryptoPhoenixesCivilWar.useAbility:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  solc: infinite
+
+  Le stesse considerazioni valgono per i metodi:
+  ~ endGame()
+  ~ setPhoenixOwners(address[19])
+  ~ useCaptainAbility(uint256)
+  ~ purchasePhoenix(uint256)
+
+  CASI PARTICOLARI A CUI PORRE ATTENZIONE:
+
+  ~ devWihdraw()
+  GASTAP: 12+40762
+  solc: infinite
+
+  ~ unpause()
+  GASTAP: 12+21847 = 21859
+  solc: 21856
+
+  ~ upgradeContract(address)
+  GASTAP: 12+36449
+  solc: infinite
+
+  ~ pause()
+  GASTAP: 12+22004 = 22016
+  solc: 22013
+
+  ~ startGame():
+  GASTAP: 12+458422
+  solc: infinite
+
+
+
+  In questi casi il valore iniziale sommato è 12, diversamente dai casi per cui
+  c'è corrispondenza perfetta.
+  Inoltre in entrambe le situazioni i valori non corrispondono.
+
+  ~ withdrawFunds()
+  GASTAP: 15+41455
+  solc: infinite
