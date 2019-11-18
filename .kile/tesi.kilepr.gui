@@ -1,0 +1,25 @@
+[General]
+kile_livePreviewEnabled=true
+kile_livePreviewStatusUserSpecified=false
+kile_livePreviewTool=LivePreview-PDFLaTeX
+lastDocument=tesi.kilepr
+
+[document-settings,item:tesi.kilepr]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=None
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Normal
+Mode Set By User=false
+
+[item:tesi.kilepr]
+open=true
+order=0
+
+[view-settings,view=0,item:tesi.kilepr]
+CursorColumn=11
+CursorLine=3
+JumpList=
+TextFolding=[]
+ViMarks=
