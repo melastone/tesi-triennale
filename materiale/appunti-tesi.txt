@@ -1,6 +1,6 @@
 // APPUNTI TESI
 
-quello che voglio fare è capire il costo dell'esecuzione di un programma in
+Quello che voglio fare è capire il costo dell'esecuzione di un programma in
 termini di gas.
 Come programma intendo un programma per ethereum, cioè uno smart contract.
 Questi programmi sono scritti in Solidity (lingaggio quasi Turing completo)
@@ -17,15 +17,18 @@ L'articolo [1] fornisce una panoramica sui tool attualmente esistenti per
 fare verifiche formali degli smart contracts. Questi sono suddivisi
 in categorie. Noi ci concentriamo sui tool di verifica che permettono di
 fare analisi statica.
+
 Particolare attenzione va a KEVM [4]: gli autori propongono una
 semantica formale per EVM. KEVM permette di fare analisi statica sia su
 programmi scritti in solidity che in EVM bytecode. Fra gli esempi proposti
-dagli autori di [4] per dimostrare le possibili applicazioni di KEVM c'è
+dagli autori per dimostrare le possibili applicazioni di KEVM c'è
 un tool di analisi per i consumi di gas (pag 11).
+C'è modo di testarlo?
 
 Questo lavoro prosegue nell'articolo successivo [2], dove gli stessi autori
 propongono un tool completo, EtherTrust, per fare analisi statica di programmi
 orientata a verificare le proprietà di sicurezza.
+EtherTrust non permette di stimare i consumi di gas.
 
 In [3] viene fornito un approccio teorico al calcolo dei consumi di gas
 nel caso pessimo. Questo viene fatto fornendo 2 diversi algoritmi.
@@ -42,13 +45,13 @@ su SACO.
 Infine cosa possiamo dire di MadMax [6]? Se vogliamo conoscere la stima
 dei consumi in termini di gas è inutile. Più che altro il tool si focalizza
 su analizzare e segnalare eventuali vulnerabilità legate al gas.
-Viene comunque citato in [5] asssieme a GASPER. Frose è interessante
+Viene comunque citato in [5] asssieme a GASPER. Forse è interessante
 dare un'occhiata agli approcci che utilizzano nelle loro analisi. Ma nessuno
 dei due si occupa di calcolare il gas associato all'esecuzione dei programmi.
 
 Un concetto che è bene afferrare è il seguente: il compilatore di Solidity
 (solc) ad ogni compilazione produce un valore che corrisponde al consumo
- di gas effettivo. Facendo dei test quindi può essere utile usare dei programmi
+ di gas stimato. Facendo dei test quindi può essere utile usare dei programmi
 che possono essere compilati (o lo sono già stati). In questo modo riusciamo
 a fare un confronto tra l'output prodotto da solc e quello ottenuto dal
 tool che stiamo testando.
@@ -91,27 +94,8 @@ i costi a fianco delle linee di codice.
 - Analisi statica di Smart Contract in Ethereum: stimare i consumi di gas
 - I consumi di gas nell'analisi statica degli Smart Contract in Ethereum
 
-/ABSTRACT
-Con la diffusione della blockchain si è resa necessaria l'analisi degli smart
-contract in Ethereum, con l'obiettivo di stimarne i costi in termini di gas.
-Ad oggi esistono diversi tool che permettono di farlo, sebbene questi
-siano lontani dall'essere precisi.
-Ci\'o significa che non esiste ancora un modo di conoscere a priori il
-costo dell'esecuzione di tali contratti con precisione.
-L'obiettivo di questo lavoro è quello di dedurre quanto le previsioni sui
-costi siano precise, ma soprattuto quali siano le difficoltà incontrate
-nell'analisi dei contratti.
-%la prima frase è da articolare. Non dobbiamo mica fare analisi per colpa
-della fama della blockchain!!!
-%attenta alla parte sui numerosi tool.. quanti esempi hai??
 
 /INTRODUZIONE
-- Collochiamo Ethereum nell'ecosistema della blockchain.
-- Introduciamo il concetto di smart contract e gas.
-- Accenno all'importanza dell'analisi statica di questi programmi
-- Qual è l'utilità di prevedere i costi dell'esecuzione?
-Sarebbe meglio dilungarsi di più.
-Dividere in 4 sottosezioni:
 1. Le innovazioni informatiche, a che punto è la cybersecurity?? Diamo una
 panoramica del contesto in cui ci troviamo.
 2. Cos'è la blockchain? Mi riallaccio alla questione precedente definendola
