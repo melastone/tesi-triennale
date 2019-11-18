@@ -56,10 +56,10 @@ tool che stiamo testando.
 /SOFTWARE
 - ETHER TRUST (solo bytecode): permette di fare un'analisi rigorosa
 dei programmi. Deduce solo proprietà di security.
-Potrebbe essere utilizzato per altro??
+Non è utile per produrre bound ai consumi di gas.
 - KEWM (sia Solidity che bytecode): framework per formalizzare la semantica
 della EVM. Gli sviluppatori propongono come esempio applicativo un tool
-per calcolare i consumi di gas
+per calcolare i consumi di gas. Still waiting for help..
 - GASTAP (sia Solidity che bytecode): nasce sulla base di ethir.
 EthIR è un tool che produce una rappresentazione semplificata del data flow
 del codice. E' una sorta di decompilatore per EVM bytecode.
@@ -73,9 +73,17 @@ produce upper bound ai consumi di gas. Questo è il tool che ci interessa,
 ovvero GASTAP. Il software prende in input un contratto e
 produce in output un bound - in terminini di gas - per ciascuna delle
 funzioni che lo compongono.
--Facciamo ancora ricerca??? Io nella tesi devo fornire una panoramica sui
- software attualmente esistenti. Non posso solo basarmi su quello che viene
- citato negli articoli..
+- eth-gas-reporter (https://github.com/cgewecke/eth-gas-reporter):
+fa test, in effetti produce dei valori etichettati come gas. A cosa
+corrispondono?? sono prodotti usando solc?
+- visualgas(https://doi.org/10.3929/ethz-b-000312914)
+- profiler(https://devpost.com/software/profiler-4mahxw): 
+sembra però che possa essere usato solo una volta che lo smart
+contract è inserito nella blockchain. Suggeriscono di farlo in 
+modalità unit test. Altrimenti?
+- remix (https://remix.ethereum.org/): IDE con web interface. produce
+i costi a fianco delle linee di codice.
+
  
 /TITOLO
 - Studio sull'efficienza di tool per l'analisi statica degli smart contract in Ethereum
