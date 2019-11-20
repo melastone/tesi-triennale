@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  18 NOV 2019 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  20 NOV 2019 00:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -359,34 +359,29 @@ LaTeX Font Info:    ... okay on input line 9.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 56--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--69
+Underfull \hbox (badness 10000) in paragraph at lines 56--61
 
  []
 
 [1] [2] (./relazione-finale.aux) ) 
 Here is how much of TeX's memory you used:
- 521 strings out of 494912
- 4846 string characters out of 6180265
- 55525 words of memory out of 5000000
- 3905 multiletter control sequences out of 15000+600000
- 5758 words of font info for 21 fonts, out of 8000000 for 9000
+ 526 strings out of 494912
+ 4891 string characters out of 6180265
+ 56525 words of memory out of 5000000
+ 3909 multiletter control sequences out of 15000+600000
+ 6066 words of font info for 22 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 23i,4n,19p,547b,153s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 23i,4n,19p,528b,160s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b>
-Output written on relazione-finale.pdf (3 pages, 69403 bytes).
+blic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+csc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on relazione-finale.pdf (3 pages, 86210 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
