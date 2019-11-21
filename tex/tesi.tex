@@ -146,7 +146,7 @@ INDICE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 %\clearpage{\pagestyle{empty}\cleardoublepage}
 
-\chapter*{Introduzione}                 %crea l'introduzione (un capitolo
+\chapter{Introduzione}            %crea l'introduzione (un capitolo
                                         %   non numerato)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
@@ -154,13 +154,14 @@ INDICE}}
 INTRODUZIONE}]{\fancyplain{}{\bfseries\thepage}}
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries
 INTRODUZIONE}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Introduzione
-                                        %   nell'indice
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce        Introduzione nell'indice
 \addcontentsline{toc}{chapter}{Introduzione}
+\pagenumbering{arabic}                  %mette i numeri arabi
 
 
 Le innovazioni tecnologiche introdotte negli ultimi decenni hanno rivoluzionato la nostra società. Il risultato che ne deriva è che numerosi settori stanno cambiando, muovendosi verso una realtà sempre più digitale. Se da una parte questo ha costituito un progresso, dall'altra ha creato nuove opportunità per i cybercriminali.\newline
-Oggi il principale obiettivo della sicurezza informatica è proprio quello di trovare soluzioni adattabili alle nuove infrastrutture, come i sistemi IoT che si stanno diffondendo sempre di più. Con l'impiego di queste nuove tecnologie nell?industria i punti di accesso alla rete aziendale sono aumentati, moltiplicando la tipologia ed il numero di minacce. In questo contesto il rischio che si corre è maggiore, poichè legato alla violazione di dati sensibili o addirittura alla compromissione dei processi di produzione.\newline
+Oggi il principale obiettivo della sicurezza informatica è proprio quello di trovare soluzioni adattabili alle nuove infrastrutture, come i sistemi IoT che si stanno diffondendo sempre di più. Con l'impiego di queste nuove tecnologie nell'industria i punti di accesso alla rete aziendale sono aumentati, moltiplicando la tipologia ed il numero di minacce. In questo contesto il rischio che si corre è maggiore, poichè legato alla violazione di dati sensibili o addirittura alla compromissione dei processi di produzione.\newline
 \newline
 In questo scenario la cybersecurity è diventata una disciplina di fondamentale importanza, ?\newline
 La blockchain nasce in questo contesto, riscuotendo un grande successo grazie al potenziale innovativo che porta con sé. Questa nuova tecnologia permette l'esecuzione di programmi in modo distribuito e sicuro, senza la necessitá di un ente centrale che faccia da garante. Il paradigma
@@ -197,6 +198,34 @@ Farei poi tipo 3 capitoli.\newline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
+
+\chapter{Background ?}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
+
+Lo scopo di questo capitolo è quello di fornire una panoramica dei concetti chiave intorno ai quali si sviluppa l'elaborato.\newline
+
+\section{Blockchain}
+
+- def schietta
+- struttura
+- com'è che è sicuro? immutabile. crittografia. ognuno ha la sua copia.
+- blockchain in azione: miners
+- le tecnologie basate su blockchain
+- chiusura di quello che abbiamo capito sul suo potenziale!
+
+- com'è che si collega alle piattaforme di crittovalute
+(ricordati che blockchain nasce insieme al bitcoin!)
+- menzione al Bitcoin
+- Ethereum come alternativa
+- perchè Ethereum?? vantaggi e possibilità
+- programmazione di Smart Contracts
+
+- ethereum e il gas
+
+Il termine Blockchain - in italiano ``catena di blocchi'' - identifica un registro distribuito e sicuro. In questo senso si può pensare alla blockchain come ad una struttura di dati simile ad una lista crescente, dove le informazioni sono raggruppate in blocchi collegati fra loro.\newline
+Ciascun blocco codifica una sequenza di transazioni individuale, e viene concatenato a quello precedente seguendo un ordine cronologico. La concatenazione è irreversibile: ciascun nuovo blocco contiene la firma digitale di quello precedente. In questo modo, modificare un blocco implicherebbe l'invalidazione di tutta la catena successiva.\newline  
+La peculiarità di questa struttura risiede nel fatto che sia condivisa: ogni nodo che compone la rete mantiene una copia del registro aggiornata. Per poter aggiungere un blocco è dunque necessario validare l'intera catena, ed ottenere un consenso da parte degli altri nodi della rete. Una volta ottenuto, il nuovo blocco viene trasmesso agli altri componenti in modo tale da aggiornare lo stato della blockchain.\newline
+Il processo di validazione dei nuovi blocchi viene realizzato dai miners. Il loro compito è quello di verificare le transazioni proposte, e 
 
 
 %\listoffigures                          %crea l'elenco delle figure
