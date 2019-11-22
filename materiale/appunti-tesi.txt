@@ -111,3 +111,16 @@ meno qui la base di lavoro è buona. Possiamo agg qualcosa?
 Il tutto sarebbe meglio per un totale di 5-6 pagine con riferimenti
 bibliografici. Cenni al fatto della proof of work e dell'eticità legata
 alla stessa (non è ambientale!)
+
+
+/CAPITOLO 1
+- def schietta
+- struttura
+- com'è che è sicuro? immutabile. crittografia. ognuno ha la sua copia.
+- blockchain in azione: miners
+- le tecnologie basate su blockchain
+- chiusura di quello che abbiamo capito sul suo potenziale!
+- com'è che si collega alle piattaforme di crittovalute
+(ricordati che blockchain nasce insieme al bitcoin!)
+- menzione al Bitcoin
+- Ethereum come alternativa

@@ -2,5 +2,6 @@
 \babel@toc {italian}{}
 \contentsline {chapter}{\numberline {1}Introduzione}{1}
 \contentsline {chapter}{Introduzione}{1}
-\contentsline {chapter}{\numberline {2}Background ?}{5}
+\contentsline {chapter}{\numberline {2}Background}{5}
 \contentsline {section}{\numberline {2.1}Blockchain}{5}
+\contentsline {section}{\numberline {2.2}Ethereum, smart contract e gas}{6}
