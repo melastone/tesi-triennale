@@ -1,0 +1,31 @@
+
+Lo scopo di questo capitolo è quello di fornire una panoramica dei concetti chiave intorno ai quali si sviluppa l'elaborato.
+
+\section{Blockchain}
+
+Il termine Blockchain - in italiano ``catena di blocchi'' - identifica un registro distribuito e sicuro. In questo senso si può pensare alla blockchain come ad una struttura di dati simile ad una lista crescente, dove le informazioni sono raggruppate in blocchi collegati fra loro.\newline
+Ciascun blocco codifica una sequenza di transazioni individuale, e viene concatenato a quello precedente seguendo un ordine cronologico. La concatenazione è irreversibile: ciascun nuovo blocco contiene la firma digitale di quello precedente. In questo modo, modificare un blocco implicherebbe l'invalidazione di tutta la catena successiva.\newline  
+La peculiarità di questa struttura risiede nel fatto che sia condivisa: ogni nodo che compone la rete mantiene una copia del registro aggiornata. Per poter aggiungere un blocco è dunque necessario validare l'intera catena, ed ottenere un consenso da parte degli altri nodi della rete. Una volta ottenuto, il nuovo blocco viene trasmesso agli altri componenti in modo tale da aggiornare lo stato della blockchain.\newline
+Il processo di validazione dei nuovi blocchi viene realizzato dai miner.
+Il loro compito è quello di verificare le transazioni proposte e fare in modo che il nuovo blocco venga linkato alla blockchain. Per fare questo i miner sono chiamati a risolvere un algoritmo proof-of-work, un puzzle crittografico che richiede un significativo costo computazionale per essere risolto.\newline
+Questo sistema permette di raggiungere il consenso senza la necessità di un'autorità centrale che faccia da garante. \'E il concetto chiave delle tecnologie basate su blockchain: la possibilità di implementare servizi sicuri senza appoggiarsi a banche, istituzioni pubbliche, ecc.\newline
+\newline
+Questa nuova tecnologia può essere integrata in diverse aree\newline (rif https://hbr.org/2017/01/the-truth-about-blockchain), sebbene ad oggi il suo uso più conosciuto sia quello nei sistemi di pagamento che impiegano crittovalute.
+Il dato non è poi così sorprendente: la prima blockchain nasce grazie a Satoshi Nakamoto assieme al Bitcoin (rif https://bitcoin.org/bitcoin.pdf). In questo senso il Bitcoin è una
+piattaforma di pagamenti, dove la catena di blocchi funge da storico di tutte le transazioni avvenute: una sorta di conto corrente condiviso.\newline
+
+\section{Ethereum, gli Smart Contract e la EVM}
+
+All'interno di quest'elaborato verrà presa in considerazione solo il network Ethereum.\newline
+Ethereum è una piattaforma decentralizzata basata su una blockchain, che come Bitcoin possiede una propria valuta: l'\textit{ether}.\newline 
+Diversamente da quanto vale per le altre crittovalute, Ethereum non è solo un network per lo scambio di moneta, ma un framework che permette l'esecuzione di programmi. Tali programmi prendono il nome di \textit{smart contract}, cioè ``contratti intelligenti''. Sebbene il nome possa suggerire una funzione ben precisa, questi programmi sono usati per computazioni general-purpose, permettendo quindi di realizzare un vasto numero di operazioni.\newline
+Gli smart contract sono scritti in linguaggi ad alto livello; fra i vari (Serpent, Viper e LLL) quello più diffuso ad oggi è Solidity (ref. https://github.com/ethereum/solidity). 
+Tale linguaggio object-oriented è pensato solo per lo sviluppo di smart contract che, per poter girare nella rete, vengono poi tradotti in bytecode. Ciascun nodo di Ethereum infatti esegue localmente la Ethereum Virtual Machine, anche detta EVM, una macchina a stack in grado di eseguire un linguaggio di basso livello, ossia bytecode. Questo linguaggio è l'unico ad essere ufficialmente supportato da Ethereum.\newline 
+
+\section{Il ruolo del gas}
+
+Per \textit{gas} si intende l'unità di misura per lo sforzo computazionale richiesto dalla EVM per eseguire ciascuna istruzione. Diremo quindi che eseguire uno smart contract costa una certa quantità di gas.\newline
+Questa sorta di carburante  viene pagato in ether dagli utenti che intendono far eseguire il proprio programma. D
+
+
+

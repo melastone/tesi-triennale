@@ -1,68 +1,60 @@
 % !TeX spellcheck = it                                        
-                                        %openright: apre i capitoli a destra
-                                        %twoside: serve per fare un documento
-                                        %fronteretro
+
 \documentclass[12pt,a4paper,openright,twoside]{report}
+%openright: apre i capitoli a destra
+%twoside: serve per fare un documento fronteretro
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per scrivere in italiano
 \usepackage[italian]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} %aumenta il tempo di compilazione
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per accettare i caratteri
-                                        %   digitati da tastiera come è à
-                                        %   si può usare anche
-                                        %   \usepackage[T1]{fontenc}
-                                        %   però con questa libreria
-                                        %   il tempo di compilazione
-                                        %   aumenta
-\usepackage[latin1]{inputenc}
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
 
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per impostare il documento (headers & footers)
+%libreria per impostare il documento (headers & footers)
 \usepackage{fancyhdr}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per avere l'indentazione
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   all'inizio dei capitoli, ...
-%\usepackage{indentfirst}
-%
+
+
+%libreria per avere l'indentazione all'inizio dei capitoli
+\usepackage{indentfirst}
+
+
 %%%%%%%%%libreria per mostrare le etichette
 %\usepackage{showkeys}
-%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per inserire grafici
 %\usepackage{graphicx}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per utilizzare font
-                                        %   particolari ad esempio
-                                        %   \textsc{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per utilizzare font particolari ad esempio  \textsc{}
 %\usepackage{newlfont}
-%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%librerie matematiche
 %\usepackage{amssymb}
 %\usepackage{amsmath}
 %\usepackage{latexsym}
 %\usepackage{amsthm}
-%
-\oddsidemargin=30pt \evensidemargin=20pt%impostano i margini
-%\hyphenation{sil-la-ba-zio-ne pa-ren-te-si}%serve per la sillabazione: tra parentesi 
-					   %vanno inserite come nell'esempio le parole 
-%					   %che latex non riesce a tagliare nel modo giusto andando a capo.
 
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%comandi per l'impostazione
-                                        %   della pagina, vedi il manuale
-                                        %   della libreria fancyhdr
-                                        %   per ulteriori delucidazioni
-%\pagestyle{fancy}\addtolength{\headwidth}{20pt}
-%\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
-%\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}}
-%\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
-%\cfoot{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\linespread{1.3}                        %comando per impostare l'interlinea
+
+\oddsidemargin=30pt \evensidemargin=20pt%impostano i margini
+\hyphenation{sil-la-ba-zio-ne pa-ren-te-si}%serve per la sillabazione: tra parentesi vanno inserite come nell'esempio le parole che latex non riesce a tagliare nel modo giusto andando a capo.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%comandi per l'impostazione della pagina, vedi il manuale della libreria fancyhdr per ulteriori delucidazioni
+\pagestyle{fancy}\addtolength{\headwidth}{60pt}
+\setlength{\headheight}{52pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+
+
+\linespread{1.3}                        %comando per impostare l'interlinea
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%definisce nuovi comandi
-%
 
 
 
@@ -146,8 +138,10 @@ INDICE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 %\clearpage{\pagestyle{empty}\cleardoublepage}
 
-\chapter{Introduzione}            %crea l'introduzione (un capitolo
-                                        %   non numerato)
+
+
+\chapter{Introduzione}            
+\pagenumbering{arabic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
 \rhead[\fancyplain{}{\bfseries
@@ -156,45 +150,9 @@ INTRODUZIONE}]{\fancyplain{}{\bfseries\thepage}}
 INTRODUZIONE}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce        Introduzione nell'indice
-\addcontentsline{toc}{chapter}{Introduzione}
-\pagenumbering{arabic}                  %mette i numeri arabi
+%\addcontentsline{toc}{chapter}{Introduzione}
 
-
-Le innovazioni tecnologiche introdotte negli ultimi decenni hanno rivoluzionato la nostra società. Il risultato che ne deriva è che numerosi settori stanno cambiando, muovendosi verso una realtà sempre più digitale. Se da una parte questo ha costituito un progresso, dall'altra ha creato nuove opportunità per i cybercriminali.\newline
-Oggi il principale obiettivo della sicurezza informatica è proprio quello di trovare soluzioni adattabili alle nuove infrastrutture, come i sistemi IoT che si stanno diffondendo sempre di più. Con l'impiego di queste nuove tecnologie nell'industria i punti di accesso alla rete aziendale sono aumentati, moltiplicando la tipologia ed il numero di minacce. In questo contesto il rischio che si corre è maggiore, poichè legato alla violazione di dati sensibili o addirittura alla compromissione dei processi di produzione.\newline
-\newline
-In questo scenario la cybersecurity è diventata una disciplina di fondamentale importanza, ?\newline
-La blockchain nasce in questo contesto, riscuotendo un grande successo grazie al potenziale innovativo che porta con sé. Questa nuova tecnologia permette l'esecuzione di programmi in modo distribuito e sicuro, senza la necessitá di un ente centrale che faccia da garante. Il paradigma
-trova applicazioni nei settori piú disparati, offrendo innovazione grazie alla
-possibilitá di fare a meno di banche o istituzioni pubbliche.\newline
-Ma in cosa consiste dal punto di vista informatico?
-Blockchain, catena di blocchi.
-Registro distibuito, organizzato in blocchi legati tra loro. Ad interagire con essa sono i miner, coloro che fisicamente realizzano le così dette transazioni. 
-Qual è il ruolo del miner nello specifico??\newline
-\newline
-Grazie alla crittografia (sicurezza informatica comprende una serie di cose, tra cui la crittografia) è stato possibile implementare delle monete virtuali. Da questi studi si è arrivati poi a pensare al bitcoin, che è stato il primo esperimento condotto con successo.\newline
-Ciò che indeboliva le crittovalute era il fatto di essere ''centralizzate'', cioè di passare per un ente che ne garantisse l'uso (una sorta di banca).\newline
-La blockchain nasce come necessità di superare quest'ostacolo, perché finalmente introduce la possibilità di farne a meno.
-Il primo esempio storico di moneta digitale si ha con il Bitcoin. Già da lui si parla di assenza di autorità centrale e rete distibuita - usando algoritmi proof-of-work. Questi permettono di raggiungere un consenso distribuito attraverso tutta la rete. E' il concetto chiave x capire come riusciamo ad evitare di affidarci ad un singolo ente es. Banca.\newline
-Tra i sistemi nati grazie alla blockchain troviamo Ethereum, una piattaforma che mette a disposizione un linguaggio di programmazione di alto livello. Questo linguaggio puó essere utilizzato dagli utenti per implementare dei programmi, i cos?ì detti smart contract.\newline
-In che cosa differisce dal Bitcoin?\newline
-\newline
-Gli smart contract possono essere eseguiti sulla rete di Ethereum solo al fronte di un pagamento anticipato. Per ragioni di sicurezza a ciascuna istruzione di basso livello è associato un costo monetario. Dunque eseguire un programma costerá tanto quante sono le istruzioni che lo compongono.
-Il costo di ciascuna istruzione è espresso in termini di gas, una sorta di carburante che viene pagato in ether, la crittovaluta di Ethereum.
-Dal momento che il gas viene pagato in anticipo, potrebbe accadere che l'esecuzione di un programma ecceda la quantitá messa a disposizione. In questi casi la computazione non giunge al termine, risultando nella perdita delle risorse investite dall'utente. Oltre a questo comportamento indesiderato l'esaurimento del gas disponibile puó avere conseguenze pericolose.
-Un programma che non gestisce correttamente queste situazioni viene etichettato come vulnerabile. La conseguenza piú diretta è il blocco del contratto, che puó essere anche permanente. La pericolositá peró risiede nel fatto che questo tipo di programmi diventano un bersaglio facile per attacchi malevoli. Vedremo come queste vulnerabilitá possono essere sfruttate per ottenere
-comportamenti dannosi per la rete.\newline
-Dato il valore monetario associato agli smart contract il rischio che si corre in caso di attacchi informatici è una perdita di denaro. Per questo motivo è necessario individuare possibili criticitá nel codice prima della sua esecuzione. In questo contesto l'analisi statica dei programmi costituisce un potente
-strumento di prevenzione.\newline
-\newline
-All'interno di questo elaborato ci concentreremo solo sulle tecniche di analisi dei consumi di gas. Poter conoscere a priori quest'informazione permetterebbe non solo un investimento adeguato da parte degli utenti, ma anche uno strumento di prevenzione da possibili attacchi.\newline
-Attualmente non esistono strumenti in grado di calcolare con precisione la quantitá di gas richiesto durante una computazione. Cercheremo di capirne le ragioni ma soprattutto di individuare dei margini di miglioramento.\newline
-\newline
-\newline
-Farei poi tipo 3 capitoli.\newline
-- Ethereum in deep + GAS\newline
-- Analisi in informatica, contestualizzata a quella dei programmi Ethereum. Qui una panoramica sui tool esistenti in materia\newline
-- Esperimenti condotti e conclusioni\newline
+\input{./introduzione/introduzione}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
@@ -203,28 +161,7 @@ Farei poi tipo 3 capitoli.\newline
 
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
 
-Lo scopo di questo capitolo è quello di fornire una panoramica dei concetti chiave intorno ai quali si sviluppa l'elaborato.
-
-\section{Blockchain}
-
-Il termine Blockchain - in italiano ``catena di blocchi'' - identifica un registro distribuito e sicuro. In questo senso si può pensare alla blockchain come ad una struttura di dati simile ad una lista crescente, dove le informazioni sono raggruppate in blocchi collegati fra loro.\newline
-Ciascun blocco codifica una sequenza di transazioni individuale, e viene concatenato a quello precedente seguendo un ordine cronologico. La concatenazione è irreversibile: ciascun nuovo blocco contiene la firma digitale di quello precedente. In questo modo, modificare un blocco implicherebbe l'invalidazione di tutta la catena successiva.\newline  
-La peculiarità di questa struttura risiede nel fatto che sia condivisa: ogni nodo che compone la rete mantiene una copia del registro aggiornata. Per poter aggiungere un blocco è dunque necessario validare l'intera catena, ed ottenere un consenso da parte degli altri nodi della rete. Una volta ottenuto, il nuovo blocco viene trasmesso agli altri componenti in modo tale da aggiornare lo stato della blockchain.\newline
-Il processo di validazione dei nuovi blocchi viene realizzato dai miner.
-Il loro compito è quello di verificare le transazioni proposte e fare in modo che il nuovo blocco venga linkato alla blockchain. Per fare questo i miner sono chiamati a risolvere un algoritmo proof-of-work, un puzzle crittografico che richiede un significativo costo computazionale per essere risolto.\newline
-Questo sistema permette di raggiungere il consenso senza la necessità di un'autorità centrale che faccia da garante. \'E il concetto chiave delle tecnologie basate su blockchain: la possibilità di implementare servizi sicuri senza appoggiarsi a banche, istituzioni pubbliche, ecc.\newline
-\newline
-Questa nuova tecnologia può essere integrata in diverse aree\newline (rif https://hbr.org/2017/01/the-truth-about-blockchain), sebbene ad oggi il suo uso più conosciuto sia quello nei sistemi di pagamento che impiegano crittovalute.
-Il dato non è poi così sorprendente: la prima blockchain nasce grazie a Satoshi Nakamoto assieme al Bitcoin (rif https://bitcoin.org/bitcoin.pdf). In questo senso il Bitcoin è una
-piattaforma di pagamenti, dove la catena di blocchi funge da storico di tutte le transazioni avvenute: una sorta di conto corrente condiviso.\newline
-La piattaforma basata su blockchain alla quale faremo riferimento è Ethereum, where registered accounts are not mere balances, but may contain smart contracts, i.e., code that can
-perform arbitrary computations.
-
-\section{Ethereum, smart contract e gas}
-
-- perchè Ethereum?? vantaggi e possibilità
-- programmazione di Smart Contracts
-- ethereum e il gas
+\input{./capitolo2/capitolo2}
 
 %\listoffigures                          %crea l'elenco delle figure
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
