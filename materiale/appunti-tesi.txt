@@ -57,6 +57,8 @@ a fare un confronto tra l'output prodotto da solc e quello ottenuto dal
 tool che stiamo testando.
 
 /SOFTWARE
+
+/Analisi statica
 - ETHER TRUST (solo bytecode): permette di fare un'analisi rigorosa
 dei programmi. Deduce solo proprietà di security.
 Non è utile per produrre bound ai consumi di gas.
@@ -76,23 +78,25 @@ produce upper bound ai consumi di gas. Questo è il tool che ci interessa,
 ovvero GASTAP. Il software prende in input un contratto e
 produce in output un bound - in terminini di gas - per ciascuna delle
 funzioni che lo compongono.
+
+/Interfacce web e IDE
 - eth-gas-reporter (https://github.com/cgewecke/eth-gas-reporter):
 fa test, in effetti produce dei valori etichettati come gas. A cosa
 corrispondono?? sono prodotti usando solc?
 - visualgas(https://doi.org/10.3929/ethz-b-000312914)
-- profiler(https://devpost.com/software/profiler-4mahxw): 
+- profiler(https://devpost.com/software/profiler-4mahxw):
 sembra però che possa essere usato solo una volta che lo smart
-contract è inserito nella blockchain. Suggeriscono di farlo in 
+contract è inserito nella blockchain. Suggeriscono di farlo in
 modalità unit test. Altrimenti?
 - remix (https://remix.ethereum.org/): IDE con web interface. produce
 i costi a fianco delle linee di codice.
 
- 
+
 /TITOLO
-- Studio sull'efficienza di tool per l'analisi statica degli smart contract in Ethereum
 - Stimare i consumi di gas nell'esecuzione di Smart Contract in Ethereum
-- Analisi statica di Smart Contract in Ethereum: stimare i consumi di gas
 - I consumi di gas nell'analisi statica degli Smart Contract in Ethereum
+- Studio sull'efficienza di tool per l'analisi statica degli smart contract in Ethereum
+- Analisi statica di Smart Contract in Ethereum: stimare i consumi di gas
 
 
 /INTRODUZIONE
@@ -114,13 +118,31 @@ alla stessa (non è ambientale!)
 
 
 /CAPITOLO 1
-- def schietta
+
+/Blockchain
+
+- def
 - struttura
-- com'è che è sicuro? immutabile. crittografia. ognuno ha la sua copia.
-- blockchain in azione: miners
+- vantaggi
+- il ruolo del miner
 - le tecnologie basate su blockchain
-- chiusura di quello che abbiamo capito sul suo potenziale!
-- com'è che si collega alle piattaforme di crittovalute
-(ricordati che blockchain nasce insieme al bitcoin!)
-- menzione al Bitcoin
+- bitcoin
+
+/Ethereum, la EVM e gli Smart Contract
+
+- def
 - Ethereum come alternativa
+- def smart contract
+- linguaggi alto livello
+- EVM e il bytecode
+
+/Il ruolo del gas
+
+- def
+- costi associati alle istr di basso livello
+- tabella dei costi
+- pagamento della risorsa
+- diff gasLimit e gasPrice???
+- necessità di scegliere un prezzo adeguato
+- proprietà di sicurezza garantite dal gas
+- problemi

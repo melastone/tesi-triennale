@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  23 NOV 2019 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  24 NOV 2019 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,6 +416,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 
+] [1] [2
+
+
 ] (./tesi.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
@@ -425,52 +428,42 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `tesi.toc'.
 
-
 [1
 
 ] [2
 
-]
-Capitolo 1.
-(./introduzione/introduzione.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
+
+] (./introduzione/introduzione.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 2--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
+Underfull \hbox (badness 10000) in paragraph at lines 2--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
+Underfull \hbox (badness 10000) in paragraph at lines 2--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
+Underfull \hbox (badness 10000) in paragraph at lines 2--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--156
+Underfull \hbox (badness 10000) in paragraph at lines 2--155
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1]
+ [1
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -478,8 +471,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Capitolo 2.
-(./capitolo2/capitolo2.tex
+Capitolo 1.
+(./capitolo1/capitolo1.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--16
 
  []
@@ -492,34 +485,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--16
 [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 19--24
+Underfull \hbox (badness 10000) in paragraph at lines 19--23
 
  []
 
-[6]) [7] (./tesi.aux) ) 
+[6]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--64
+
+ []
+
+[7])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+[9] [10
+
+
+]
+Capitolo 2.
+[11
+
+] [12
+
+
+] [13
+
+] [14
+
+] [15] [16
+
+
+] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 1814 strings out of 494912
- 19933 string characters out of 6180265
+ 1824 strings out of 494912
+ 20027 string characters out of 6180265
  90072 words of memory out of 5000000
- 5130 multiletter control sequences out of 15000+600000
- 17924 words of font info for 40 fonts, out of 8000000 for 9000
+ 5138 multiletter control sequences out of 15000+600000
+ 19287 words of font info for 42 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 26i,10n,43p,796b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/lj
-four/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk
-/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive2017/texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive2017/texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texlive2017/tex
-mf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on tesi.pdf (11 pages, 108303 bytes).
+ 24i,10n,43p,796b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/
+ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive2017/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive2017/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive2017/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texlive2017/texm
+f-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on tesi.pdf (22 pages, 133546 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 449 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
