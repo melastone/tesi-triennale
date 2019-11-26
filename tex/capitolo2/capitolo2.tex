@@ -1,0 +1,35 @@
+
+
+
+\section{Tecniche in informatica}
+
+Analisi statica vs. analisi dinamica
+
+Per analisi statica si intende l'analisi dei programmi fatta prima della loro esecuzione. L'analisi può essere fatta sia sul codice sorgente, che sul codice oggetto, vale a dire il prodotto della compilazione.\newline
+Le tecniche di analisi possono essere suddivise in due tipologie in base al loro obiettivo. La prima categoria comprende i tool di analisi volti a localizzare bug nel codice. La seconda identifica invece un gruppo di software con una forte base logica, che utilizzano tecniche matematiche per la verifica di specifiche prorietà del programma.\newline
+
+Per analisi dinamica si intende quella fatta durante l'esecuzione dei programmi su un processore reale o virtuale. Il software testing rientra in questa categoria. 
+
+\section{Analisi statica di smart contract}
+
+L'impiego delle tecniche di analisi statica per la verifica degli smart contract non è molto diffuso. Principalmente perchè data la dimensione limitata di questi programmi non si ritiene necessario l'impiego dell'analisi. 
+In parte questo è dovuto anche alla difficile rappresentazione del bytecode EVM. Decompilare le istruzioni di basso livello al fine di ottenere una rappresentazione migliore che funga da base per una buona analisi richiede un notevole sforzo.
+
+\section{Tool per l'analisi}
+Durante questo lavoro è stato preso in considerazione un certo numero di software che implementano tecniche di analisi statica orientata alla verifica degli smart contract. Di seguito ne faremo un elenco.
+
+\begin{description}[labelindent=1cm]    %crea un elenco descrittivo
+
+\item[EtherTrust] ~\cite{grishchenko2018foundations} questo framework offre la possibilità di analizzare i programmi scritti al fine di verificarne le proprietà di sicurezza. Per fare questo EtherTrust traduce il bytecode in clausole Horn. I contributi di questo framework sono: la realizzazione di una semantica per EVM, la modellizzazione delle proprietà di sicurezza degli smart contract e l'analisi statica applicata al bytecode;
+
+\item[MadMax] ~\cite{grech2018madmax} attraverso la combinazione di più tecniche di analisi statica, questo software propone un'analisi di smart contract volta ad individuare bug legati all'esaurimento del gas disponibile;
+
+\item[KEVM] ~\cite{hildenbrandt2017kevm} produce una semantica per la EVM. Questa modellizzazione puà essere utilizzata come base di partenza per implementare un'analisi esaustiva del codice. Gli stessi autori del programma fanno riferimento ad una possibile applicazione di KEVM volta a stimare i consumi di gas dei programmi;
+
+\item[EthIR] ~\cite{albert2018ethir} è un framework di analisi del bytecode di EVM. A partire dalle istruzioni di basso livello, EthIR produce una rappresentazione RB (\textit{Ruled Based}). Tale modellizzazione può essere utilizzata per desumere proprietà del bytecode, applicando delle ulteriori tecniche di analisi statica;
+
+\item[GASTAP] ~\cite{DBLP:journals/corr/abs-1811-10403} è la prima piattaforma sviluppata in grado di analizzare smart contract al fine di dare un upper bound ai consumi di gas dello stesso. Questo software è ancora in via di sviluppo, perciò presenta ancora delle limitazioni. Tuttavia si distingue per la precisione nella stima dei bound, riuscendo a fornire un analisi più precisa rispetto ad altri software che implementano le stesse funzionalità. 
+
+\end{description}
+
+

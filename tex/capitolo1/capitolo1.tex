@@ -10,22 +10,22 @@ Il processo di validazione dei nuovi blocchi viene realizzato dai miner.
 Il loro compito è quello di verificare le transazioni proposte e fare in modo che il nuovo blocco venga linkato alla blockchain. Per fare questo i miner sono chiamati a risolvere un algoritmo proof-of-work, un puzzle crittografico che richiede un significativo costo computazionale per essere risolto.\newline
 Questo sistema permette di raggiungere il consenso senza la necessità di un'autorità centrale che faccia da garante. \'E il concetto chiave delle tecnologie basate su blockchain: la possibilità di implementare servizi sicuri senza appoggiarsi a banche, istituzioni pubbliche, ecc.\newline
 \newline
-Questa nuova tecnologia può essere integrata in diverse aree \cite{K1}, sebbene ad oggi il suo uso più conosciuto sia quello nei sistemi di pagamento che impiegano crittovalute.
-Il dato non è poi così sorprendente: la prima blockchain nasce grazie a Satoshi Nakamoto assieme al Bitcoin \cite{K2}. In questo senso il Bitcoin è una
+Questa nuova tecnologia può essere integrata in diverse aree ~\cite{iansiti_lakhani_2017}, sebbene ad oggi il suo uso più conosciuto sia quello nei sistemi di pagamento che impiegano crittovalute.
+Il dato non è poi così sorprendente: la prima blockchain nasce grazie a Satoshi Nakamoto assieme al Bitcoin ~\cite{nakamoto2008bitcoin}. In questo senso il Bitcoin è una
 piattaforma di pagamenti, dove la catena di blocchi funge da storico di tutte le transazioni avvenute: una sorta di conto corrente condiviso.\newline
 
 \section{Ethereum, gli Smart Contract e la EVM}
 
 All'interno di quest'elaborato verrà presa in considerazione solo il network Ethereum, una piattaforma decentralizzata basata su una blockchain, che come Bitcoin possiede una propria valuta: l'\textit{ether}.\newline 
 Diversamente da quanto vale per le altre crittovalute, Ethereum non è solo un network per lo scambio di moneta, ma un framework che permette l'esecuzione di programmi. Tali programmi prendono il nome di \textit{smart contract}, cioè ``contratti intelligenti''. Sebbene il nome possa suggerire una funzione ben precisa, questi programmi sono usati per computazioni general-purpose, permettendo quindi di realizzare un vasto numero di operazioni.\newline
-Gli smart contract sono scritti in linguaggi ad alto livello; fra i vari (Serpent, Viper e LLL) quello più diffuso ad oggi è Solidity \cite{K3}. 
+Gli smart contract sono scritti in linguaggi ad alto livello; fra i vari (Serpent, Viper e LLL) quello più diffuso ad oggi è Solidity ~\cite{ethereum/solidity_2019}. 
 Tale linguaggio object-oriented è pensato solo per lo sviluppo di smart contract che, per poter girare nella rete, vengono poi tradotti in bytecode. Ciascun nodo di Ethereum infatti esegue localmente la Ethereum Virtual Machine, anche detta EVM, una macchina a stack in grado di eseguire un linguaggio di basso livello, ossia bytecode. Questo linguaggio è non tipato, e composto da un piccolo insieme di istruzioni.\newline 
 
 \section{Il ruolo del gas}
 
 Per \textit{gas} si intende l'unità di misura dello sforzo computazionale richiesto dalla EVM per eseguire ciascuna istruzione. Diremo quindi che eseguire uno smart contract costa una certa quantità di gas.\newline
 Nello specifico ciascuna istruzione di basso livello ha associato un costo fisso in gas. Per calcolare quindi il consumo totale di un programma Solidity è necessario comprendere in quali istruzioni di basso livello verrà tradotto.\newline
-I costi di alcune delle istruzioni EVM \cite{K4} sono riportati nella tabella \ref{tab:gas-costs}.
+I costi di alcune delle istruzioni EVM ~\cite{wood2014ethereum} sono riportati nella tabella \ref{tab:gas-costs}.
 %(richiamo il nome della tabella utilizzando la label che ho messo sotto)
 
 \begin{table}[h]                        %ambiente tabella

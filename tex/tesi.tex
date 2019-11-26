@@ -18,6 +18,12 @@
 %libreria per avere l'indentazione all'inizio dei capitoli
 \usepackage{indentfirst}
 
+%libreria per personalizzare gli elenchi
+\usepackage{enumitem}
+
+%libreria per citare BibTex
+\usepackage{cite}
+
 
 %%%%%%%%%libreria per mostrare le etichette
 %\usepackage{showkeys}
@@ -170,11 +176,14 @@ INTRODUZIONE}}
 
 \chapter{Analisi statica}
 
-\section{Tecniche in informatica}
+\input{./capitolo2/capitolo2}
 
-\section{Analisi statica di smart contract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
-\section{Tool per l'analisi}
+\chapter{Risultati sperimentali}
+
+\input{./capitolo3/capitolo3}
 
 %\listoffigures                          %crea l'elenco delle figure
 
@@ -213,13 +222,6 @@ INTRODUZIONE}}
 %\item secondo oggetto
 %\end{itemize}
 
-
-%Vediamo un elenco descrittivo:
-%\begin{description}                     %crea un elenco descrittivo
- % \item[OGGETTO1] prima descrizione;
- % \item[OGGETTO2] seconda descrizione;
- % \item[OGGETTO3] terza descrizione.
-%\end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%crea una sottosezione
 %\subsection{Altra SottoSezione}
@@ -287,24 +289,8 @@ CONCLUSIONI}}
 %\rhead[\fancyplain{}{\bfseries \thechapter \:Seconda Appendice}]
 %{\fancyplain{}{\bfseries\thepage}}
 
-\begin{thebibliography}{90}             %crea l'ambiente bibliografia
-
-%\rhead[\fancyplain{}{\bfseries \leftmark}]{\fancyplain{}{\bfseries
-%\thepage}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Bibliografia
-                                        %   nell'indice
-%\addcontentsline{toc}{chapter}{Bibliografia}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%provare anche questo comando:
-%%%%%%%%%%%\addcontentsline{toc}{chapter}{\numberline{}{Bibliografia}}
-\bibitem{K1} M. Iansiti e K. R. Lakhani. `` The Truth About Blockchain'' hbr.org.\\https://hbr.org/2017/01/the-truth-about-blockchain (Ultimo accesso 24 novembre 2019) 
-\bibitem{K2} S. Nakamoto. ``Bitcoin: A peer-to-peer electronic cash system''
-(Bitcoin whitepaper). 31 Ottobre 2008. https://bitcoin.org/bitcoin.pdf
-\bibitem{K3} Ethereum Foundation. ``The solidity contract-oriented programming language''. https://github.com/ethereum/solidity
-\bibitem{K4} Dr. Gavin Wood. ``Ethereum:
-A secure decentralised generalised transaction ledger''. Versione: 20 Ottobre 2019. https://ethereum.github.io/yellowpaper/paper.pdf
-\end{thebibliography}
+\bibliography{bibliografia}{}
+\bibliographystyle{plain}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}

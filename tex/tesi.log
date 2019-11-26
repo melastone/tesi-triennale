@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  24 NOV 2019 19:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  26 NOV 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -389,29 +389,41 @@ s
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (./enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\enitkv@toks@=\toks16
+\labelindent=\skip52
+\enit@outerparindent=\dimen104
+\enit@toks=\toks17
+\enit@inbox=\box26
+\enit@count@id=\count94
+\enitdp@description=\count95
+) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
 ) (./tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Info: Redefining \it@ocap on input line 63.
-LaTeX Info: Redefining \it@ccap on input line 63.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Info: Redefining \it@ocap on input line 69.
+LaTeX Info: Redefining \it@ccap on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 70.
+(Font)              <17.28> on input line 76.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 70.
-
-[1
+(Font)              <12> on input line 76.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
@@ -428,33 +440,34 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `tesi.toc'.
 
+
 [1
 
 ] [2
 
 
 ] (./introduzione/introduzione.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 2--155
+Underfull \hbox (badness 10000) in paragraph at lines 2--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--155
+Underfull \hbox (badness 10000) in paragraph at lines 2--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--155
+Underfull \hbox (badness 10000) in paragraph at lines 2--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--155
+Underfull \hbox (badness 10000) in paragraph at lines 2--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--155
+Underfull \hbox (badness 10000) in paragraph at lines 2--161
 
  []
 
@@ -507,44 +520,62 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Capitolo 2.
+(./capitolo2/capitolo2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
+
+ []
+
 [11
 
-] [12
+]) [12]
+Capitolo 3.
+(./capitolo3/capitolo3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 6--187
+
+ []
+
+[13
 
 
-] [13
 
 ] [14
 
-] [15] [16
 
+] (./tesi.bbl [15
 
-] (./tesi.aux) ) 
+] [16
+
+] [17]) [18] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 1824 strings out of 494912
- 20027 string characters out of 6180265
- 90072 words of memory out of 5000000
- 5138 multiletter control sequences out of 15000+600000
+ 2250 strings out of 494912
+ 26749 string characters out of 6180265
+ 98871 words of memory out of 5000000
+ 5547 multiletter control sequences out of 15000+600000
  19287 words of font info for 42 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 24i,10n,43p,796b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen
-/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/
-ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive2017/texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive2017/texmf-var/
-fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive2017/texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texlive2017/texm
-f-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on tesi.pdf (22 pages, 133546 bytes).
+ 24i,10n,43p,796b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/melania/.texlive2017/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-va
+r/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive2017/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive2017
+/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive2
+017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texli
+ve2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on tesi.pdf (24 pages, 151023 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 492 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

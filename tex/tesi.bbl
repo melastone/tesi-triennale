@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+
+\bibitem{albert2018ethir}
+Elvira Albert, Pablo Gordillo, Benjamin Livshits, Albert Rubio, and Ilya
+  Sergey.
+\newblock Ethir: A framework for high-level analysis of ethereum bytecode.
+\newblock In {\em International Symposium on Automated Technology for
+  Verification and Analysis}, pages 513--520. Springer, 2018.
+
+\bibitem{DBLP:journals/corr/abs-1811-10403}
+Elvira Albert, Pablo Gordillo, Albert Rubio, and Ilya Sergey.
+\newblock {GASTAP:} {A} gas analyzer for smart contracts.
+\newblock {\em CoRR}, abs/1811.10403, 2018.
+
+\bibitem{ethereum/solidity_2019}
+ethereum.
+\newblock The solidity contract-oriented programming language, 2019.
+
+\bibitem{grech2018madmax}
+Neville Grech, Michael Kong, Anton Jurisevic, Lexi Brent, Bernhard Scholz, and
+  Yannis Smaragdakis.
+\newblock Madmax: Surviving out-of-gas conditions in ethereum smart contracts.
+\newblock {\em Proceedings of the ACM on Programming Languages}, 2(OOPSLA):116,
+  2018.
+
+\bibitem{grishchenko2018foundations}
+Ilya Grishchenko, Matteo Maffei, and Clara Schneidewind.
+\newblock Foundations and tools for the static analysis of ethereum smart
+  contracts.
+\newblock In {\em International Conference on Computer Aided Verification},
+  pages 51--78. Springer, 2018.
+
+\bibitem{hildenbrandt2017kevm}
+Everett Hildenbrandt, Manasvi Saxena, Xiaoran Zhu, Nishant Rodrigues, Philip
+  Daian, Dwight Guth, and Grigore Rosu.
+\newblock Kevm: A complete semantics of the ethereum virtual machine.
+\newblock Technical report, 2017.
+
+\bibitem{iansiti_lakhani_2017}
+Marco Iansiti and Karim~R. Lakhani.
+\newblock The truth about blockchain.
+\newblock {\em Harvard Business Review}, 2017.
+
+\bibitem{nakamoto2008bitcoin}
+Satoshi Nakamoto et~al.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock 2008.
+
+\bibitem{wood2014ethereum}
+Gavin Wood et~al.
+\newblock Ethereum: A secure decentralised generalised transaction ledger.
+\newblock {\em Ethereum project yellow paper}, 151(2014):1--32, 2014.
+
+\end{thebibliography}
