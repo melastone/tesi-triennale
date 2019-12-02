@@ -1,129 +1,61 @@
 // TEST GASTAP VS SOLC COMPILER
 
-/ CryptoPhoenix.sol
+  % assegnazione di var
+/ assignment.sol {
 
-  selezionando il main method GASTAP restituisce:
-      ../../bin/ethirweb   /tmp/ei_filesgfCwog/CryptoPhoenix.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  GASTAP: ../../bin/ethirweb   /tmp/ei_filesIFEUP0/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  solc: 5087 + 28400 = 33487 (construction)
 
-  mentre solc come construction restituisce:
-      infinite + 2592000 = infinite
-
-  Selezionando invece i singoli metododi riusciamo ad ottenere una stima piuttosto precisa.
-
-  ~ BASE_PRICE()
-  GASTAP: 15+663 = 678
-  solc: 678
-
-  Quindi la stima di GASTAP coincide perfettamente con i consumi calcolati da solc.
-
-  Le stesse considerazioni sono valide per i seguenti metodi:
-  ~ owner()
-  ~ paused()
-  ~ subDevOne()
-  ~ SCORES(uint256)
-  ~ PHOENIXES(uint256)
-  ~ POOLS(uint256)
-  ~ devFunds(address)
-  ~ GAME_STARTED()
-  ~ userFunds(address)
-  ~ DENOMINATOR()
-  ~ GAME_END()
-  ~ subDevTwo()
-  ~ owner() - Ownable
-  ~ paused() - Pausable
-  ~ owner() - Pausable
+  ~init()
+  GASTAP: 9+20138
+  solc: 20147
+}
 
 
-  Casi dove il bound è pressoché simile:
+  % ciclo for
+/ Loop.sol {
 
-  ~ unpause() - CryptoPhoenixesCivilWar
-  GASTAP: 12+21847 = 21859
-  solc: 21856
-
-  ~ pause() - CryptoPhoenixesCivilWar
-  GASTAP: 12+22004 = 22016
-  solc: 22013
-
-  ~ pause() - Pausable
-  GASTAP: 12+21850
-  solc: 21859
-
-  ~ unpause()
-  GASTAP: 12+21803
-  solc:	21812
-
-  Generalmente, nei casi in cui solc produce un bound infinito,
-  GASTAP si comporta diversamente.
-  O non riesce a determinare un output utile:
-
-  ~ useAbility(uint256)
-  GASTAP: ../../bin/ethirweb   /tmp/ei_filesWfPcDn/CryptoPhoenix.sol  -entries  CryptoPhoenixesCivilWar.useAbility:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
-  solc: infinite
-
-  Le stesse considerazioni valgono per i metodi:
-  ~ endGame()
-  ~ setPhoenixOwners(address[19])
-  ~ useCaptainAbility(uint256)
-  ~ purchasePhoenix(uint256)
-
-  Oppure, al contrario di solc, da un output finito:
-
-  ~ devWihdraw()
-  GASTAP: 12+40762
-  solc: infinite
-
-  ~ upgradeContract(address)
-  GASTAP: 12+36449
-  solc: infinite
-
-  ~ startGame():
-  GASTAP: 12+458422
-  solc: infinite
-
-  ~ withdrawFunds()
-  GASTAP: 15+41455
-  solc: infinite
-
-
-
-/ Loop.sol
   Calcola la moltiplicazione di 5*7.
-  Contiene un ciclo for.
 
-  Selezionando il main method GASTAP restituisce:
-      9+ (75+max([163583,222+20476*nat(a)]))
-
-  mentre solc come construction restituisce:
-      10117 + 51800 = 61917
-
+  GASTAP: 9+ (75+max([163583,222+20476*nat(a)]))
   a che cosa è dovuto il 75??
 
-  ~ enter()
-  GASTAP: 9+163561
-  solc: infinite
+  solc: 10117 + 51800 = 61917 (construction)
 
-  ~ multiply()
-  GASTAP: 9+ (222+20476*nat(a))
-  solc: infinite
+    ~ enter()
+    GASTAP: 9+163561
+    solc: infinite
+
+    ~ multiply(uint256)
+    GASTAP: 9+ (222+20476*nat(a))
+    solc: infinite
+
+  N.B.: in questo caso la fun prende un argomento. Anche se il codice sol non
+  contiene cicli, in fase di compilazione il passaggio di arg viene tradotto in
+  un ciclo nel bytecode EVM. Penso sia per questo motivo che l'output sia
+  parametrico....
+
+}
 
 
+  % ciclo for
+/ sum.sol {
 
-/ sum.sol
   Somma i primi 5 elementi di un vettore.
-  Contiene un ciclo for.
 
   GASTAP: ../../bin/ethirweb   /tmp/ei_filesoS6OXG/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
   solc: 111 + 59200 = 59311 (construction)
 
-  ~ suma(uint256[])
-  GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1091+3* (1/32))
-  solc:	infinite
+    ~ suma(uint256[])
+    GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1091+3* (1/32))
+    solc:	infinite
+
+}
 
 
 
-/ factorial.sol
-  Calcola il fattoriale di un numero.
-  Ricorsione finita.
+  % ricorsione diretta
+/ factorial.sol {
 
   GASTAP: ../../bin/ethirweb   /tmp/ei_filessNlmMy/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
   solc: 93 + 42200 = 42293 (construction)
@@ -132,11 +64,142 @@
   GASTAP: ../../bin/ethirweb   /tmp/ei_filesKu7YaR/noname1.sol  -entries  Factorial.fact:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
   solc: infinite
 
+}
 
 
-/ sqrt(uint256) in bitzCrypto.sol
-funzione che calcola la radice quadrata.
-While. Sconsigliano l'uso in quanto consuma elevate qtà di gas!
 
-GASTAP: Exception: error(existence_error(procedure,evm_solver:non_terminating/2),context(evm_solver:print_ub/4,_G28))
-solc: infinite
+  % ricorsione indiretta
+/ ricorsione_indiretta.sol {
+
+  Funzioni che si richiamano l'un l'atra.
+
+  GASTAP: ../../bin/ethirweb   /tmp/ei_files8oo77i/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  solc: 117 + 68600 = 68717 (construction)
+
+    ~due(uint256)
+    GASTAP: ../../bin/ethirweb   /tmp/ei_filesSyqnDG/noname1.sol  -entries  ricorsione_indiretta.due:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+    solc:	infinite
+    ~uno(uint256)
+    GASTAP: /tmp/ei_files7DDUGq/noname1.sol  -entries  ricorsione_indiretta.uno:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+    solc: infinite
+
+}
+
+
+
+  % ricorsione multipla
+/ fibonacci-mul.sol {
+
+  GASTAP: ../../bin/ethirweb   /tmp/ei_filesBg9Aac/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  solc: 99 + 45600 = 45699 (construction)
+
+    ~fact(uint256)
+    GASTAP: ../../bin/ethirweb   /tmp/ei_filesyYrbfT/noname1.sol  -entries  Fibonacci.fact:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+    solc:	infinite
+
+}
+
+
+
+  %funzioni che si richiamano a vicenda
+/ four_functions.sol {
+
+  GASTAP: ../../bin/ethirweb   /tmp/ei_filesuaKper/noname1.sol  -entries  Sum.suma Sum.hola Sum.adios:uint256 Sum.comer:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  solc: 135 + 83800 = 83935 (construction)
+
+     ~adios(uint256), comer(uint256), hola()
+     bound costante che coincide.
+     ~suma()
+     GASTAP: 15+802
+     solc: infinite
+
+}
+
+
+
+  % while
+/ sqrt(uint256) in bitzCrypto.sol  {
+  funzione che calcola la radice quadrata.
+  While. Sconsigliano l'uso in quanto consuma elevate qtà di gas!
+
+  GASTAP: Exception: error(existence_error(procedure,evm_solver:non_terminating/2),context(evm_solver:print_ub/4,_G28))
+  solc: infinite
+
+}
+
+
+
+  % caso di studio
+/ CryptoPhoenix.sol {
+
+    selezionando il main method GASTAP restituisce:
+        ../../bin/ethirweb   /tmp/ei_filesgfCwog/CryptoPhoenix.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+
+    mentre solc come construction restituisce:
+        infinite + 2592000 = infinite
+
+    Selezionando invece i singoli metododi riusciamo ad ottenere una stima piuttosto precisa.
+
+    ~ BASE_PRICE()
+    GASTAP: 15+663 = 678
+    solc: 678
+
+    Quindi la stima di GASTAP coincide perfettamente con i consumi calcolati da solc.
+
+    Le stesse considerazioni sono valide per i seguenti metodi:
+    ~ owner()
+    ~ paused()
+    ~ subDevOne()
+    ~ SCORES(uint256)
+    ~ PHOENIXES(uint256)
+    ~ POOLS(uint256)
+    ~ devFunds(address)
+    ~ GAME_STARTED()
+    ~ userFunds(address)
+    ~ DENOMINATOR()
+    ~ GAME_END()
+    ~ subDevTwo()
+    ~ owner() - Ownable
+    ~ paused() - Pausable
+    ~ owner() - Pausable
+
+
+    Casi dove il bound è pressoché simile:
+
+    ~ unpause() - CryptoPhoenixesCivilWar
+    ~ pause() - CryptoPhoenixesCivilWar
+    ~ pause() - Pausable
+    ~ unpause()
+
+    Casi in cui solc produce un bound infinito:
+    GASTAP non riesce a determinare un output utile:
+
+    ~ useAbility(uint256)
+    GASTAP: ../../bin/ethirweb   /tmp/ei_filesWfPcDn/CryptoPhoenix.sol  -entries  CryptoPhoenixesCivilWar.useAbility:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+    solc: infinite
+
+    Le stesse considerazioni valgono per i metodi:
+    ~ endGame()
+    ~ setPhoenixOwners(address[19])
+    ~ useCaptainAbility(uint256)
+    ~ purchasePhoenix(uint256)
+
+      Oppure si comporta diversamente:
+
+    ~ devWihdraw()
+    GASTAP: 12+40762
+    solc: infinite
+
+    ~ upgradeContract(address)
+    GASTAP: 12+36449
+    solc: infinite
+
+    ~ startGame():
+    GASTAP: 12+458422
+    solc: infinite
+
+    ~ withdrawFunds()
+    GASTAP: 15+41455
+    solc: infinite
+
+}

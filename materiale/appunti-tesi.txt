@@ -12,6 +12,9 @@ soprattutto formalizzarlo in modo da darlo in pasto ai programmi di analisi
 in forma ottimizzata ma corretta (EVM da sé è molto difficile da analizzare,
 vedi intr. [1])
 
+Solidity è Turing completo, la EVM quasi-Turing completa in quanto intrinsecamente
+limitata dai bound dati dal gas.
+
 /RIELABORAZIONE DELLE FONTI
 L'articolo [1] fornisce una panoramica sui tool attualmente esistenti per
 fare verifiche formali degli smart contracts. Questi sono suddivisi
@@ -93,23 +96,25 @@ i costi a fianco delle linee di codice.
 
 
 /TITOLO
-- Stimare i consumi di gas nell'esecuzione di Smart Contract in Ethereum
-- I consumi di gas nell'analisi statica degli Smart Contract in Ethereum
-- Studio sull'efficienza di tool per l'analisi statica degli smart contract in Ethereum
-- Analisi statica di Smart Contract in Ethereum: stimare i consumi di gas
+- Stimare i Consumi di Gas nell'Esecuzione di Smart Contract in Ethereum
+- I Consumi di Gas nell'Analisi Statica degli Smart Contract in Ethereum
+- Analisi Statica di Smart Contract in Ethereum: Stimare i Consumi di Gas
 
 
 /INTRODUZIONE
 1. Le innovazioni informatiche, a che punto è la cybersecurity?? Diamo una
 panoramica del contesto in cui ci troviamo.
+
 2. Cos'è la blockchain? Mi riallaccio alla questione precedente definendola
 come un ottimo strumento di cybersecurity.
-Cosa sono gli smart contracts? parliamone!
+
 3. All'interno della blockchain concentriamoci sull'ambito delle criptovalute.
 Cenni al bitcoin. Introduciamo Ethereum come alternativa.
-Parliamo di Ethereum.
+Parliamo di Ethereum. Cosa sono gli smart contracts? parliamone!
+
 4. Tutto il problema del GAS.. cenni bibliografici, vulnerabilità. Più o
 meno qui la base di lavoro è buona. Possiamo agg qualcosa?
+
 5. Parlo del mio lavoro.
 
 Il tutto sarebbe meglio per un totale di 5-6 pagine con riferimenti
@@ -146,3 +151,14 @@ alla stessa (non è ambientale!)
 - necessità di scegliere un prezzo adeguato
 - proprietà di sicurezza garantite dal gas
 - problemi
+
+
+/CAPITOLO 2
+Analisi statica
+
+
+/CAPITOLO 3
+Parlo del problema del gas
+
+/CAPITOLO 4
+risultati sperimentali

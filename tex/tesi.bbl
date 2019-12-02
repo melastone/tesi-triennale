@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{albert2018ethir}
 Elvira Albert, Pablo Gordillo, Benjamin Livshits, Albert Rubio, and Ilya
@@ -9,8 +9,26 @@ Elvira Albert, Pablo Gordillo, Benjamin Livshits, Albert Rubio, and Ilya
 
 \bibitem{DBLP:journals/corr/abs-1811-10403}
 Elvira Albert, Pablo Gordillo, Albert Rubio, and Ilya Sergey.
-\newblock {GASTAP:} {A} gas analyzer for smart contracts.
+\newblock Gastap: A gas analyzer for smart contracts.
 \newblock {\em CoRR}, abs/1811.10403, 2018.
+
+\bibitem{dai2017bitcoin}
+Fangfang Dai, Yue Shi, Nan Meng, Liang Wei, and Zhiguo Ye.
+\newblock From bitcoin to cybersecurity: A comparative study of blockchain
+  application and security issues.
+\newblock In {\em 2017 4th International Conference on Systems and Informatics
+  (ICSAI)}, pages 975--979. IEEE, 2017.
+
+\bibitem{ernst-ijcai97}
+Michael~D. Ernst, Todd~D. Millstein, and Daniel~S. Weld.
+\newblock Automatic sat-compilation of planning problems.
+\newblock In {\em IJCAI '97: IJCAI-97, Proceedings of the Fifteenth
+  International Joint Conference on Artificial Intelligence}, pages 1169--1176,
+  Nagoya, Aichi, Japan, aug 1997.
+
+\bibitem{solidity-docs}
+Ethereum.
+\newblock Solidity docs, 2018.
 
 \bibitem{ethereum/solidity_2019}
 ethereum.
@@ -37,14 +55,24 @@ Everett Hildenbrandt, Manasvi Saxena, Xiaoran Zhu, Nishant Rodrigues, Philip
 \newblock Technical report, 2017.
 
 \bibitem{iansiti_lakhani_2017}
-Marco Iansiti and Karim~R. Lakhani.
+Marco Iansiti and Karim~R Lakhani.
 \newblock The truth about blockchain.
-\newblock {\em Harvard Business Review}, 2017.
+\newblock {\em Harvard Business Review}, 95(1):118--127, 2017.
+
+\bibitem{KHAN2018395}
+Minhaj~Ahmad Khan and Khaled Salah.
+\newblock Iot security: Review, blockchain solutions, and open challenges.
+\newblock {\em Future Generation Computer Systems}, 82:395 -- 411, 2018.
 
 \bibitem{nakamoto2008bitcoin}
 Satoshi Nakamoto et~al.
 \newblock Bitcoin: A peer-to-peer electronic cash system.
 \newblock 2008.
+
+\bibitem{analisi-statica-unina}
+Porfirio Tramontana.
+\newblock 10-analisi statica.
+\newblock University Lecture, 2019.
 
 \bibitem{wood2014ethereum}
 Gavin Wood et~al.

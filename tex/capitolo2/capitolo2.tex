@@ -1,34 +1,106 @@
+L'analisi statica è un processo di valutazione della correttezza dei programmi che rientra tra le tecniche di verifica del sotware. L'aggettivo \textit{statica} identifica una serie di controlli che possono essere effettuati sul codice prima della sua esecuzione. In questo si differenzia dall'analisi dinamica, una tecnica complementare che comprende quei controlli che vengono invece effettuati a runtime.\newline
+\indent L'analisi statica solitamente è il primo controllo che viene effettuato sul codice.
+% Perchè l'analisi statica non è common practice?
 
 
+\section{Analisi Statica vs. Analisi Dinamica}
 
-\section{Tecniche in informatica}
+Per analisi statica si intende l'analisi dei programmi dal punto di vista del codice che li compone, vale a dire senza doverli eseguire. L'analisi può essere fatta sia sul codice sorgente, che sul codice oggetto, ossia  il prodotto della compilazione.\newline
+\indent L'analisi statica viene condotta su tre dimensioni: esaminando la struttura del programma, costruendo un modello che rappresenti i possibili stati del codice e ragionando sul possibile comportamento in fase di esecuzione ~\cite{ernst-ijcai97}. 
+Rientrano in questa categoria la verifica formale dei programmi e le ottimizzazioni a tempo di compilazione. L'analisi statica viene spesso implementata da tool automatici, e garantisce proprietà di sound. Le principali critiche mosse nei confronti di questa tecnica derivano dal fatto che possa portare a dei \textit{falsi positivi}, cioè situazioni in cui viene segnalata una vulnerabilità nel codice sebbene non sia stata violata alcuna regola.\newline
+% Perchè vale questo? 
+% - le proprietà sono indecidibili
+% - vogliamo la soundness
+\indent Dall'altro lato l'analisi dinamica identifica quei controlli che possono essere effettuati sul programma soltanto durante la sua esecuzione, che sia su un processore reale o virtuale. Il software testing rientra in questa categoria. Per condurre questo tipo di controllo è necessario fornire un input ben preciso e analizzare poi il comportamento del programma. Occorre inoltre stabilire a priori \emph{che cosa} si vuole misurare. Sebbene questa analisi sia più veloce rispetto alla prima, non garantisce la stessa correttezza. Per essere rigorosa infatti l'analisi dinamica dovrebbe coprire ogni possibile configurazione del programma.\\
+\newline
+\indent Le tecniche di analisi possono essere suddivise in due tipologie in base al loro obiettivo. La prima categoria comprende i tool di analisi volti a localizzare bug nel codice. La seconda identifica invece un gruppo di software con una forte base logica, che utilizzano tecniche matematiche per la verifica di specifiche prorietà del programma.\newline
 
-Analisi statica vs. analisi dinamica
 
-Per analisi statica si intende l'analisi dei programmi fatta prima della loro esecuzione. L'analisi può essere fatta sia sul codice sorgente, che sul codice oggetto, vale a dire il prodotto della compilazione.\newline
-Le tecniche di analisi possono essere suddivise in due tipologie in base al loro obiettivo. La prima categoria comprende i tool di analisi volti a localizzare bug nel codice. La seconda identifica invece un gruppo di software con una forte base logica, che utilizzano tecniche matematiche per la verifica di specifiche prorietà del programma.\newline
+\section{Tecniche di Analisi Statica in Informatica}
 
-Per analisi dinamica si intende quella fatta durante l'esecuzione dei programmi su un processore reale o virtuale. Il software testing rientra in questa categoria. 
+Di seguito daremo una panoramica sulle principali tecniche ~\cite{analisi-statica-unina} di analisi statica.
+% Espandiamo la sezione
+% Differenziamo le tecniche manuali da quelle       automatizzabili
 
-\section{Analisi statica di smart contract}
+    \subsection{La compilazione}
+    
+    % Spieghiamo in dettaglio che per essere eseguita la compilazione richiede un po' di analisi
 
-L'impiego delle tecniche di analisi statica per la verifica degli smart contract non è molto diffuso. Principalmente perchè data la dimensione limitata di questi programmi non si ritiene necessario l'impiego dell'analisi. 
-In parte questo è dovuto anche alla difficile rappresentazione del bytecode EVM. Decompilare le istruzioni di basso livello al fine di ottenere una rappresentazione migliore che funga da base per una buona analisi richiede un notevole sforzo.
+    Questa tecnica identifica i controlli effettuati dal compilatore, che variano a seconda del linguaggio di programmazione del codice. Le anomalie che possono essere catturate da questo tipo di analisi possono variare, ma in generale comprendono l'incoerenza dei tipi, la mancata dichiarazione delle variabili e il codice non raggiungibile dal flusso di controllo.\newline 
 
-\section{Tool per l'analisi}
-Durante questo lavoro è stato preso in considerazione un certo numero di software che implementano tecniche di analisi statica orientata alla verifica degli smart contract. Di seguito ne faremo un elenco.
+    \subsection{Code Reading}
+
+    Come suggerisce il termine stesso si tratta della rilettura del codice da parte di una persona. Sebbene i bug identificabili possono variare in base a diversi fattori (es. numero di persone, conoscenza del codice, livello di esperienza) questa operazione può portare alla luce difetti che invece il compilatore non rileva. Commenti inconsistenti con il codice, nomi di variabili errati, loop infiniti, codice non strutturato, sono solo alcuni di questi. L'efficacia di questa tecnica è limitata se colui che legge il codice è la stessa persona ad averlo sviluppato.\newline
+
+    \subsection{Code Reviews}
+
+    Generalmente adottata in contesti aziendali. Identifica un controllo del codice fatto in gruppo, il quale viene costituito secondo requisiti specifici. \`E una riunione dove lo sviluppatore è chiamato a leggere il codice ad alta voce di fronte ad altri esperti, che possono commentare il programma con lo scopo di individuare gli errori; in questo modo possono essere rilevati dal 30 al 70\% di quelli presenti nel programma.\newline
+
+    \subsection{Walktrough}
+
+    Molto simile alla tecnica di precedente nelle modalità in cui viene effettuata, poiché prevede la riunione di un gruppo di persone. Differisce negli obiettivi: cerca di trovare dei difetti nel comportamento del programma, e per farlo simula l'esecuzione del codice a mano.\newline
+
+    \subsection{Control Flow Analysis}
+
+    Prevede la rappresentazione del codice attraverso un grafo chiamato CFG (\textit{Control Flow Graph}, dove ciascun nodo rappresenta un'istruzione o un predicato, mentre gli archi il passaggio del flusso di controllo.
+    Successivamente il grafo viene analizzato, al fine di rilevare anomalie nel programma quali non strutturazione o iraggiungibilità del codice.\newline
+    
+    \subsection{Data Flow Analysis}
+    
+    La tecnica di analisi del data flow solitamente rientra nella categoria dei controlli dinamici. 
+    Analizza l'evoluzione delle variabili durante il tempo di esecuzione, al fine di rilevare anomalie.
+    Parte di questi controlli possono essere effettuati anche staticamente, permettendo di rilevare parte dei comportamenti anomali del programma, come l'uso delle variabili prima della loro dichiarazione, o l'annullamento prima dell'utilizzo.\newline
+    
+    \subsection{Esecuzione Simbolica}
+    
+    Consiste nell'esecuzione del programma con dei valori di input simbolici (es. espressioni) piuttosto che con i valori effettivi. Può risultare molto difficile da realizzare in caso di istruzioni if, poichè rende complesso valutare la condizione. Un altro caso che viene mal gestito è quello dei cicli, sia determinati (nel caso dipendano dal valore di una variabile) che non.\newline
+
+\section{Analisi Statica di Smart Contract}
+
+L'impiego delle tecniche di analisi statica per la verifica degli smart contract non è molto diffuso. Principalmente perchè data la dimensione limitata di questi programmi non si ritiene necessario il suo impiego.\newline
+\indent In parte l'impopolarità dell'analisi statica è dovuta anche alla difficile rappresentazione del bytecode EVM. Decompilare le istruzioni di basso livello al fine di ottenere una rappresentazione migliore che funga da base per una buona analisi richiede un notevole sforzo.\\
+\indent Un altro fattore a rendere poco appetibile l'applicazione di queste tecniche al mondo degli smart contract è il rischio di ottenere falsi positivi.\newline
+
+\section{Tool per l'Analisi}
+Durante questo lavoro è stato preso in considerazione un certo numero di software che implementano tecniche di analisi statica orientata alla verifica degli smart contract. Di seguito ne vedremo alcuni.
+
+\subsection{Verificare le Proprietà di Sicurezza}
+
+I seguenti software sono stati pensati per verificare la sicurezza dei programmi di Ethereum.\newline
+\indent Il primo è uno strumento completo, per cui si può etichettare uno smart contract come \emph{sicuro} o meno. Il secondo invece è in grado di indivuare dei comportamenti anomali dei programmi causati soltanto dall'esaurimento del gas. Dunque la sua verifica comprende una tipologia circoscritta di proprietà di sicurezza.\newline
 
 \begin{description}[labelindent=1cm]    %crea un elenco descrittivo
 
-\item[EtherTrust] ~\cite{grishchenko2018foundations} questo framework offre la possibilità di analizzare i programmi scritti al fine di verificarne le proprietà di sicurezza. Per fare questo EtherTrust traduce il bytecode in clausole Horn. I contributi di questo framework sono: la realizzazione di una semantica per EVM, la modellizzazione delle proprietà di sicurezza degli smart contract e l'analisi statica applicata al bytecode;
+    \item[EtherTrust] ~\cite{grishchenko2018foundations} questo framework offre la possibilità di analizzare i programmi al fine di verificarne le proprietà di sicurezza. Tali proprietà, come ad es. la \textit{single-entrancy}, per poter essere verificate devono prima essere modellate.\newline
+    \indent Per condurre la sua analisi EtherTrust produce una rappresentazione astratta del bytecode EVM nella forma di clausole di Horn. Successivamente questa rappresentazione viene data in input ad un SMT solver, il quale verifica che siano rispettate delle proprietà di sicurezza ben precise. EtherTrust garantisce la proprietà di correttezza.\newline
 
-\item[MadMax] ~\cite{grech2018madmax} attraverso la combinazione di più tecniche di analisi statica, questo software propone un'analisi di smart contract volta ad individuare bug legati all'esaurimento del gas disponibile;
+    \item[MadMax] ~\cite{grech2018madmax} attraverso la combinazione di più tecniche di analisi statica (analisi Data Flow e Control Flow) questo software è in grado di verificare smart contract al fine di scoprire bug legati all'esaurimento del gas disponibile.\newline
+    \indent MadMax individua una serie di vulnerabilità \textit{gas-focused} in modo da definire dei pattern da ricercare attraverso l'analisi dei programmi. Questa viene condotta a partire da una rappresentazione intermedia (IR) del codice, ottenuta tramite la decompilazione del bytecode EVM.\newline
 
-\item[KEVM] ~\cite{hildenbrandt2017kevm} produce una semantica per la EVM. Questa modellizzazione puà essere utilizzata come base di partenza per implementare un'analisi esaustiva del codice. Gli stessi autori del programma fanno riferimento ad una possibile applicazione di KEVM volta a stimare i consumi di gas dei programmi;
+\end{description}
 
-\item[EthIR] ~\cite{albert2018ethir} è un framework di analisi del bytecode di EVM. A partire dalle istruzioni di basso livello, EthIR produce una rappresentazione RB (\textit{Ruled Based}). Tale modellizzazione può essere utilizzata per desumere proprietà del bytecode, applicando delle ulteriori tecniche di analisi statica;
+\subsection{Rappresentare il bytecode EVM}
 
-\item[GASTAP] ~\cite{DBLP:journals/corr/abs-1811-10403} è la prima piattaforma sviluppata in grado di analizzare smart contract al fine di dare un upper bound ai consumi di gas dello stesso. Questo software è ancora in via di sviluppo, perciò presenta ancora delle limitazioni. Tuttavia si distingue per la precisione nella stima dei bound, riuscendo a fornire un analisi più precisa rispetto ad altri software che implementano le stesse funzionalità. 
+I prossimi tool utilizzano tecniche di analisi statica per fornire una miglior rappresentazione del bytecode. I risultati che si ottengono dalla loro esecuzione possono essere utilizzati per un'analisi statica volta alla verifica delle proprietà del codice.\newline
+
+\begin{description}
+
+    \item[KEVM] ~\cite{hildenbrandt2017kevm} produce una semantica formale per la EVM. Gli autori del programma sottolineano che la loro rappresentazione del byteocode si presta facilmente all'applicazione di tecniche di analisi, e forniscono come esempio un tool per stimare i consumi di gas degli smart contract.\newline
+
+    \item[EthIR] ~\cite{albert2018ethir} è un framework di analisi del bytecode di EVM. A partire dalle istruzioni di basso livello, che vengono rappresentate tramite grafi CFG dal tool Oyente ~\cite{}, EthIR produce una rappresentazione \textit{Ruled Based} (RB). Tale modellizzazione può essere utilizzata per desumere proprietà del bytecode, applicando delle ulteriori tecniche di analisi statica.\newline
+    
+\end{description}
+
+\subsection{Stimare i consumi di GAS}
+
+L'ultima categoria di software che vedremo è la più interessante dal punto di vista della ricerca condotta. Si tratta di programmi che tramite la combinazione di tecniche di analisi statica rilevano e forniscono un bound ai consumi di gas dei programmi esaminati.\newline
+\indent Li citeremo per completezza di questo elenco, per poi trattarli in modo più dettagliato nei capitoli successivi.\newline
+
+\begin{description}
+
+    \item[solc] ~\cite{solidity-docs} è il compilatore ufficiale di Solidity. Tra le opzioni di utilizzo c'è la modalità \textit{gas}, dove l'output prodotto è una stima della quantità di gas richiesto dal programma. Nella maggior parte dei casi il risultato prodotto è infinito.\newline
+
+    \item[GASTAP] ~\cite{DBLP:journals/corr/abs-1811-10403} è la prima piattaforma sviluppata in grado di analizzare smart contract al fine di dare un upper bound ai consumi di gas dello stesso. Questo software è ancora in via di sviluppo, perciò presenta ancora delle limitazioni. Tuttavia si distingue per la precisione nella stima dei bound, riuscendo a fornire un analisi più precisa rispetto ad altri programmi che implementano le stesse funzionalità. 
 
 \end{description}
 

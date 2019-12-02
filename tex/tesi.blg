@@ -3,47 +3,48 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: tesi.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for ""
 Warning--empty institution in hildenbrandt2017kevm
 Warning--empty journal in nakamoto2008bitcoin
-You've used 9 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            548 strings with 5611 characters,
-and the built_in function-call counts, 3118 in all, are:
-= -- 297
-> -- 186
-< -- 2
-+ -- 75
-- -- 64
-* -- 213
-:= -- 538
-add.period$ -- 28
-call.type$ -- 9
-change.case$ -- 58
+            578 strings with 6452 characters,
+and the built_in function-call counts, 5037 in all, are:
+= -- 495
+> -- 259
+< -- 4
++ -- 104
+- -- 88
+* -- 335
+:= -- 827
+add.period$ -- 43
+call.type$ -- 14
+change.case$ -- 85
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 111
-empty$ -- 215
-format.name$ -- 64
-if$ -- 640
+cite$ -- 16
+duplicate$ -- 185
+empty$ -- 380
+format.name$ -- 88
+if$ -- 1068
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 7
-newline$ -- 47
-num.names$ -- 18
-pop$ -- 64
+int.to.str$ -- 14
+missing$ -- 10
+newline$ -- 71
+num.names$ -- 28
+pop$ -- 102
 preamble$ -- 1
-purify$ -- 48
+purify$ -- 70
 quote$ -- 0
-skip$ -- 87
+skip$ -- 148
 stack$ -- 0
-substring$ -- 128
-swap$ -- 25
-text.length$ -- 2
+substring$ -- 277
+swap$ -- 51
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 56
 warning$ -- 2
-while$ -- 27
-width$ -- 10
-write$ -- 96
-(There were 2 warnings)
+while$ -- 46
+width$ -- 16
+write$ -- 150
+(There were 3 warnings)

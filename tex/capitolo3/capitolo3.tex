@@ -1,6 +1,16 @@
+Spieghiamo il problema del gas nell'esecuzione degli smart contract in ehtereum.
 
-Lo scopo di questo capitolo è quello di fornire una panoramica sugli esperimenti condotti.\newline
+Perchè ci serve la stima??
 
-Spiego che cosa ho fatto.
+Se io so quanto è il gas associato ad ogni istruzione, mi basterà sapere come verrà tradotto il mio programma in bytecode. Da lì potrei stabilire il costo fisso. Eh no!
+Il gas viene consumato in circostanze differenti.
 
-Dato un set di smart contract molto semplici, sono state condotte delle analisi utilizzando i software disponibili precedentemente elencati. A partire dai risultati ottenuti si è individuato quali di questi programmi fornissero un bound esplicito ai consumi di gas associati all'esecuzione dei programmi.\newline
+Il costo totale - espresso in gas - richiesto per eseguire un programma è determinato in base a 3 fattori:
+\begin{enumerate}
+\item il costo intrinseco di ciascuna istruzione di basso livello; questo valore è fissato.
+\item i costi determinati dalla creazione di un contratto o dalla chiamata di un altro programma. Questi sono determinati dalle istruzioni CREATE , CALL and CALLCODE.
+\item eventuali costi aggiunti, che vengono addebitati nel caso in cui la memoria richiesta dal programma superi una certa soglia
+\end{enumerate}
+
+Mentre alcuni di questi valori possono essere facilmente previsti, altri possono essere determinati soltanto durante l'esecuzione del contratto. Essendo difficili da prevedere, potrebbero far sì che la quantità di gas richiesta in fase di esecuzione ecceda quella messa a disposizione dal committente prima. Dunque conoscere questi costi prima del lancio del programma in rete permetterebbe agli utenti di investire somme di denaro adeguate.\newline
+Soltanto delle tecniche di analisi precise ci permettono di stimare questi consumi, poichè ci permettono di calcolare in anticipo quali ``sorprese'' riserverà il codice durante la sua esecuzione.\newline

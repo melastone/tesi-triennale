@@ -3,11 +3,26 @@
 \contentsline {chapter}{Introduzione}{1}
 \contentsline {chapter}{\numberline {1}Background}{5}
 \contentsline {section}{\numberline {1.1}Blockchain}{5}
-\contentsline {section}{\numberline {1.2}Ethereum, gli Smart Contract e la EVM}{6}
-\contentsline {section}{\numberline {1.3}Il ruolo del gas}{7}
+\contentsline {section}{\numberline {1.2}La piattaforma Ethereum}{6}
+\contentsline {section}{\numberline {1.3}La Ethereum Virtual Machine}{6}
+\contentsline {section}{\numberline {1.4}Gli smart contract}{6}
+\contentsline {section}{\numberline {1.5}Ethereum, gli Smart Contract e la EVM}{6}
+\contentsline {section}{\numberline {1.6}Il ruolo del gas}{7}
 \contentsline {chapter}{\numberline {2}Analisi statica}{11}
-\contentsline {section}{\numberline {2.1}Tecniche in informatica}{11}
-\contentsline {section}{\numberline {2.2}Analisi statica di smart contract}{11}
-\contentsline {section}{\numberline {2.3}Tool per l'analisi}{12}
-\contentsline {chapter}{\numberline {3}Risultati sperimentali}{13}
-\contentsline {chapter}{Conclusioni}{15}
+\contentsline {section}{\numberline {2.1}Analisi statica vs. analisi dinamica}{11}
+\contentsline {section}{\numberline {2.2}Tecniche di analisi statica in Informatica}{12}
+\contentsline {subsection}{\numberline {2.2.1}La compilazione}{12}
+\contentsline {subsection}{\numberline {2.2.2}Code reading}{13}
+\contentsline {subsection}{\numberline {2.2.3}Code reviews}{13}
+\contentsline {subsection}{\numberline {2.2.4}Walktrough}{13}
+\contentsline {subsection}{\numberline {2.2.5}Control Flow Analysis}{13}
+\contentsline {subsection}{\numberline {2.2.6}Data Flow Analysis}{14}
+\contentsline {subsection}{\numberline {2.2.7}Esecuzione Simbolica}{14}
+\contentsline {section}{\numberline {2.3}Analisi statica di Smart Contract}{14}
+\contentsline {section}{\numberline {2.4}Tool per l'analisi}{15}
+\contentsline {subsection}{\numberline {2.4.1}Verificare le propriet\IeC {\`a} di sicurezza}{15}
+\contentsline {subsection}{\numberline {2.4.2}Rappresentare il bytecode EVM}{16}
+\contentsline {subsection}{\numberline {2.4.3}Stimare i consumi di GAS}{16}
+\contentsline {chapter}{\numberline {3}Il problema del gas}{19}
+\contentsline {chapter}{\numberline {4}Risultati sperimentali}{21}
+\contentsline {chapter}{Conclusioni}{23}
