@@ -1,10 +1,10 @@
 // TEST GASTAP VS SOLC COMPILER
 
-  % assegnazione di var
+  % assegnazione
 / assignment.sol {
+  inizializza una var, poi gli assegna un valore.
 
-  GASTAP: ../../bin/ethirweb   /tmp/ei_filesIFEUP0/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
-  solc: 5087 + 28400 = 33487 (construction)
+  GASTAP: 9+20138
 
   ~init()
   GASTAP: 9+20138
@@ -12,8 +12,38 @@
 }
 
 
+
+  % assegnazione
+/ assigment2.sol {
+  inizializza una var.
+
+  GASTAP: 9+137
+  solc: 81 + 28200 = 28281 (construction)
+
+  ~init()
+  GASTAP: 9+137
+  solc:	146
+
+}
+
+
+
+% assegnazione
+/ assigment2.sol {
+  inizializza una var.
+
+  GASTAP: 9+124
+  solc: 5087 + 26800 = 31887 (construction)
+
+  ~init()
+  GASTAP: 9+124
+  solc:	133
+
+}
+
+
   % ciclo for
-/ Loop.sol {
+/ loop.sol {
 
   Calcola la moltiplicazione di 5*7.
 
@@ -52,6 +82,36 @@
 
 }
 
+
+
+ % for annidati
+/ nested*.sol {
+
+
+  / nested1.sol {
+
+    ~suma(uint256)
+    GASTAP: 15+ (20508+70*nat(a))
+    solc: infinite
+
+  }
+
+  Che cosa accade incrementando il livello di annidamento?
+    solc: infinito (per ogni liv > 0)
+    GASTAP:
+      - liv == 2 -> 15+ (20548+70*nat(a)+20276*nat(a))
+      - liv == 3 -> 15+ (20588+70*nat(a)+20276*nat(a)+20276*nat(a))
+      - liv == 4 -> 15+ (20628+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))
+      ....
+      - liv == 10 -> 15+ (20908+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))
+        N.B. se lanciamo GASTAP direttamente su un programma che contiene 10 cicli non determina alcun bound.
+        Produce il seguente output:  ../../bin/ethirweb   /tmp/ei_files9WLXVu/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+      ...
+      - liv == 14 -> 15+ (21028+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))
+      - liv == 15 -> null
+        GASTAP non riesce a mappare le funzioni nella outline, impedendo di valutare il bound.
+        Il limite è dovuto alla struttura del programma.
+}
 
 
   % ricorsione diretta
@@ -117,9 +177,9 @@
 
 
 
-  % while
-/ sqrt(uint256) in bitzCrypto.sol  {
-  funzione che calcola la radice quadrata.
+  % ciclo while
+/ sqrt.sol  {
+  calcola la radice quadrata.
   While. Sconsigliano l'uso in quanto consuma elevate qtà di gas!
 
   GASTAP: Exception: error(existence_error(procedure,evm_solver:non_terminating/2),context(evm_solver:print_ub/4,_G28))
@@ -127,6 +187,19 @@
 
 }
 
+
+
+  % ciclo while
+/ while.sol {
+
+  GASTAP: 9+ (209+20271*nat(a))
+  solc: 5093 + 37600 = 42693 (construction)
+
+  ~init(uint256)
+  GASTAP: 9+ (209+20271*nat(a))
+  solc:	infinite
+
+}
 
 
   % caso di studio
