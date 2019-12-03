@@ -1,5 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{10.1007/978-3-642-54862-8_46}
+Elvira Albert, Puri Arenas, Antonio Flores-Montoya, Samir Genaim, Miguel
+  G{\'o}mez-Zamalloa, Enrique Martin-Martin, German Puebla, and Guillermo
+  Rom{\'a}n-D{\'i}ez.
+\newblock Saco: Static analyzer for concurrent objects.
+\newblock In Erika {\'A}brah{\'a}m and Klaus Havelund, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, pages 562--567,
+  Berlin, Heidelberg, 2014. Springer Berlin Heidelberg.
+
+\bibitem{albert2008automatic}
+Elvira Albert, Puri Arenas, Samir Genaim, and Germ{\'a}n Puebla.
+\newblock Automatic inference of upper bounds for recurrence relations in cost
+  analysis.
+\newblock In {\em International Static Analysis Symposium}, pages 221--237.
+  Springer, 2008.
+
 \bibitem{albert2018ethir}
 Elvira Albert, Pablo Gordillo, Benjamin Livshits, Albert Rubio, and Ilya
   Sergey.
@@ -63,6 +79,10 @@ Marco Iansiti and Karim~R Lakhani.
 Minhaj~Ahmad Khan and Khaled Salah.
 \newblock Iot security: Review, blockchain solutions, and open challenges.
 \newblock {\em Future Generation Computer Systems}, 82:395 -- 411, 2018.
+
+\bibitem{melonproject/oyente}
+melonproject.
+\newblock Oyente: An analysis tool for smart contracts, 2018.
 
 \bibitem{nakamoto2008bitcoin}
 Satoshi Nakamoto et~al.

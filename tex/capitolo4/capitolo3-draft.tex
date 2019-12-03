@@ -1,0 +1,31 @@
+% !TeX spellcheck = it                                        
+
+\documentclass[12pt,a4paper,openright,twoside]{report}
+%openright: apre i capitoli a destra
+%twoside: serve per fare un documento fronteretro
+
+
+\usepackage[italian]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} %aumenta il tempo di compilazione
+
+
+\begin{document}
+
+
+\pagenumbering{roman}                   %serve per mettere i numeri romani
+
+\tableofcontents %crea l'indice
+
+%\chapter{Il Problema del gas}
+
+\pagenumbering{arabic}
+
+\chapter{Risultati Sperimentali}
+
+\input{../capitolo3/capitolo3}
+
+\input{./capitolo4}
+ 
+\end{document}

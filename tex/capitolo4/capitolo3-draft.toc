@@ -1,0 +1,18 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{\numberline {1}Risultati Sperimentali}{3}
+\contentsline {section}{\numberline {1.1}Il Problema del gas}{3}
+\contentsline {section}{\numberline {1.2}Caratteristiche del Tool GASTAP}{4}
+\contentsline {section}{\numberline {1.3}Test Condotti}{4}
+\contentsline {subsection}{\numberline {1.3.1}Caso di Studio: CryptoPhoenix.sol}{4}
+\contentsline {subsection}{\numberline {1.3.2}Operazioni di Assegnamento}{4}
+\contentsline {subsection}{\numberline {1.3.3}Costrutto for}{4}
+\contentsline {subsection}{\numberline {1.3.4}Cicli for Annidati}{4}
+\contentsline {subsection}{\numberline {1.3.5}Costrutto while}{4}
+\contentsline {subsubsection}{while.sol}{4}
+\contentsline {subsubsection}{sqrt.sol}{4}
+\contentsline {subsection}{\numberline {1.3.6}Ricorsione}{4}
+\contentsline {subsubsection}{Ricorsione Diretta}{4}
+\contentsline {subsubsection}{Ricorsione Indiretta}{4}
+\contentsline {subsubsection}{Ricorsione Multipla}{4}
+\contentsline {section}{\numberline {1.4}Risultati}{4}

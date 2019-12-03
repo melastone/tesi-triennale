@@ -32,8 +32,9 @@
 %\usepackage{showkeys}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per inserire grafici
-%\usepackage{graphicx}
+%libreria per inserire grafici
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per utilizzare font particolari ad esempio  \textsc{}
@@ -184,11 +185,11 @@ INTRODUZIONE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-\chapter{Il problema del gas}
+\chapter{Il Problema del gas}
 
 \input{./capitolo3/capitolo3}
 
-\chapter{Risultati sperimentali}
+\chapter{Risultati Sperimentali}
 
 \input{./capitolo4/capitolo4}
 
@@ -257,20 +258,21 @@ INTRODUZIONE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%per fare le conclusioni
 \chapter*{Conclusioni}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
+%imposta l'intestazione di pagina
 \rhead[\fancyplain{}{\bfseries
 CONCLUSIONI}]{\fancyplain{}{\bfseries\thepage}}
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries
 CONCLUSIONI}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%aggiunge la voce Conclusioni
-                                        %   nell'indice
+%aggiunge la voce Conclusioni nell'indice
 \addcontentsline{toc}{chapter}{Conclusioni} 
 
+%imposta l'intestazione di pagina
+%\renewcommand{\chaptermark}[1]{\markright{\thechapter \ #1}{}}
+%\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
-\renewcommand{\chaptermark}[1]{\markright{\thechapter \ #1}{}}
-\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries\rightmark}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 
 %\appendix                               %imposta le appendici
@@ -296,8 +298,16 @@ CONCLUSIONI}}
 %\rhead[\fancyplain{}{\bfseries \thechapter \:Seconda Appendice}]
 %{\fancyplain{}{\bfseries\thepage}}
 
+
+\rhead[\fancyplain{}{\bfseries \leftmark}]{\fancyplain{}{\bfseries
+\thepage}}
+
+%aggiunge la voce Bibliografia nell'indice
+\addcontentsline{toc}{chapter}{Bibliografia}
+
 \bibliography{bibliografia}{}
 \bibliographystyle{plain}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}

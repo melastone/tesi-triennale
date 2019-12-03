@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  3 DEC 2019 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  3 DEC 2019 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**tesi.tex
-(./tesi.tex
+**capitolo3-draft.tex
+(./capitolo3-draft.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 4 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -374,429 +374,70 @@ Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
-s
-\f@nch@headwidth=\skip43
-\f@nch@O@elh=\skip44
-\f@nch@O@erh=\skip45
-\f@nch@O@olh=\skip46
-\f@nch@O@orh=\skip47
-\f@nch@O@elf=\skip48
-\f@nch@O@erf=\skip49
-\f@nch@O@olf=\skip50
-\f@nch@O@orf=\skip51
-)
-(/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
-Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) (./enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\enitkv@toks@=\toks16
-\labelindent=\skip52
-\enit@outerparindent=\dimen104
-\enit@toks=\toks17
-\enit@inbox=\box26
-\enit@count@id=\count94
-\enitdp@description=\count95
-) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
-)
-(/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
-Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box27
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(./capitolo3-draft.aux)
+\openout1 = `capitolo3-draft.aux'.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 99.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen105
-\Gin@req@width=\dimen106
-) (./tesi.aux)
-\openout1 = `tesi.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Info: Redefining \it@ocap on input line 73.
-LaTeX Info: Redefining \it@ccap on input line 73.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count96
-\scratchdimen=\dimen107
-\scratchbox=\box28
-\nofMPsegments=\count97
-\nofMParguments=\count98
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count99
-\MPscratchDim=\dimen108
-\MPnumerator=\count100
-\makeMPintoPDFobject=\count101
-\everyMPtoPDFconversion=\toks20
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Info: Redefining \it@ocap on input line 14.
+LaTeX Info: Redefining \it@ccap on input line 14.
+ (./capitolo3-draft.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 80.
+(Font)              <12> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 80.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-
-] [1] [2
-
-
-] (./tesi.toc
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 5.
-
-[1
-
-])
+(Font)              <6> on input line 4.
+)
 \tf@toc=\write3
-\openout3 = `tesi.toc'.
-
- [2] (./introduzione/introduzione.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--9
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+\openout3 = `capitolo3-draft.toc'.
 
  [1
 
 
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 20--23
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--32
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2])
-Underfull \hbox (badness 10000) in paragraph at lines 34--165
-
- []
-
-[3] [4
-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
 Capitolo 1.
-(./capitolo1/capitolo1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--15
+(../capitolo3/capitolo3.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 17--28
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--15
-
- []
-
-[5
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[3] (./capitolo4.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 27--30
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 77--82
-
- []
-
-[8]) [9] [10
-
-
-]
-Capitolo 2.
-(./capitolo2/capitolo2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--17
-
- []
-
-[11
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--63
-
- []
-
-
-Underfull \vbox (badness 2119) has occurred while \output is active []
-
- [14]
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--76
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--79
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
-
- []
-
-[16]) [17] [18
-
-
-]
-Capitolo 3.
-(./capitolo3/capitolo3.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 17--191
-
- []
-
-[19
-
-] [20]
-Capitolo 4.
-(./capitolo4/capitolo4.tex
-Underfull \hbox (badness 10000) in paragraph at lines 2--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--13
-
- []
-
-[21
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-<./img/GASTAP-structure.png, id=101, 735.74875pt x 294.09875pt>
-File: ./img/GASTAP-structure.png Graphic file (type png)
-<use ./img/GASTAP-structure.png>
-Package pdftex.def Info: ./img/GASTAP-structure.png  used on input line 20.
-(pdftex.def)             Requested size: 367.87347pt x 147.04901pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[22]
-<./img/GASTAP-example.png, id=107, 1320.935pt x 611.28375pt>
-File: ./img/GASTAP-example.png Graphic file (type png)
-<use ./img/GASTAP-example.png>
-Package pdftex.def Info: ./img/GASTAP-example.png  used on input line 40.
-(pdftex.def)             Requested size: 396.28355pt x 183.38654pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 47.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [23 <./img/GASTAP-structure.png>])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24 <./img/GASTAP-example.png>] [25] [26
-
-
-] [27
-
-] [28
-
-
-] (./tesi.bbl [29
-
-]) [30] (./tesi.aux) ) 
+) [4] (./capitolo3-draft.aux) ) 
 Here is how much of TeX's memory you used:
- 3560 strings out of 494912
- 46874 string characters out of 6180265
- 115815 words of memory out of 5000000
- 6775 multiletter control sequences out of 15000+600000
- 20392 words of font info for 45 fonts, out of 8000000 for 9000
- 16 hyphenation exceptions out of 8191
- 41i,10n,43p,823b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ectt1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
-/jknappen/ec/eccc1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/
-fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive2017/t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive201
-7/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive
-2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texl
-ive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on tesi.pdf (36 pages, 333746 bytes).
+ 1658 strings out of 494912
+ 18019 string characters out of 6180265
+ 79111 words of memory out of 5000000
+ 4992 multiletter control sequences out of 15000+600000
+ 12550 words of font info for 31 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 23i,4n,23p,807b,185s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/melania/.texlive2017/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive2017/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk>
+Output written on capitolo3-draft.pdf (4 pages, 59253 bytes).
 PDF statistics:
- 634 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
+ 205 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

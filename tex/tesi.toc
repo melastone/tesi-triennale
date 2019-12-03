@@ -8,21 +8,40 @@
 \contentsline {section}{\numberline {1.4}Gli smart contract}{6}
 \contentsline {section}{\numberline {1.5}Ethereum, gli Smart Contract e la EVM}{6}
 \contentsline {section}{\numberline {1.6}Il ruolo del gas}{7}
-\contentsline {chapter}{\numberline {2}Analisi statica}{11}
-\contentsline {section}{\numberline {2.1}Analisi statica vs. analisi dinamica}{11}
-\contentsline {section}{\numberline {2.2}Tecniche di analisi statica in Informatica}{12}
+\contentsline {chapter}{\numberline {2}Analisi Statica}{11}
+\contentsline {section}{\numberline {2.1}Analisi Statica vs. Analisi Dinamica}{11}
+\contentsline {section}{\numberline {2.2}Tecniche di Analisi Statica in Informatica}{12}
 \contentsline {subsection}{\numberline {2.2.1}La compilazione}{12}
-\contentsline {subsection}{\numberline {2.2.2}Code reading}{13}
-\contentsline {subsection}{\numberline {2.2.3}Code reviews}{13}
+\contentsline {subsection}{\numberline {2.2.2}Code Reading}{12}
+\contentsline {subsection}{\numberline {2.2.3}Code Reviews}{13}
 \contentsline {subsection}{\numberline {2.2.4}Walktrough}{13}
 \contentsline {subsection}{\numberline {2.2.5}Control Flow Analysis}{13}
 \contentsline {subsection}{\numberline {2.2.6}Data Flow Analysis}{14}
 \contentsline {subsection}{\numberline {2.2.7}Esecuzione Simbolica}{14}
-\contentsline {section}{\numberline {2.3}Analisi statica di Smart Contract}{14}
-\contentsline {section}{\numberline {2.4}Tool per l'analisi}{15}
-\contentsline {subsection}{\numberline {2.4.1}Verificare le propriet\IeC {\`a} di sicurezza}{15}
+\contentsline {section}{\numberline {2.3}Analisi Statica di Smart Contract}{14}
+\contentsline {section}{\numberline {2.4}Tool per l'Analisi}{15}
+\contentsline {subsection}{\numberline {2.4.1}Verificare le Propriet\IeC {\`a} di Sicurezza}{15}
 \contentsline {subsection}{\numberline {2.4.2}Rappresentare il bytecode EVM}{16}
 \contentsline {subsection}{\numberline {2.4.3}Stimare i consumi di GAS}{16}
-\contentsline {chapter}{\numberline {3}Il problema del gas}{19}
-\contentsline {chapter}{\numberline {4}Risultati sperimentali}{21}
-\contentsline {chapter}{Conclusioni}{23}
+\contentsline {chapter}{\numberline {3}Il Problema del gas}{19}
+\contentsline {section}{\numberline {3.1}Il Problema del gas}{19}
+\contentsline {chapter}{\numberline {4}Risultati Sperimentali}{21}
+\contentsline {section}{\numberline {4.1}Caratteristiche del Tool GASTAP}{21}
+\contentsline {subsection}{\numberline {4.1.1}Struttura del TOOL}{22}
+\contentsline {subsection}{\numberline {4.1.2}Interfaccia Web}{23}
+\contentsline {section}{\numberline {4.2}Compilatore solc}{25}
+\contentsline {section}{\numberline {4.3}Test Condotti}{25}
+\contentsline {subsection}{\numberline {4.3.1}Caso di Studio: CryptoPhoenix.sol}{25}
+\contentsline {subsection}{\numberline {4.3.2}Operazioni di Assegnamento}{25}
+\contentsline {subsection}{\numberline {4.3.3}Costrutto for}{25}
+\contentsline {subsection}{\numberline {4.3.4}Cicli for Annidati}{25}
+\contentsline {subsection}{\numberline {4.3.5}Costrutto while}{25}
+\contentsline {subsubsection}{while.sol}{25}
+\contentsline {subsubsection}{sqrt.sol}{25}
+\contentsline {subsection}{\numberline {4.3.6}Ricorsione}{25}
+\contentsline {subsubsection}{Ricorsione Diretta}{25}
+\contentsline {subsubsection}{Ricorsione Indiretta}{25}
+\contentsline {subsubsection}{Ricorsione Multipla}{25}
+\contentsline {section}{\numberline {4.4}Risultati}{25}
+\contentsline {chapter}{Conclusioni}{27}
+\contentsline {chapter}{Bibliografia}{29}
