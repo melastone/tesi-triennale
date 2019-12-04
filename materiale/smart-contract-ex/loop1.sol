@@ -1,9 +1,12 @@
+//loop1.sol
+//esegue la moltiplicazione di number*a
+
 pragma solidity ^0.4.11;
 
 contract Loop1{
 
   uint sum = 0;
-  uint number = 0;
+  uint number;
   
   function multiply(uint a){
     
@@ -11,16 +14,6 @@ contract Loop1{
       sum = sum+number;
     }
 
-  }
-
-  function enter(){
-    number = 5;
-    multiply(7);    
-  }
-
-  //main
-  function (){
-    enter();
   }
 
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  4 DEC 2019 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  4 DEC 2019 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -801,37 +801,58 @@ LaTeX Font Info:    Try loading font information for T1+cmtt on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [24 <./img/GASTAP-example.png>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 65.
- [25]
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+)
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
 
  []
 
-)
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26]
-[27] [28
+ [24 <./img/GASTAP-example.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 65.
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
+
+ []
 
 
-] [29
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
 
-] [30
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
 
 
-] (./tesi.bbl [31
+Underfull \vbox (badness 1448) has occurred while \output is active []
 
-]) [32] (./tesi.aux) ) 
+ [27]
+[28])
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+ [29]
+[30] [31
+
+
+
+] [32
+
+
+] (./tesi.bbl [33
+
+]) [34] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 5630 strings out of 494912
- 73167 string characters out of 6180265
- 192873 words of memory out of 5000000
- 8826 multiletter control sequences out of 15000+600000
+ 5631 strings out of 494912
+ 73181 string characters out of 6180265
+ 186877 words of memory out of 5000000
+ 8827 multiletter control sequences out of 15000+600000
  21622 words of font info for 49 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 41i,11n,43p,823b,1088s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,43p,823b,1751s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jk
 nappen/ec/ectt1095.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
 /jknappen/ec/ectt1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
@@ -849,10 +870,10 @@ ive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.t
 exlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on tesi.pdf (38 pages, 356652 bytes).
+Output written on tesi.pdf (40 pages, 369088 bytes).
 PDF statistics:
- 716 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 751 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

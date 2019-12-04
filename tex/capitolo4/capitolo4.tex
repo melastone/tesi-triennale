@@ -46,7 +46,7 @@ Dal punto di vista degli attaccanti invece è possibile stimare quanto Ether è 
     
     \`E possibile scrivere un proprio programma in Solidity oppure scegliere uno degli esempi proposti dal menù ``Smart Contract Examples''.\newline
     \indent Una volta selezionato il programma di input, cliccando su ``Refresh Outline'' GASTAP mappa le funzioni pubbliche del nostro programma, che vengono mostrate nella sezione di destra. Dopo aver selezionato i metodi che si vogliono analizzare, il pulsante ``Apply'' esegue l'analisi e produce un output nella Console.\newline
-    \indent Nell'esempio viene proposto un semplice programma che setta una variabile globale. Stando all'output prodotto, tale programma è garantito teminare, e l'\textit{Upper Bound} (UB) ai consumi di gas è \verb|9+20196| .
+    \indent Nell'esempio viene proposto un semplice programma che setta una variabile globale. Stando all'output prodotto, tale programma è garantito teminare, e l'\textit{Upper Bound} (UB) ai consumi di gas è \verb|9+20196|. Si noti che l'upper bound fornito è sempre nella forma \textbf{memory bound} + \textbf{opcode bound}, dove le cifre si riferiscono rispettivamente al bound dei costi di memorizzazione e a quello dei costi delle operazioni che compongono il programma.\newline
 
     
 
@@ -93,14 +93,6 @@ Allowed options:
 \end{lstlisting}
 
 
-\ldots
-
-\begin{lstlisting}
-
-  --link               Switch to linker mode,            
-                       ignoring all options apart from --libraries and modify  binaries in place.
-
-\end{lstlisting}
 
 Per condurre i nostri test abbiamo utilizzato il compilatore con l'opzione \verb|--gas|. Ecco un esempio del suo utilizzo sul programma raffigurato in figura \ref{fig:gstp-example}.
 
@@ -122,13 +114,135 @@ Confrontando i risultati ottenuti con quelli prodotti da GASTAP si evince che la
 
 \section{Test Condotti}
 
-
+La nostra analisi è stata condotta su un insieme di programmi scritti in Solidity, disponibili nella repository ~\cite{melastone-sc}.\newline
+\indent Ad eccezione di \verb|CryptoPhoenix.sol|, uno degli esempi proposti dal tool GASTAP, gli altri smart contract sono stati sviluppati seguendo la documentazione ufficiale del linguaggio ~\cite{solidity-docs}. Si tratta di semplici programmi ad hoc per il testing dei costrutti di base di Solidity. Di seguito i casi che abbiamo trattato.\newline
 
     \subsection{Caso di Studio: CryptoPhoenix.sol}
-
+    %inserire tabella confronti
+    %può essere utile?
+    
     \subsection{Operazioni di Assegnamento}
+    
+    I programmi \verb|assignment*.sol| implementano dei contratti che contengono un numero arbitrario di operazioni di assegnamento.
+    
+    \begin{lstlisting}
+    //assignment2.sol
+    
+    pragma solidity ^0.4.11;
+
+    contract B{
+
+        function init(){
+            uint number = 1;    
+        }
+
+    }
+
+    \end{lstlisting}
+    
+    Abbiamo potuto verificare come l'operazione di assegnare un valore ad una variabile locale (\verb|assignment2.sol|) o globale (\verb|assignment3.sol|, \verb|assignment4.sol|) costa una quantità di gas relativamente bassa, in media 140 unità.
+    Aggiungendo un'operazione di assegnamento in più, che va dunque ad incrementare il valore precedente della variabile, questa stima in alcuni casi subisce una crescita notevole: passiamo da 140 unità a circa 20000.
+    
+    \begin{lstlisting}
+    //assignment1.sol
+    
+    pragma solidity ^0.4.11;
+
+    contract A{
+
+        uint number = 0;
+
+        function init(){
+            number = 1;    
+        }
+
+    }
+
+    \end{lstlisting}
+    
+    Tale incremento è dato dalla presenza nel codice EVM dell'istruzione SSTORE (vedi Tabella \ref{tab:gas-costs}). Si evince dunque che la semplice operazione di settare il valore di una variabile da 0 ad uno diverso da 0 ha un impatto notevole sulla performance del programma in termini di costi. Un caso simile si era verificato nel caso del programma \verb|example.sol|.
 
     \subsection{Costrutto for}
+    
+    Testando i cicli for si è ottenuto un risultato interessante. La compilazione di questi programmi con solc produce sempre un bound infinito. Al contrario i test con GASTAP hanno prodotto una stima finita dei consumi.\newline
+    
+    \begin{description}
+    
+     \item \textbf{loop1.sol}
+     
+    \begin{lstlisting}
+    //esegue la moltiplicazione di number*a
+
+    pragma solidity ^0.4.11;
+
+    contract Loop1{
+
+        uint sum = 0;
+        uint number;
+        
+        function multiply(uint a){
+            
+            for(uint i = 0; i<a; i++){
+            sum = sum+number;
+            }
+        }
+
+    }
+    \end{lstlisting}
+    
+    Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+    
+    \begin{lstlisting}
+    ======= loop1.sol:Loop1 =======
+    Gas estimation:
+    construction:
+    5099 + 39200 = 44299
+    external:
+    multiply(uint256):	infinite
+    \end{lstlisting}
+    
+    e
+    
+    \verb|GASTAP: 9+ (222+20476*nat(a))|
+    
+
+     \item \textbf{loop2.sol}
+     
+    \begin{lstlisting}
+    //somma i primi 10 elementi di un vettore
+
+    pragma solidity ^0.4.11;
+
+    contract Loop2 {
+
+    function sum (uint[] nums) returns (uint sol) {
+    sol = 0;
+    for(uint i = 0; i < 10; i++)
+            sol = sol+nums[i];
+    }
+
+    }
+    \end{lstlisting}
+    
+    Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+    
+    \begin{lstlisting}
+    ======= loop2.sol:Loop2 =======
+    Gas estimation:
+    construction:
+    111 + 59200 = 59311
+    external:
+    sum(uint256[]):	infinite
+    \end{lstlisting}
+    
+    e
+    
+    \begin{lstlisting}
+    GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1746+3* (1/32))
+    \end{lstlisting}
+     
+    \end{description}
+
     
     \subsection{Cicli for Annidati}
 

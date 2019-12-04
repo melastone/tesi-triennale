@@ -29,7 +29,7 @@
 
 
 % assegnazione
-/ assigment2.sol {
+/ assigment3.sol {
   inizializza una var.
 
   GASTAP: 9+124
@@ -43,18 +43,13 @@
 
 
   % ciclo for
-/ loop.sol {
+/ loop1.sol {
 
   Calcola la moltiplicazione di 5*7.
 
-  GASTAP: 9+ (75+max([163583,222+20476*nat(a)]))
-  a che cosa è dovuto il 75??
+  GASTAP: 9+ (222+20476*nat(a))
 
-  solc: 10117 + 51800 = 61917 (construction)
-
-    ~ enter()
-    GASTAP: 9+163561
-    solc: infinite
+  solc: 5099 + 39200 = 44299 (construction)
 
     ~ multiply(uint256)
     GASTAP: 9+ (222+20476*nat(a))
@@ -69,15 +64,15 @@
 
 
   % ciclo for
-/ sum.sol {
+/ loop2.sol {
 
   Somma i primi 5 elementi di un vettore.
 
-  GASTAP: ../../bin/ethirweb   /tmp/ei_filesoS6OXG/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
+  GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1746+3* (1/32))
   solc: 111 + 59200 = 59311 (construction)
 
     ~ suma(uint256[])
-    GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1091+3* (1/32))
+    GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1746+3* (1/32))
     solc:	infinite
 
 }
