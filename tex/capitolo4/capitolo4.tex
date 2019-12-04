@@ -1,7 +1,9 @@
 
 Lo scopo di questo capitolo è quello di riassumere gli esperimenti condotti.\newline
-\indent Una volta individuati i tool capaci di produrre bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per dedurre la completezza del software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
+\indent Una volta individuati i tool capaci di determinare bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per dedurre la completezza del software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
 \indent I test sono stati condotti con il tool GASTAP e con il compilatore solc, ad oggi gli unici capaci di produrre dei bound ai consumi di gas per gli smart contract di Ethereum. Per quanto riguarda il primo gli sviluppatori hanno fornito i dettagli della sua implementazione, documentando in che modo venga condotta la loro analisi. Conoscere le tecniche utilizzate ha permesso di dedurre alcune proprietà del tool e dell'analisi di smart contract in generale. Dall'altro lato la documentazione ~\cite{solidity-docs} del compilatore solc tratta l'analisi del gas in modo superficiale. Tuttavia il suo impiego nei test condotti ci ha permesso di confrontare i risultati di GASTAP, in modo da considerare l'analisi degli smart contract in chiave critica.\newline
+
+\newpage
 
 \section{Caratteristiche del Tool GASTAP}
 
@@ -51,7 +53,76 @@ Dal punto di vista degli attaccanti invece è possibile stimare quanto Ether è 
     
 \section{Compilatore solc}
 
+Si tratta del compilatore ufficiale del linguaggio Solidity, utilizzabile da linea di comando.\newline
+\indent Il comando \verb|solc --help| fornisce la spiegazione di ciascuna delle opzioni con cui può essere lanciato.
+
+\lstset{
+    style=cmd-line,
+    literate={~} {$\sim$}{1}
+}
+
+\begin{lstlisting}
+$~solc --help
+
+solc, the Solidity commandline compiler.
+
+This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you
+are welcome to redistribute it under certain conditions. See 'solc --license'
+for details.
+
+Usage: solc [options] [input_file...]
+
+...
+
+Allowed options:
+  --help               Show help message and exit.
+  --version            Show version and exit.
+  --license            Show licensing information and exit.
+    
+\end{lstlisting}    
+    
+\ldots
+
+\begin{lstlisting}[frame=single, 
+                    framerule=0pt]
+
+  --gas                Print an estimate of the  
+                       maximal gas usage for each 
+                       function. 
+ 
+\end{lstlisting}
+
+
+\ldots
+
+\begin{lstlisting}
+
+  --link               Switch to linker mode,            
+                       ignoring all options apart from --libraries and modify  binaries in place.
+
+\end{lstlisting}
+
+Per condurre i nostri test abbiamo utilizzato il compilatore con l'opzione \verb|--gas|. Ecco un esempio del suo utilizzo sul programma raffigurato in figura \ref{fig:gstp-example}.
+
+\begin{lstlisting}
+$~solc --gas example.sol 
+
+======= example.sol:Example =======
+Gas estimation:
+construction:
+   5093 + 32800 = 37893
+external:
+   set(uint256):	20205
+
+\end{lstlisting}
+
+Confrontando i risultati ottenuti con quelli prodotti da GASTAP si evince che la stima del gas consumato dalla funzione \verb|set()| corrisponde a quela determinata da solc. Dunque l'uso dell'analisi statica non fa sì che si perda accuratezza nel calcolo.\newline
+\indent Nella sezione 4.3.2 l'esempio verrà ripreso al fine di comprendere il bound.\newline
+
+
 \section{Test Condotti}
+
+
 
     \subsection{Caso di Studio: CryptoPhoenix.sol}
 

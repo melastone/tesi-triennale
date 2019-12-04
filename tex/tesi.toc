@@ -26,22 +26,22 @@
 \contentsline {chapter}{\numberline {3}Il Problema del gas}{19}
 \contentsline {section}{\numberline {3.1}Il Problema del gas}{19}
 \contentsline {chapter}{\numberline {4}Risultati Sperimentali}{21}
-\contentsline {section}{\numberline {4.1}Caratteristiche del Tool GASTAP}{21}
+\contentsline {section}{\numberline {4.1}Caratteristiche del Tool GASTAP}{22}
 \contentsline {subsection}{\numberline {4.1.1}Struttura del TOOL}{22}
-\contentsline {subsection}{\numberline {4.1.2}Interfaccia Web}{23}
-\contentsline {section}{\numberline {4.2}Compilatore solc}{25}
-\contentsline {section}{\numberline {4.3}Test Condotti}{25}
-\contentsline {subsection}{\numberline {4.3.1}Caso di Studio: CryptoPhoenix.sol}{25}
-\contentsline {subsection}{\numberline {4.3.2}Operazioni di Assegnamento}{25}
-\contentsline {subsection}{\numberline {4.3.3}Costrutto for}{25}
-\contentsline {subsection}{\numberline {4.3.4}Cicli for Annidati}{25}
-\contentsline {subsection}{\numberline {4.3.5}Costrutto while}{25}
-\contentsline {subsubsection}{while.sol}{25}
-\contentsline {subsubsection}{sqrt.sol}{25}
-\contentsline {subsection}{\numberline {4.3.6}Ricorsione}{25}
-\contentsline {subsubsection}{Ricorsione Diretta}{25}
-\contentsline {subsubsection}{Ricorsione Indiretta}{25}
-\contentsline {subsubsection}{Ricorsione Multipla}{25}
-\contentsline {section}{\numberline {4.4}Risultati}{25}
-\contentsline {chapter}{Conclusioni}{27}
-\contentsline {chapter}{Bibliografia}{29}
+\contentsline {subsection}{\numberline {4.1.2}Interfaccia Web}{24}
+\contentsline {section}{\numberline {4.2}Compilatore solc}{24}
+\contentsline {section}{\numberline {4.3}Test Condotti}{27}
+\contentsline {subsection}{\numberline {4.3.1}Caso di Studio: CryptoPhoenix.sol}{27}
+\contentsline {subsection}{\numberline {4.3.2}Operazioni di Assegnamento}{27}
+\contentsline {subsection}{\numberline {4.3.3}Costrutto for}{27}
+\contentsline {subsection}{\numberline {4.3.4}Cicli for Annidati}{27}
+\contentsline {subsection}{\numberline {4.3.5}Costrutto while}{27}
+\contentsline {subsubsection}{while.sol}{27}
+\contentsline {subsubsection}{sqrt.sol}{27}
+\contentsline {subsection}{\numberline {4.3.6}Ricorsione}{27}
+\contentsline {subsubsection}{Ricorsione Diretta}{27}
+\contentsline {subsubsection}{Ricorsione Indiretta}{27}
+\contentsline {subsubsection}{Ricorsione Multipla}{27}
+\contentsline {section}{\numberline {4.4}Risultati}{27}
+\contentsline {chapter}{Conclusioni}{29}
+\contentsline {chapter}{Bibliografia}{31}

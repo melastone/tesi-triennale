@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  3 DEC 2019 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  4 DEC 2019 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,36 +430,79 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count96
+\lst@gtempboxa=\box28
+\lst@token=\toks19
+\lst@length=\count97
+\lst@currlwidth=\dimen107
+\lst@column=\count98
+\lst@pos=\count99
+\lst@lostspace=\dimen108
+\lst@width=\dimen109
+\lst@newlines=\count100
+\lst@lineno=\count101
+\lst@maxwidth=\dimen110
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
+\lst@framebox=\box29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (./tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Info: Redefining \it@ocap on input line 73.
-LaTeX Info: Redefining \it@ccap on input line 73.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Info: Redefining \it@ocap on input line 83.
+LaTeX Info: Redefining \it@ccap on input line 83.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count96
-\scratchdimen=\dimen107
-\scratchbox=\box28
-\nofMPsegments=\count97
-\nofMParguments=\count98
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count99
-\MPscratchDim=\dimen108
-\MPnumerator=\count100
-\makeMPintoPDFobject=\count101
-\everyMPtoPDFconversion=\toks20
+\scratchcounter=\count104
+\scratchdimen=\dimen111
+\scratchbox=\box30
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen112
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -516,10 +559,11 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\c@lstlisting=\count110
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 80.
+(Font)              <17.28> on input line 90.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 80.
+(Font)              <12> on input line 90.
 
 [1
 
@@ -567,7 +611,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--32
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2])
-Underfull \hbox (badness 10000) in paragraph at lines 34--165
+Underfull \hbox (badness 10000) in paragraph at lines 34--175
 
  []
 
@@ -709,7 +753,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 ]
 Capitolo 3.
 (./capitolo3/capitolo3.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 17--191
+Underfull \hbox (badness 10000) in paragraph at lines 17--201
 
  []
 
@@ -722,81 +766,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--13
-
- []
-
 [21
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 <./img/GASTAP-structure.png, id=101, 735.74875pt x 294.09875pt>
 File: ./img/GASTAP-structure.png Graphic file (type png)
 <use ./img/GASTAP-structure.png>
-Package pdftex.def Info: ./img/GASTAP-structure.png  used on input line 20.
+Package pdftex.def Info: ./img/GASTAP-structure.png  used on input line 22.
 (pdftex.def)             Requested size: 367.87347pt x 147.04901pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22]
-<./img/GASTAP-example.png, id=107, 1320.935pt x 611.28375pt>
+
+Underfull \vbox (badness 2538) has occurred while \output is active []
+
+ [22]
+<./img/GASTAP-example.png, id=106, 1320.935pt x 611.28375pt>
 File: ./img/GASTAP-example.png Graphic file (type png)
 <use ./img/GASTAP-example.png>
-Package pdftex.def Info: ./img/GASTAP-example.png  used on input line 40.
+Package pdftex.def Info: ./img/GASTAP-example.png  used on input line 42.
 (pdftex.def)             Requested size: 396.28355pt x 183.38654pt.
 
+[23 <./img/GASTAP-structure.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 49.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 47.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [23 <./img/GASTAP-structure.png>])
+) [24 <./img/GASTAP-example.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 65.
+ [25]
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24 <./img/GASTAP-example.png>] [25] [26
+ [26]
+[27] [28
 
 
-] [27
+] [29
 
-] [28
+] [30
 
 
-] (./tesi.bbl [29
+] (./tesi.bbl [31
 
-]) [30] (./tesi.aux) ) 
+]) [32] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 3560 strings out of 494912
- 46874 string characters out of 6180265
- 115815 words of memory out of 5000000
- 6775 multiletter control sequences out of 15000+600000
- 20392 words of font info for 45 fonts, out of 8000000 for 9000
+ 5630 strings out of 494912
+ 73167 string characters out of 6180265
+ 192873 words of memory out of 5000000
+ 8826 multiletter control sequences out of 15000+600000
+ 21622 words of font info for 49 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 41i,10n,43p,823b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,43p,823b,1088s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ectt1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
-/jknappen/ec/eccc1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/
-fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive2017/t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive201
-7/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive
-2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texl
-ive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on tesi.pdf (36 pages, 333746 bytes).
+nappen/ec/ectt1095.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ectt1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
+our/jknappen/ec/eccc1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texm
+f-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/t
+exmf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive201
+7/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive
+2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texl
+ive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.t
+exlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/eurosym/feymr10.pfb>
+Output written on tesi.pdf (38 pages, 356652 bytes).
 PDF statistics:
- 634 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
+ 716 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
