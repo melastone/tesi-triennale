@@ -1,18 +1,251 @@
-\section{Il Problema del gas}
 
-Spieghiamo il problema del gas nell'esecuzione degli smart contract in ehtereum.
+Lo scopo di questo capitolo è quello di riassumere gli esperimenti condotti.\newline
+\indent Una volta individuati i tool capaci di determinare bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per dedurre la completezza del software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
+\indent I test sono stati condotti con il tool GASTAP e con il compilatore solc, ad oggi gli unici capaci di produrre dei bound ai consumi di gas per gli smart contract di Ethereum. Per quanto riguarda il primo gli sviluppatori hanno fornito i dettagli della sua implementazione, documentando in che modo venga condotta la loro analisi. Conoscere le tecniche utilizzate ha permesso di dedurre alcune proprietà del tool e dell'analisi di smart contract in generale. Dall'altro lato la documentazione ~\cite{solidity-docs} del compilatore solc tratta l'analisi del gas in modo superficiale. Tuttavia il suo impiego nei test condotti ci ha permesso di confrontare i risultati di GASTAP, in modo da considerare l'analisi degli smart contract in chiave critica.\newline
 
-Perchè ci serve la stima??
+\newpage
 
-Se io so quanto è il gas associato ad ogni istruzione, mi basterà sapere come verrà tradotto il mio programma in bytecode. Da lì potrei stabilire il costo fisso. Ma questo non basta.
-Il gas viene consumato in circostanze differenti.
+\input{./capitolo3/sez-gas-problems}
 
-Il costo totale richiesto per eseguire un programma è determinato in base a 3 fattori:
-\begin{enumerate}
-\item il costo intrinseco di ciascuna istruzione di basso livello; questo valore è fissato.
-\item i costi determinati dalla creazione di un contratto o dalla chiamata di un altro programma. Questi sono determinati dalle istruzioni CREATE , CALL and CALLCODE.
-\item eventuali costi aggiunti, che vengono addebitati nel caso in cui la memoria richiesta dal programma superi una certa soglia
-\end{enumerate}
+\input{./capitolo3/sez-gastap-tool}
+    
+\input{./capitolo3/sez-solc}
 
-Mentre alcuni di questi valori possono essere facilmente previsti, altri possono essere determinati soltanto durante l'esecuzione del contratto. Essendo difficili da prevedere, potrebbero far sì che la quantità di gas richiesta in fase di esecuzione ecceda quella messa a disposizione dal committente prima. Dunque conoscere questi costi prima del lancio del programma in rete permetterebbe agli utenti di investire somme di denaro adeguate.\newline
-\indent Soltanto delle tecniche di analisi precise ci permettono di stimare questi consumi, poichè ci permettono di calcolare in anticipo quali ``sorprese'' riserverà il codice durante la sua esecuzione.\newline
+\newpage
+
+\section{Test Condotti}
+
+La nostra analisi è stata condotta su un insieme di programmi scritti in Solidity, disponibili nella repository ~\cite{melastone-sc}.\newline
+\indent Ad eccezione di \verb|CryptoPhoenix.sol|, uno degli esempi proposti dal tool GASTAP, gli altri smart contract sono stati sviluppati seguendo la documentazione ufficiale del linguaggio Solidity ~\cite{solidity-docs}. Si tratta di semplici programmi ad hoc per il testing dei costrutti di base del linguaggio di programmazione. Di seguito i casi che abbiamo trattato.\newline
+
+    \subsection{Caso di Studio: CryptoPhoenix.sol}
+    %inserire tabella confronti
+    %può essere utile?
+    
+    \subsection{Operazioni di Assegnamento}
+    
+    I programmi \verb|assignment*.sol| implementano dei contratti che contengono un numero arbitrario di operazioni di assegnamento.
+    
+    \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        //assignment2.sol
+        
+        pragma solidity ^0.4.11;
+
+        contract B{
+
+            function init(){
+                uint number = 1;    
+            }
+
+        }
+
+        \end{lstlisting}
+    \end{minipage}
+
+    
+    Abbiamo potuto verificare come l'operazione di assegnare un valore ad una variabile locale (\verb|assignment2.sol|) o globale (\verb|assignment3.sol|, \verb|assignment4.sol|) costa una quantità di gas relativamente bassa, in media 140 unità.
+    Aggiungendo un'operazione di assegnamento in più, che va dunque ad incrementare il valore precedente della variabile, questa stima in alcuni casi subisce una crescita notevole: passiamo da 140 unità a circa 20000.
+    
+    \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        //assignment1.sol
+        
+        pragma solidity ^0.4.11;
+
+        contract A{
+
+            uint number = 0;
+
+            function init(){
+                number = 1;    
+            }
+
+        }
+
+        \end{lstlisting} 
+    \end{minipage}
+
+    
+    Tale incremento è dato dalla presenza nel codice EVM dell'istruzione SSTORE (vedi Tabella \ref{tab:gas-costs}). Si evince dunque che la semplice operazione di settare il valore di una variabile da 0 ad uno diverso da 0 ha un impatto notevole sulla performance del programma in termini di costi. Un caso simile si era verificato nel caso del programma \verb|example.sol|.
+
+    \subsection{Costrutto for}
+    
+    Testando i cicli for si è ottenuto un risultato interessante. La compilazione di questi programmi con solc produce sempre un bound infinito. Al contrario i test con GASTAP hanno prodotto una stima finita dei consumi.\newline
+    
+     
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    //loop1.sol
+    //esegue la moltiplicazione di number*a
+
+    pragma solidity ^0.4.11;
+
+    contract Loop1{
+
+        uint sum = 0;
+        uint number;
+        
+        function multiply(uint a){
+            
+            for(uint i = 0; i<a; i++){
+            sum = sum+number;
+            }
+        }
+
+    }
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    ======= loop1.sol:Loop1 =======
+    Gas estimation:
+    construction:
+    5099 + 39200 = 44299
+    external:
+    multiply(uint256):	infinite
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    e
+    
+    \verb|GASTAP: 9+ (222+20476*nat(a))|
+    
+     
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    //loop2.sol
+    //somma i primi 10 elementi di un vettore
+
+    pragma solidity ^0.4.11;
+
+    contract Loop2 {
+
+        function sum (uint[] nums) returns (uint sol) {
+            sol = 0;
+            for(uint i = 0; i < 10; i++)
+                    sol = sol+nums[i];
+            }
+
+    }
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    ======= loop2.sol:Loop2 =======
+    Gas estimation:
+    construction:
+    111 + 59200 = 59311
+    external:
+    sum(uint256[]):	infinite
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    e
+    
+    \verb|GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1746+3* (1/32))|
+    
+    Come si può evincere da quest'ultimo caso gli upper bound forniti da GASTAP possono essere parametrici. Nell'esempio il parametro è determinato dal valore in input di una delle funzioni pubbliche del contratto.\newline
+    \indent Più in generale possiamo dire che l'output prodotto da GASTAP è parametrico:
+    \begin{itemize}
+     \item nella dimensione dei parametri delle funzioni
+     \item nello stato del contratto
+     \item nei dati della blockchain dai quali dipendono i cosumi di gas (es. valore dell'ether)
+    \end{itemize}
+
+
+    
+    \subsection{Cicli for Annidati}
+    
+    Per verificare la gestione dei cicli for annidati si è implementato un semplice programma che attraverso il metodo \verb|suma(uint a)| esegue \verb|a| incrementi della variabile locale \verb|sum| attraverso un ciclo for.
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    //nested1.sol
+
+    pragma solidity ^0.4.11;
+
+    contract Nested1 {
+
+        uint total_loops;
+
+        // restituisce un valore uguale ad a, ottenuto sommando a volte 1.
+        // ad ogni iterazione incrementa la var total_loops.
+        function suma (uint a) returns (uint sum) {
+            sum = 0;
+            for(uint i = 0; i < a; i++)
+                    sum = sum+1;
+                    total_loops = total_loops +1;          
+        }
+
+    }
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    Il programma è stato modificato in successione, inserendo un ciclo for annidato alla volta all'interno di \verb|suma(uint a)|. Ad ogni incremento abbiamo nuovamente calcolato il bound alla funzione \verb|suma(uint a)| con entrambi i programmi. Denotiamo con la variabile n il livello di annidamento dei cicli for. I risultati ottenuti sono mostrati nella Tabella \ref{tab:nested-outputs}.
+    
+    \begin{table}[h]
+    \begin{threeparttable}[b]
+     
+
+
+     \begin{center}
+        \caption[legenda elenco tabelle]{Risultati dell'analisi dei programmi nested*.sol}\label{tab:nested-outputs}
+        \begin{tabular}{ccp{12cm}}  
+        \hline \hline   %inserisce due righe orizzontali
+        $n$ & solc & GASTAP \\   %& separa le colonne
+        \hline  %inserisce una riga orizzontale
+        \bf1 & infinite & $15 + (20508+70*nat$\tnote{1}$(a))$\\
+        \bf2 & infinite & $15 + (20548+70*nat(a)+20276*nat(a))$\\
+        \bf3 & infinite & $15 + (20588+70*nat(a)+20276*nat(a)+20276*nat(a))$\\
+        \bf4 & infinite & $15 + (20628+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))$\\
+        \end{tabular}
+        \begin{tablenotes}
+            \item [1] La funzione nat è definita come nat(l)=max(0,l)
+        \end{tablenotes}
+     \end{center}
+    \end{threeparttable}
+    \end{table}
+
+    
+    Continuando ad incrementare il numero di cicli, si è potuto dare un bound al livello di annidamento. Per $n$ = 15 GASTAP non riesce a mappare le funzioni nella outline. Questo implica che non può essere condotta l'analisi sul programma \verb|nested15.sol|. Il limite dunque è dato dalla struttura del codice. L'esempio è mostrato in Figura \ref{fig:gstp-nested15}\newline
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.3]{GASTAP-nested15.png}
+        \caption{nested15.sol in GASTAP}
+        \label{fig:gstp-nested15}
+    \end{figure}
+
+    \begin{minipage}{\linewidth}
+    \indent Dai risultati ottenuti conducendo i nostri test è stato possibile ricavare la seguente formula di ricorrenza per il bound determinato da GASTAP per i programmi nested$n$.sol:
+    \[ \forall 0 < n \leq 14 \quad \mathrm{UB} = 15 + (20508 + (n - 1)*40 + 70*nat(a) + (n - 1)*20276*nat(a)) \]
+    \end{minipage}
+
+    \subsection{Costrutto while}
+    
+        \subsubsection{while.sol}
+
+        \subsubsection{sqrt.sol}
+
+    \subsection{Ricorsione}
+
+        \subsubsection{Ricorsione Diretta}
+
+        \subsubsection{Ricorsione Indiretta}
+        
+        \subsubsection{Ricorsione Multipla}
+    
+\section{Risultati}
+

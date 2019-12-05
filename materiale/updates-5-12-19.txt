@@ -1,3 +1,5 @@
+
+
 ANALISI STATICA DI SMART CONTRACT IN ETHEREUM : STIMARE I CONSUMI DI GAS
 
 
@@ -49,69 +51,6 @@ si può pensare di \textit{possedere} gas.
 // RISULTATI SPERIMENTALI
 
 
-/ il problema del gas - Perchè stimare i consumi di gas è importante?
-
- \indent I consumi di gas sono associati alle operazioni di basso livello, 
-dunque specificati solo per il bytecode EVM \cite{yellow-paper}. Dal momento che però gli
-smart contract sono sviluppati utilizzando linguaggi di alto livello (come,
-ad es, Solidity \cite{sol-github}), è difficile per lo sviluppatore conoscere i 
-costi del proprio programma durante la fase di sviluppo. Per di più la traduzione 
-dei costrutti di alto livello in bytecode fa sì che stimare i constumi tramite l'analisi 
-statica sia una sfida non triviale.\newline
-
-\indent Dal momento che il gas viene pagato anticipatamente, può succedere che durante la sua
-esecuzione un programma ecceda la quantità che ha a disposizione. Come conseguenza, la EVM
-sollleva un'eccezione di tipo \textit{out-of-gas} e abortisce la transazione. Un contratto
-che non gestisce bene l'eventuale interruzione di una transazione è soggetto ad una 
-vulnerabilità legata al gas \cite{MadMax}. Generalmente questi programmi, che vengono etichettati
-come rischiosi, saranno bloccati in modo permanente.
-Quando si eccede il gas disponibile un'altra conseguenza più immediata è il
-blocco della transazione: la computazione non giunge a termine, l'utente non ottiene il
-risultato desiderato e l'ether pagato per il gas va perso.\newline
-
-\indent Un altro limite all'esecuzione dei contratti è dovuto al protocollo adottato da Ethereum.
-Questo infatti impone un limite superiore alla quantità di gas che è possibile consumare
-a ciascun blocco creato. Dal momento che le transazioni vengono raggruppate in blocchi,
-tale limite influenza anche l'esecuzione dei singoli programmi. Può succedere infatti che
-se l'esecuzione di una certa funzione aumenta nel tempo, ad un certo punto non sia
-più possibile portarla avanti a causa del superamento del limite massimo di gas.
-Conoscere a priori i consumi può aiutare anche ad evitare questo tipo di errori.\newline
-
-\indent Va inoltre considerato che se l'utente della rete ha modo di conoscere il costo
-di una computazione nel suo caso pessimo, ha anche modo di confrontare fra di loro dei programmi
-semanticamente equivalenti, al fine di prediligere quello che consuma meno gas.  In questo 
-senso la stima dei costi di gas costituirebbe l'uinica fonte di risparmio: considerato
-che le transazioni sotto una certa soglia di \textit{gasPrice} rischiano di non essere 
-accettate dai miner, i committenti non hanno margine di risparmio.\newline
-
-\indent Una stima affidabile del gas aiuta un utente a stabilire un prezzo per ciascuna
-unità di gas in linea con l'utilità della sua transazione. Infatti una quantità 
-insufficiente per completare la transazione comporta la perdita dei soldi investiti,
-senza che la transazione venga eseguita. Al tempo stesso una sovrastima fa sì che i
-miner assumano un atteggiamento diffidente, abbassando la probabilità che la stessa
-venga scelta.\newline
-
-\indent Conoscere un limite ai consumi di gas del proprio programma assicura all'utente
-che se la quantità di gas investito supera il bound l'esecuzione verrà portata a termine
-senza incorrere in spiacevoli sorprese.
-
-- Si potrebbe aggiungere anche il fatto delle callbak. Quando si chiama un metodo di un altro contratto,
-e quindi non si conosce lo stato dell'ambiente, poter calcolare i consumi ci permette di mettere a disp
-una qta di gas adeguata ed eseguire la callback con successo!
-
-/ il compilatore solc
-
-the estimator assumes
-concrete values for transaction parameters and the Ethereum state, therefore
-merely providing a lower bound for the worst-case gas consumption.
-
-/ sez. cicli for
-
-	The upper bounds
-	that Gastap infers are given in terms of the sizes of the input parameters of
-	the functions, the contract state, and/or on the blockchain data that the gas
-	consumption depends upon (e.g., on the Ether value)
-
 / Lavori correlati
 
 Analysis of Ethereum smart contracts for possible safety violations and security
@@ -162,7 +101,8 @@ gas consumption instead of identifying code that can be optimized
 
 { The GASPER tool identies gas-costly programming patterns [11], which
 can be optimized to consume less. For doing so, it relies on matching spe-
-cic control-ow patterns, SMT solvers and symbolic computation, which makes
+cic control-
+ow patterns, SMT solvers and symbolic computation, which makes
 their analysis neither sound, nor complete.
  - MadMax
  - Marescotti et al. - algoritmi

@@ -31,6 +31,9 @@
 %%%%%%%%%libreria per mostrare le etichette
 %\usepackage{showkeys}
 
+%libreria per inserire le note nelle tabelle
+\usepackage{threeparttable}
+
 
 %libreria per inserire grafici
 \usepackage{graphicx}
@@ -41,7 +44,7 @@
 \usepackage{listings, xcolor}
 
 \lstdefinestyle{cmd-line}{
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,         
     breaklines=true,
     escapeinside={(*@}{@*)}
@@ -53,7 +56,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%librerie matematiche
 %\usepackage{amssymb}
-%\usepackage{amsmath}
+\usepackage{amsmath}
 %\usepackage{latexsym}
 %\usepackage{amsthm}
 
@@ -195,13 +198,9 @@ INTRODUZIONE}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\chapter{Il Problema del gas}
-
-%\input{./capitolo3/capitolo3}
-
 \chapter{Risultati Sperimentali}
 
-\input{./capitolo4/capitolo4}
+\input{./capitolo3/capitolo3}
 
 %\listoffigures                          %crea l'elenco delle figure
 
