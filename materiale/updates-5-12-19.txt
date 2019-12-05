@@ -1,0 +1,179 @@
+ANALISI STATICA DI SMART CONTRACT IN ETHEREUM : STIMARE I CONSUMI DI GAS
+
+
+// il ruolo del gas
+
+Il concetto del gas è stato introdotto in Ethereum con 
+l'obiettivo di difendere la rete dai possibili abusi. Per
+questa ragione ogni computazione eseguibile nel network è 
+soggetta ad una tassazione, il cui importo è espresso in
+unità di gas. In questo senso il gas può essere inteso come
+un carburante, che serve alla \textit{Ethereum Virtual Machine}
+per poter portare avanti ciascuna transazione; è necessario 
+acquistarne una quantità adeguata \textit{prima} che l'operazione
+venga eseguita, e qualora questo finisca la macchina si fermerà.
+Il prezzo del gas, in modo analogo ai carburanti, non ha un costo
+fissato. Invece che dipendere dalle oscillazioni di mercato, viene 
+deciso direttamente dall'utente che lo acquista.
+Potrebbe sembrare una scelta poco intelligente, ma in realtà questo
+fattore incide molto sul destino delle transazioni: i miner sono 
+liberi di scegliere le transazioni da far eseguire sulla base del 
+prezzo che i committenti sono disposti a pagare. Questo perchè 
+l'ether destinato all'acuisto di gas costituisce una delle loro 
+fonti di guadagno. Al termine della transazione infatti l'ether 
+destinato all'acquisto del gas che non viene né utilizzato dalla
+computazione, né rimborsato all'utente, può essere accreditato su
+di un indirizzo specifico chiamato \textit{beneficiario}. Tale 
+indirizzo viene specificato dal miner, e generalmente coincide con il suo.
+Quando coloro che propongono una transazione devono scegliere quanto
+pagare per il gas dunque, devono trovare un compromesso tra la
+possibilità di risparmiare e quella di aumentare la probabilità che la
+loro transazione venga scelta in poco tempo.\newline
+\indent La scelta di rimborsare il gas al termine delle computazioni
+dipende dal fatto che questo bene non abbia alcun valore al di fuori
+dell'esecuzione di queste operazioni. Per come è stato definito, non
+si può pensare di \textit{possedere} gas.
+- gasPrice x gasLimit; wei, gwei etc.
+	gasPrice: A scalar value equal to the number of
+	Wei to be paid per unit of gas for all computation
+	costs incurred as a result of the execution of
+	this transaction; formally Tp.
+	gasLimit: A scalar value equal to the maximum
+	amount of gas that should be used in executing
+	this transaction. This is paid up-front, before any
+	computation is done and may not be increased
+	later; formally Tg.
+- specificare la differenza fra transazioni. message call-account creation
+
+
+// RISULTATI SPERIMENTALI
+
+
+/ il problema del gas - Perchè stimare i consumi di gas è importante?
+
+ \indent I consumi di gas sono associati alle operazioni di basso livello, 
+dunque specificati solo per il bytecode EVM \cite{yellow-paper}. Dal momento che però gli
+smart contract sono sviluppati utilizzando linguaggi di alto livello (come,
+ad es, Solidity \cite{sol-github}), è difficile per lo sviluppatore conoscere i 
+costi del proprio programma durante la fase di sviluppo. Per di più la traduzione 
+dei costrutti di alto livello in bytecode fa sì che stimare i constumi tramite l'analisi 
+statica sia una sfida non triviale.\newline
+
+\indent Dal momento che il gas viene pagato anticipatamente, può succedere che durante la sua
+esecuzione un programma ecceda la quantità che ha a disposizione. Come conseguenza, la EVM
+sollleva un'eccezione di tipo \textit{out-of-gas} e abortisce la transazione. Un contratto
+che non gestisce bene l'eventuale interruzione di una transazione è soggetto ad una 
+vulnerabilità legata al gas \cite{MadMax}. Generalmente questi programmi, che vengono etichettati
+come rischiosi, saranno bloccati in modo permanente.
+Quando si eccede il gas disponibile un'altra conseguenza più immediata è il
+blocco della transazione: la computazione non giunge a termine, l'utente non ottiene il
+risultato desiderato e l'ether pagato per il gas va perso.\newline
+
+\indent Un altro limite all'esecuzione dei contratti è dovuto al protocollo adottato da Ethereum.
+Questo infatti impone un limite superiore alla quantità di gas che è possibile consumare
+a ciascun blocco creato. Dal momento che le transazioni vengono raggruppate in blocchi,
+tale limite influenza anche l'esecuzione dei singoli programmi. Può succedere infatti che
+se l'esecuzione di una certa funzione aumenta nel tempo, ad un certo punto non sia
+più possibile portarla avanti a causa del superamento del limite massimo di gas.
+Conoscere a priori i consumi può aiutare anche ad evitare questo tipo di errori.\newline
+
+\indent Va inoltre considerato che se l'utente della rete ha modo di conoscere il costo
+di una computazione nel suo caso pessimo, ha anche modo di confrontare fra di loro dei programmi
+semanticamente equivalenti, al fine di prediligere quello che consuma meno gas.  In questo 
+senso la stima dei costi di gas costituirebbe l'uinica fonte di risparmio: considerato
+che le transazioni sotto una certa soglia di \textit{gasPrice} rischiano di non essere 
+accettate dai miner, i committenti non hanno margine di risparmio.\newline
+
+\indent Una stima affidabile del gas aiuta un utente a stabilire un prezzo per ciascuna
+unità di gas in linea con l'utilità della sua transazione. Infatti una quantità 
+insufficiente per completare la transazione comporta la perdita dei soldi investiti,
+senza che la transazione venga eseguita. Al tempo stesso una sovrastima fa sì che i
+miner assumano un atteggiamento diffidente, abbassando la probabilità che la stessa
+venga scelta.\newline
+
+\indent Conoscere un limite ai consumi di gas del proprio programma assicura all'utente
+che se la quantità di gas investito supera il bound l'esecuzione verrà portata a termine
+senza incorrere in spiacevoli sorprese.
+
+- Si potrebbe aggiungere anche il fatto delle callbak. Quando si chiama un metodo di un altro contratto,
+e quindi non si conosce lo stato dell'ambiente, poter calcolare i consumi ci permette di mettere a disp
+una qta di gas adeguata ed eseguire la callback con successo!
+
+/ il compilatore solc
+
+the estimator assumes
+concrete values for transaction parameters and the Ethereum state, therefore
+merely providing a lower bound for the worst-case gas consumption.
+
+/ sez. cicli for
+
+	The upper bounds
+	that Gastap infers are given in terms of the sizes of the input parameters of
+	the functions, the contract state, and/or on the blockchain data that the gas
+	consumption depends upon (e.g., on the Ether value)
+
+/ Lavori correlati
+
+Analysis of Ethereum smart contracts for possible safety violations and security
+and vulnerabilities is a popular topic that has received a lot of attention recently,
+with numerous tools developed, leveraging techniques based on symbolic execu-
+tion [
+	23.L. Luu, D. Chu, H. Olickel, P. Saxena, and A. Hobor. Making smart contracts
+	smarter. In CCS'16, pages 254{269. ACM ,
+	19. S. Grossman, I. Abraham, G. Golan-Gueta, Y. Michalevsky, N. Rinetzky, M. Sagiv,
+	and Y. Zohar. Online detection of eectively callback free objects with applications
+	to smart contracts. PACMPL, 2(POPL):48:1{48:28, 2018 ,
+	25. I. Nikolic, A. Kolluri, I. Sergey, P. Saxena, and A. Hobor. Finding the greedy,
+	prodigal, and suicidal contracts at scale. In ACSAC'18, pages 653{663. ACM. ,
+	22. J. Krupp and C. Rossow. teether: Gnawing at ethereum to automatically exploit
+	smart contracts. In USENIX Security Symposium, pages 1317{1333. USENIX Association,
+	2018. ,
+	20. S. Kalra, S. Goel, M. Dhawan, and S. Sharma. ZEUS: analyzing safety of smart
+	contracts. In NDSS'18. The Internet Society ,	
+	27. P. Tsankov, A. M. Dan, D. Drachsler-Cohen, A. Gervais, F. Bunzli, and M. T.
+	Vechev. Securify: Practical security analysis of smart contracts. In CCS'18, pages
+	67{82. ACM. ], 
+	SMT solving [
+	24. M. Marescotti, M. Blicha, A. E. J. Hyvarinen, S. Asadi, and N. Sharygina. Computing
+	Exact Worst-Case Gas Consumption for Smart Contracts. In ISoLA'18,
+	LNCS 11247, pages 450{465. Springer ,
+	21. A. Kolluri, I. Nikolic, I. Sergey, A. Hobor, and P. Saxena. Exploiting The Laws of
+	Order in Smart Contracts. CoRR, abs/1810.11605, 2018], 
+	and certied programming [
+	9. K. Bhargavan, A. Delignat-Lavaud, C. Fournet, A. Gollamudi, G. Gonthier,
+	N. Kobeissi, N. Kulatova, A. Rastogi, T. Sibut-Pinote, N. Swamy, and S. Zanella-
+	Beguelin. Formal verication of smart contracts: Short paper. In PLAS'16, pages 91-96. ACM,
+	18. I. Grishchenko, M. Maei, and C. Schneidewind. A Semantic Framework for the
+	Security Analysis of Ethereum Smart Contracts. In POST'18, volume 10804 of
+	LNCS 2018, pages 243{269. Springer,
+	7. S. Amani, M. Begel, M. Bortin, and M. Staples. Towards Verifying Ethereum
+	Smart Contract Bytecode in Isabelle/HOL. In CPP'18, pages 66{77. ACM.],
+with only a small fraction of them focusing on analyzing gas consumption.
+
+ - The GASPER tool
+
+{ The tool GASPER analyses Ethereum smart contracts compiled into the
+low-level EVM bytecode and is capable of identifying certain constructs that
+are costly and can be simplied to equivalent, less costly programs. While some
+technologies used in GASPER, such as SMT solvers and symbolic computation,
+are similar to ours, we identify two important dierences: We propose to work
+on the higher-level Solidity language, and our goal is to estimate the worst-case
+gas consumption instead of identifying code that can be optimized
+
+{ The GASPER tool identies gas-costly programming patterns [11], which
+can be optimized to consume less. For doing so, it relies on matching spe-
+cic control-ow patterns, SMT solvers and symbolic computation, which makes
+their analysis neither sound, nor complete.
+ - MadMax
+ - Marescotti et al. - algoritmi
+
+// NOTE SUGLI ALTRI TOOL TROVATI
+
+A bytecode-level analysis does not require a contract’s source, allowing the analysis of
+both new and deployed contracts. It is estimated that high-level source code of EVM contracts
+is only available for a tiny fraction (just 0.34%) of contracts on etherscan.io[etherscan.io [n. d.]].
+
+
+// NOTA AL CAP 1 SEZ GAS
+
+"Questo comportamento è .. in quanto IMPLICA spiacevoli conseguenze."
