@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  4 DEC 2019 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  5 DEC 2019 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -752,36 +752,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
 ]
 Capitolo 3.
-(./capitolo3/capitolo3.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 17--201
-
- []
-
-[19
-
-] [20]
-Capitolo 4.
 (./capitolo4/capitolo4.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--5
 
  []
 
-[21
+[19
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 10--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 65--70
 
  []
 
-<./img/GASTAP-structure.png, id=101, 735.74875pt x 294.09875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+<./img/GASTAP-structure.png, id=102, 735.74875pt x 294.09875pt>
 File: ./img/GASTAP-structure.png Graphic file (type png)
 <use ./img/GASTAP-structure.png>
-Package pdftex.def Info: ./img/GASTAP-structure.png  used on input line 22.
+Package pdftex.def Info: ./img/GASTAP-structure.png  used on input line 77.
 (pdftex.def)             Requested size: 367.87347pt x 147.04901pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -790,19 +781,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 2538) has occurred while \output is active []
 
  [22]
-<./img/GASTAP-example.png, id=106, 1320.935pt x 611.28375pt>
+<./img/GASTAP-example.png, id=107, 1320.935pt x 611.28375pt>
 File: ./img/GASTAP-example.png Graphic file (type png)
 <use ./img/GASTAP-example.png>
-Package pdftex.def Info: ./img/GASTAP-example.png  used on input line 42.
+Package pdftex.def Info: ./img/GASTAP-example.png  used on input line 97.
 (pdftex.def)             Requested size: 396.28355pt x 183.38654pt.
 
 [23 <./img/GASTAP-structure.png>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 49.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 104.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
 
  []
 
@@ -811,19 +803,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24 <./img/GASTAP-example.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 65.
+(Font)              <10.95> on input line 120.
  [25]
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
@@ -846,8 +838,8 @@ Underfull \vbox (badness 2042) has occurred while \output is active []
 
 ]) [34] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 5631 strings out of 494912
- 73181 string characters out of 6180265
+ 5627 strings out of 494912
+ 73110 string characters out of 6180265
  186877 words of memory out of 5000000
  8827 multiletter control sequences out of 15000+600000
  21622 words of font info for 49 fonts, out of 8000000 for 9000
@@ -870,9 +862,9 @@ ive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.t
 exlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on tesi.pdf (40 pages, 369088 bytes).
+Output written on tesi.pdf (40 pages, 372549 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
+ 755 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
