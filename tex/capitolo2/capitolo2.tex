@@ -1,59 +1,71 @@
-L'analisi statica è un processo di valutazione della correttezza dei programmi che rientra tra le tecniche di verifica del sotware. L'aggettivo \textit{statica} identifica una serie di controlli che possono essere effettuati sul codice prima della sua esecuzione. In questo si differenzia dall'analisi dinamica, una tecnica complementare che comprende quei controlli che vengono invece effettuati a runtime.\newline
-\indent L'analisi statica solitamente è il primo controllo che viene effettuato sul codice.
+L'analisi statica è un processo di valutazione della correttezza dei programmi che rientra tra le tecniche di verifica del software. L'aggettivo \textit{statica} identifica una serie di controlli che possono essere effettuati sul codice prima della sua esecuzione. In questo si differenzia dall'analisi dinamica, una tecnica complementare che comprende quei controlli che vengono invece effettuati a runtime.\newline
+\indent L'analisi statica solitamente è il primo controllo che viene effettuato sul codice durante lo sviluppo del programma.
 % Perchè l'analisi statica non è common practice?
+I vantaggi apportati da questo tipo di controllo del codice sono numerosi. I bug possono essere individuati per tempo, evitando comportamenti inaspettati da parte dei programmi. Inoltre, a seconda del tool utilizzato, è possibile migliorare il codice dal punto di vista della leggibilità, della strutturazione o della performance.\newline
+\indent Tuttavia l'analisi statica resta una pratica poco diffusa tra gli sviluppatori \cite{johnson2013don}. Le principali cause sono da ricondursi agli output prodotti dai tool di analisi: l'elevato numero di warning così come la presenza di falsi positivi rendono gli strumenti meno affidabili. Oltre a questo gran parte degli informatici afferma di non utilizzare questi tool di verifica a causa del sovraccarico di lavoro: spesso i ritmi di lavoro così come la scarsa collaborazione dei team di sviluppo fanno sì che non ci siano i presupposti per dedicare spazio sufficiente all'analisi del codice.\newline
 
 
 \section{Analisi Statica vs. Analisi Dinamica}
 
 Per analisi statica si intende l'analisi dei programmi dal punto di vista del codice che li compone, vale a dire senza doverli eseguire. L'analisi può essere fatta sia sul codice sorgente, che sul codice oggetto, ossia  il prodotto della compilazione.\newline
 \indent L'analisi statica viene condotta su tre dimensioni: esaminando la struttura del programma, costruendo un modello che rappresenti i possibili stati del codice e ragionando sul possibile comportamento in fase di esecuzione ~\cite{ernst-ijcai97}. 
-Rientrano in questa categoria la verifica formale dei programmi e le ottimizzazioni a tempo di compilazione. L'analisi statica viene spesso implementata da tool automatici, e garantisce proprietà di sound. Le principali critiche mosse nei confronti di questa tecnica derivano dal fatto che possa portare a dei \textit{falsi positivi}, cioè situazioni in cui viene segnalata una vulnerabilità nel codice sebbene non sia stata violata alcuna regola.\newline
+Rientrano in questa categoria la verifica formale dei programmi e le ottimizzazioni a tempo di compilazione. L'analisi statica viene spesso implementata da tool automatici, e garantisce proprietà di correttezza. Le principali critiche mosse nei confronti di questa tecnica derivano dal fatto che possa portare a dei \textit{falsi positivi}, cioè situazioni in cui viene segnalata una vulnerabilità nel codice sebbene non sia stata violata alcuna regola.
 % Perchè vale questo? 
 % - le proprietà sono indecidibili
 % - vogliamo la soundness
+La ragione di questo comportamento è legata alle proprietà che ci poniamo di verificare: la terminazione di un programma, ad esempio, è di per sè una proprietà indecidibile. \'E dimostrato matematicamente che non esiste alcun metodo di analisi statica che sia al tempo stesso \emph{corretto} e \emph{completo} e che non sia limitato dalle risorse che utilizza (es. memoria, tempo)\footnote{Questo risultato è dato dal Teorema di Rice} ~\cite{ausiello2003linguaggi}. Dunque, per ottenere degli strumenti realmente utili, siamo costretti a rinunciare alla completezza dell'analisi, preferendo dei risultati che siano corretti. Ci accontentiamo di strumenti che producono risultati approssimati, talvolta anche diversi da quelli attesi.\newline
 \indent Dall'altro lato l'analisi dinamica identifica quei controlli che possono essere effettuati sul programma soltanto durante la sua esecuzione, che sia su un processore reale o virtuale. Il software testing rientra in questa categoria. Per condurre questo tipo di controllo è necessario fornire un input ben preciso e analizzare poi il comportamento del programma. Occorre inoltre stabilire a priori \emph{che cosa} si vuole misurare. Sebbene questa analisi sia più veloce rispetto alla prima, non garantisce la stessa correttezza. Per essere rigorosa infatti l'analisi dinamica dovrebbe coprire ogni possibile configurazione del programma.\\
-\newline
-\indent Le tecniche di analisi possono essere suddivise in due tipologie in base al loro obiettivo. La prima categoria comprende i tool di analisi volti a localizzare bug nel codice. La seconda identifica invece un gruppo di software con una forte base logica, che utilizzano tecniche matematiche per la verifica di specifiche prorietà del programma.\newline
 
 
 \section{Tecniche di Analisi Statica in Informatica}
 
-Di seguito daremo una panoramica sulle principali tecniche ~\cite{analisi-statica-unina} di analisi statica.
+Le tecniche di analisi possono essere suddivise in due tipologie in base ai risultati prodotti. La prima categoria comprende i tool di analisi volti a localizzare bug nel codice. La seconda identifica invece un gruppo di software con una forte base logica, che utilizzano tecniche matematiche per la verifica di specifiche prorietà del programma.\newline
+\indent Di seguito daremo una panoramica sulle principali tecniche ~\cite{analisi-statica-unina} di analisi statica.
 % Espandiamo la sezione
-% Differenziamo le tecniche manuali da quelle       automatizzabili
+% Differenziamo le tecniche manuali da quelle automatizzabili
 
     \subsection{La compilazione}
     
     % Spieghiamo in dettaglio che per essere eseguita la compilazione richiede un po' di analisi
 
-    Questa tecnica identifica i controlli effettuati dal compilatore, che variano a seconda del linguaggio di programmazione del codice. Le anomalie che possono essere catturate da questo tipo di analisi possono variare, ma in generale comprendono l'incoerenza dei tipi, la mancata dichiarazione delle variabili e il codice non raggiungibile dal flusso di controllo.\newline 
-
-    \subsection{Code Reading}
-
-    Come suggerisce il termine stesso si tratta della rilettura del codice da parte di una persona. Sebbene i bug identificabili possono variare in base a diversi fattori (es. numero di persone, conoscenza del codice, livello di esperienza) questa operazione può portare alla luce difetti che invece il compilatore non rileva. Commenti inconsistenti con il codice, nomi di variabili errati, loop infiniti, codice non strutturato, sono solo alcuni di questi. L'efficacia di questa tecnica è limitata se colui che legge il codice è la stessa persona ad averlo sviluppato.\newline
-
-    \subsection{Code Reviews}
-
-    Generalmente adottata in contesti aziendali. Identifica un controllo del codice fatto in gruppo, il quale viene costituito secondo requisiti specifici. \`E una riunione dove lo sviluppatore è chiamato a leggere il codice ad alta voce di fronte ad altri esperti, che possono commentare il programma con lo scopo di individuare gli errori; in questo modo possono essere rilevati dal 30 al 70\% di quelli presenti nel programma.\newline
-
-    \subsection{Walktrough}
-
-    Molto simile alla tecnica di precedente nelle modalità in cui viene effettuata, poiché prevede la riunione di un gruppo di persone. Differisce negli obiettivi: cerca di trovare dei difetti nel comportamento del programma, e per farlo simula l'esecuzione del codice a mano.\newline
-
-    \subsection{Control Flow Analysis}
-
-    Prevede la rappresentazione del codice attraverso un grafo chiamato CFG (\textit{Control Flow Graph}, dove ciascun nodo rappresenta un'istruzione o un predicato, mentre gli archi il passaggio del flusso di controllo.
-    Successivamente il grafo viene analizzato, al fine di rilevare anomalie nel programma quali non strutturazione o iraggiungibilità del codice.\newline
+    Tutti i compilatori per eseguire la traduzione del codice dorgente in codice oggetto applicano l'analisi statica. L'operazione di compilazione, intesa come \emph{traduzione automatica}, può essere suddivisa in due macro-fasi: dal codice sorgente alla generazione della forma intermedia, e dalla forma intermedia al codice oggetto, il prodotto finale. La prima fase è quella che fa più utilizzo di analisi statica; il compilatore esegue in sequenza delle trasformazioni sul codice, chiamate analisi lessicale, sintattica e semantica. \`E durante quest'ultimo passaggio che il programma viene sottoposto ai controlli relativi ai vincoli del linguaggio ~\cite{gabbrielli2011linguaggi}: si controllano le dichiarazioni delle variabili, la coerenza dei tipi, il numero dei parametri delle funzioni ecc. 
+    In generale questi controlli variano a seconda del linguaggio di programmazione.\newline
+    La compilazione dunque non costituisce una vera e propria tecnica, ma piuttosto un tipo di controllo sul codice che non può essere risparmiato.\newline
     
-    \subsection{Data Flow Analysis}
+    \subsection{Tecniche Manuali}
     
-    La tecnica di analisi del data flow solitamente rientra nella categoria dei controlli dinamici. 
-    Analizza l'evoluzione delle variabili durante il tempo di esecuzione, al fine di rilevare anomalie.
-    Parte di questi controlli possono essere effettuati anche staticamente, permettendo di rilevare parte dei comportamenti anomali del programma, come l'uso delle variabili prima della loro dichiarazione, o l'annullamento prima dell'utilizzo.\newline
+    Consideriamo \textit{manuali} quelle tecniche che non possono essere automatizzate da un software, ma richiedono l'interazione umana per poter essere realizzate. Di seguito ne citiamo alcune.\newline
     
-    \subsection{Esecuzione Simbolica}
+        \subsubsection{Code Reading}
+
+        Come suggerisce il termine stesso si tratta della rilettura del codice da parte di una persona. Sebbene i bug identificabili possono variare in base a diversi fattori (es. numero di persone, conoscenza del codice, livello di esperienza) questa operazione può portare alla luce difetti che invece il compilatore non rileva. Commenti inconsistenti con il codice, nomi di variabili errati, loop infiniti, codice non strutturato, sono solo alcuni di questi. L'efficacia di questa tecnica è limitata se colui che legge il codice è la stessa persona ad averlo sviluppato.\newline
+
+        \subsubsection{Code Reviews}
+
+        Generalmente adottata in contesti aziendali. Identifica un controllo del codice fatto in gruppo, il quale viene costituito secondo requisiti specifici. \`E una riunione dove lo sviluppatore è chiamato a leggere il codice ad alta voce di fronte ad altri esperti, che possono commentare il programma con lo scopo di individuare gli errori; in questo modo possono essere rilevati dal 30 al 70\% di quelli presenti nel programma.\newline
+
+        \subsubsection{Walktrough}
+
+        Molto simile alla tecnica di precedente nelle modalità in cui viene effettuata, poiché prevede la riunione di un gruppo di persone. Differisce negli obiettivi: cerca di trovare dei difetti nel comportamento del programma, e per farlo simula l'esecuzione del codice a mano.\newline
+        
+    \subsection{Tecniche Automatizzabili}
     
-    Consiste nell'esecuzione del programma con dei valori di input simbolici (es. espressioni) piuttosto che con i valori effettivi. Può risultare molto difficile da realizzare in caso di istruzioni if, poichè rende complesso valutare la condizione. Un altro caso che viene mal gestito è quello dei cicli, sia determinati (nel caso dipendano dal valore di una variabile) che non.\newline
+    Queste tecniche di revisione del codice possono essere automatizzate, al fine di implementare dei tool di analisi. Ne riportiamo alcuni esempi.\newline
+
+        \subsubsection{Control Flow Analysis}
+
+        Prevede la rappresentazione del codice attraverso un grafo chiamato CFG (\textit{Control Flow Graph}, dove ciascun nodo rappresenta un'istruzione o un predicato, mentre gli archi il passaggio del flusso di controllo.
+        Successivamente il grafo viene analizzato, al fine di rilevare anomalie nel programma quali non strutturazione o iraggiungibilità del codice.\newline
+        
+        \subsubsection{Data Flow Analysis}
+        
+        La tecnica di analisi del data flow solitamente rientra nella categoria dei controlli dinamici. 
+        Analizza l'evoluzione delle variabili durante il tempo di esecuzione, al fine di rilevare anomalie.
+        Parte di questi controlli possono essere effettuati anche staticamente, permettendo di rilevare parte dei comportamenti anomali del programma, come l'uso delle variabili prima della loro dichiarazione, o l'annullamento prima dell'utilizzo.\newline
+        
+        \subsubsection{Esecuzione Simbolica}
+        
+        Consiste nell'esecuzione del programma con dei valori di input simbolici (es. espressioni) piuttosto che con i valori effettivi. Può risultare molto difficile da realizzare in caso di istruzioni if, poichè rende complesso valutare la condizione. Un altro caso che viene mal gestito è quello dei cicli, sia determinati (nel caso dipendano dal valore di una variabile) che non.\newline
 
 \section{Analisi Statica di Smart Contract}
 
@@ -103,5 +115,3 @@ L'ultima categoria di software che vedremo è la più interessante dal punto di 
     \item[GASTAP] ~\cite{DBLP:journals/corr/abs-1811-10403} è la prima piattaforma sviluppata in grado di analizzare smart contract al fine di dare un upper bound ai consumi di gas dello stesso. Questo software è ancora in via di sviluppo, perciò presenta ancora delle limitazioni. Tuttavia si distingue per la precisione nella stima dei bound, riuscendo a fornire un analisi più precisa rispetto ad altri programmi che implementano le stesse funzionalità. 
 
 \end{description}
-
-

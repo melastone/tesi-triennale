@@ -1,6 +1,8 @@
+//while1.sol
+
 pragma solidity ^0.4.11;
 
-contract B{
+contract A{
 
   uint number = 0;
 

@@ -1,7 +1,7 @@
 
-Lo scopo di questo capitolo è quello di riassumere gli esperimenti condotti.\newline
-\indent Una volta individuati i tool capaci di determinare bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per dedurre la completezza del software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
-\indent I test sono stati condotti con il tool GASTAP e con il compilatore solc, ad oggi gli unici capaci di produrre dei bound ai consumi di gas per gli smart contract di Ethereum. Per quanto riguarda il primo gli sviluppatori hanno fornito i dettagli della sua implementazione, documentando in che modo venga condotta la loro analisi. Conoscere le tecniche utilizzate ha permesso di dedurre alcune proprietà del tool e dell'analisi di smart contract in generale. Dall'altro lato la documentazione ~\cite{solidity-docs} del compilatore solc tratta l'analisi del gas in modo superficiale. Tuttavia il suo impiego nei test condotti ci ha permesso di confrontare i risultati di GASTAP, in modo da considerare l'analisi degli smart contract in chiave critica.\newline
+Lo scopo di questo capitolo è quello di riassumere gli esperimenti condotti e illustrare i relativi risultati.\newline
+\indent Una volta individuati i tool capaci di determinare bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per studiare la potenza espressiva del software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
+\indent I test sono stati condotti con il tool GASTAP e con il compilatore solc, ad oggi gli unici capaci di produrre dei bound ai consumi di gas per gli smart contract di Ethereum. Per quanto riguarda il primo gli sviluppatori hanno fornito i dettagli della sua implementazione, documentando in che modo venga condotta la loro analisi. Conoscere le tecniche utilizzate ha permesso di dedurre alcune proprietà del tool e dell'analisi di smart contract in generale. Dall'altro lato la documentazione  del compilatore solc ~\cite{solidity-docs} tratta l'analisi del gas in modo superficiale. Tuttavia il suo impiego nei test condotti ci ha permesso di confrontare i risultati di GASTAP, in modo da considerare l'analisi degli smart contract in chiave critica.\newline
 
 \newpage
 
@@ -16,68 +16,85 @@ Lo scopo di questo capitolo è quello di riassumere gli esperimenti condotti.\ne
 \section{Test Condotti}
 
 La nostra analisi è stata condotta su un insieme di programmi scritti in Solidity, disponibili nella repository ~\cite{melastone-sc}.\newline
-\indent Ad eccezione di \verb|CryptoPhoenix.sol|, uno degli esempi proposti dal tool GASTAP, gli altri smart contract sono stati sviluppati seguendo la documentazione ufficiale del linguaggio Solidity ~\cite{solidity-docs}. Si tratta di semplici programmi ad hoc per il testing dei costrutti di base del linguaggio di programmazione. Di seguito i casi che abbiamo trattato.\newline
+\indent Ad eccezione del contratto \verb|four-function.sol|, proveniente dalla repository ~\cite{ethir-repository}, gli altri smart contract sono stati sviluppati seguendo la documentazione ufficiale del linguaggio Solidity ~\cite{solidity-docs}. Si tratta di semplici programmi ad hoc per il testing dei costrutti di base del linguaggio di programmazione. Di seguito i casi che abbiamo trattato.\newline
 
-    \subsection{Caso di Studio: CryptoPhoenix.sol}
-    %inserire tabella confronti
-    %può essere utile?
     
     \subsection{Operazioni di Assegnamento}
     
     I programmi \verb|assignment*.sol| implementano dei contratti che contengono un numero arbitrario di operazioni di assegnamento.
     
-    \begin{minipage}{\linewidth}
-        \begin{lstlisting}
-        //assignment2.sol
+    \noindent
+    \begin{minipage}[t]{.5\linewidth}
+    \begin{lstlisting}
+    //assignment2.sol
         
-        pragma solidity ^0.4.11;
+    pragma solidity ^0.4.11;
 
-        contract B{
+    contract B{
 
-            function init(){
-                uint number = 1;    
-            }
-
+        function init(){
+            uint number = 1;    
         }
 
-        \end{lstlisting}
+    }
+
+    \end{lstlisting}
+    \end{minipage}
+    \begin{minipage}[t]{.5\linewidth}
+    \begin{lstlisting}
+    //assignment4.sol
+
+    pragma solidity ^0.4.11;
+
+    contract D{
+
+        uint foo;
+
+        function reset(){
+            uint foo = 0;    
+        }
+
+    }
+    \end{lstlisting}
     \end{minipage}
 
-    
     Abbiamo potuto verificare come l'operazione di assegnare un valore ad una variabile locale (\verb|assignment2.sol|) o globale (\verb|assignment3.sol|, \verb|assignment4.sol|) costa una quantità di gas relativamente bassa, in media 140 unità.
     Aggiungendo un'operazione di assegnamento in più, che va dunque ad incrementare il valore precedente della variabile, questa stima in alcuni casi subisce una crescita notevole: passiamo da 140 unità a circa 20000.
     
+    \begin{center}
     \begin{minipage}{\linewidth}
-        \begin{lstlisting}
-        //assignment1.sol
+    \begin{lstlisting}
+    //assignment1.sol
         
-        pragma solidity ^0.4.11;
+    pragma solidity ^0.4.11;
 
-        contract A{
+    contract A{
 
-            uint number = 0;
+        uint number = 0;
 
-            function init(){
-                number = 1;    
-            }
-
+        function init(){
+            number = 1;    
         }
 
-        \end{lstlisting} 
+    }
+    \end{lstlisting} 
     \end{minipage}
+    \end{center}
 
     
-    Tale incremento è dato dalla presenza nel codice EVM dell'istruzione SSTORE (vedi Tabella \ref{tab:gas-costs}). Si evince dunque che la semplice operazione di settare il valore di una variabile da 0 ad uno diverso da 0 ha un impatto notevole sulla performance del programma in termini di costi. Un caso simile si era verificato nel caso del programma \verb|example.sol|.
+    Tale incremento è dato dalla presenza nel codice EVM dell'istruzione SSTORE (vedi Tabella \ref{tab:gas-costs}. Si evince dunque che la semplice operazione di settare il valore di una variabile da 0 ad uno diverso da 0 ha un impatto notevole sulla performance del programma in termini di costi. Un caso simile si era verificato nel caso del programma \verb|example.sol|.
 
     \subsection{Costrutto for}
     
-    Testando i cicli for si è ottenuto un risultato interessante. La compilazione di questi programmi con solc produce sempre un bound infinito. Al contrario i test con GASTAP hanno prodotto una stima finita dei consumi.\newline
+    Testando i cicli for si è ottenuto un risultato interessante. La compilazione di questi programmi con solc produce sempre un bound infinito. Al contrario i test con GASTAP hanno prodotto una stima finita dei consumi. A titolo esemplificativo riportiamo di seguito i due esempi.
     
-     
+    \subsubsection{loop1.sol}
+    
     \begin{minipage}{\linewidth}
     \begin{lstlisting}
     //loop1.sol
-    //esegue la moltiplicazione di number*a
+    //esegue la moltiplicazione
+    //di number*a
 
     pragma solidity ^0.4.11;
 
@@ -97,12 +114,13 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \end{lstlisting}
     \end{minipage}
 
-    
     Gli output ottenuti con solc e GASTAP sono, rispettivamente:
     
     \begin{minipage}{\linewidth}
     \begin{lstlisting}
-    ======= loop1.sol:Loop1 =======
+    $~solc --gas loop1.sol
+    
+    ====== loop1.sol:Loop1 ======
     Gas estimation:
     construction:
     5099 + 39200 = 44299
@@ -111,11 +129,13 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \end{lstlisting}
     \end{minipage}
 
+    e \begin{lstlisting}
+    GASTAP: 9+ (222+20476*nat(a))
+    \end{lstlisting}
+
     
-    e
     
-    \verb|GASTAP: 9+ (222+20476*nat(a))|
-    
+    \subsubsection{loop2.sol}
      
     \begin{minipage}{\linewidth}
     \begin{lstlisting}
@@ -151,9 +171,9 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \end{minipage}
 
     
-    e
-    
-    \verb|GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+ (1746+3* (1/32))|
+    e \begin{lstlisting} 
+    GASTAP: 3*max([4+nat(nums)+1,4+nat(nums)+2])+pow(max([4+nat(nums)+1,4+nat(nums)+2]),2)/512+(1746+3* (1/32))
+      \end{lstlisting}
     
     Come si può evincere da quest'ultimo caso gli upper bound forniti da GASTAP possono essere parametrici. Nell'esempio il parametro è determinato dal valore in input di una delle funzioni pubbliche del contratto.\newline
     \indent Più in generale possiamo dire che l'output prodotto da GASTAP è parametrico:
@@ -167,7 +187,7 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     
     \subsection{Cicli for Annidati}
     
-    Per verificare la gestione dei cicli for annidati si è implementato un semplice programma che attraverso il metodo \verb|suma(uint a)| esegue \verb|a| incrementi della variabile locale \verb|sum| attraverso un ciclo for.
+    Per verificare la gestione dei cicli for annidati si è implementato un semplice programma che con il metodo \verb|suma(uint a)| esegue \verb|a| incrementi della variabile locale \verb|sum| attraverso un ciclo for.
     
     \begin{minipage}{\linewidth}
     \begin{lstlisting}
@@ -197,11 +217,8 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     
     \begin{table}[h]
     \begin{threeparttable}[b]
-     
-
-
      \begin{center}
-        \caption[legenda elenco tabelle]{Risultati dell'analisi dei programmi nested*.sol}\label{tab:nested-outputs}
+        \caption[Analisi di nested*.sol]{Risultati dell'analisi dei contratti nested*.sol}\label{tab:nested-outputs}
         \begin{tabular}{ccp{12cm}}  
         \hline \hline   %inserisce due righe orizzontali
         $n$ & solc & GASTAP \\   %& separa le colonne
@@ -235,17 +252,334 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
 
     \subsection{Costrutto while}
     
-        \subsubsection{while.sol}
+    Nel testare il comportamento dei tool di analisi di fronte a contratti contenenti dei cicli while abbiamo preso come input i file \verb|while1.sol| e \verb|while2.sol|.\newline
+    
+    \subsubsection{while1.sol}
+    
+    \indent Il primo programma implementa un algoritmo molto simile a quello di \verb|nested1.sol|. Abbiamo sostituito il ciclo for con un while, dunque il numero di iterazioni è facilmente determinabile, poichè equivalente al valore del parametro \verb|a|. Come nel caso dei cicli for solc produce un output infinito. Il risultato di GASTAP rispecchia un comportamento simile al caso precedente: viene determinato un bound parametrico in \verb|a|.\newline
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    //while1.sol
 
-        \subsubsection{sqrt.sol}
+    pragma solidity ^0.4.11;
+
+    contract A{
+
+        uint number = 0;
+
+        function init(uint a){
+            
+            while (a > 0) {
+                number = number + 1;
+                a = a - 1;
+            }
+        }
+
+    }
+    \end{lstlisting}
+    \end{minipage}
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    ======= while1.sol:A =======
+    Gas estimation:
+    construction:
+    5093 + 37600 = 42693
+    external:
+    init(uint256):	infinite
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    e
+    
+    \verb|GASTAP: 9+ (209+20271*nat(a))|
+    
+    \subsubsection{while2.sol}
+    
+    Un caso differente si ha con il programma \verb|while2.sol|.
+    Questo contratto implementa un algoritmo che calcola la radice quadrata del parametro in input \verb|x|. Anche in questo caso il bound dato da solc è infinito. Non solo GASTAP non riesce a determinare il bound - comportandosi quindi in modo simile a solc - ma addirittura va in errore.
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    //while2.sol
+
+    pragma solidity ^0.4.11;
+
+    contract B{
+
+        function sqrt(uint x) returns (uint y) {
+        
+            uint z = (x + 1) / 2;
+            y = x;
+            
+            while (z < y) {
+                y = z;
+                z = (x / z + z) / 2;
+            }
+        }
+    }
+    \end{lstlisting}
+    \end{minipage}
+    
+
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    ======= while2.sol:B =======
+    Gas estimation:
+    construction:
+    99 + 48800 = 48899
+    external:
+    sqrt(uint256):	infinite
+    \end{lstlisting}
+    \end{minipage}
+
+    
+    e
+    
+    \verb|GASTAP: evm_solver:non_terminating|
+
+    \newpage
 
     \subsection{Ricorsione}
+    
+    Per testare la ricorsione abbiamo utilizzato tre diversi programmi che implementano delle tecniche ricorsive diverse:
+    \verb|ricorsione-diretta.sol|, \verb|ricorsione-indiretta.sol| e \verb|ricorsione-multipla.sol|. Per tutti e tre gli input entrambi i tool di analisi falliscono nel tentativo di stimare un bound. In base a questi risultati possiamo dunque asserire che i programmi ricorsivi non sono gestiti correttamente dai tool di analisi statica.\newline
+    \indent Riportiamo di seguito il codice sorgente dei programmi utilizzati insieme ai risultati dell'analisi.\newline
 
         \subsubsection{Ricorsione Diretta}
+        
+        Questo programma contiene una sola funzione pubblica, \verb|fact(uint x)|. Questo metodo implementa l'algoritmo di calcolo del fattoriale di un numero. Consideriamo questo algoritmo ricorsivo \emph{diretto} in quanto la funzione fact richiama direttamente sé stessa.\newline
+        
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        //ricorsione-diretta.sol
+
+        pragma solidity ^0.4.19;
+
+        contract Factorial{
+
+            function fact(uint x) returns (uint y) {
+                if (x == 0) {
+                return 1;
+                }
+                else {
+                return x*fact(x-1);
+                }
+            }
+        }
+        \end{lstlisting}
+        \end{minipage}
+        
+        Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+        
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        ======= ricorsione-diretta.sol:Factorial =======
+        Gas estimation:
+        construction:
+        93 + 42200 = 42293
+        external:
+        fact(uint256):	infinite
+        \end{lstlisting}
+        \end{minipage}
+
+        e
+    
+        \begin{lstlisting}
+        GASTAP: ../../bin/ethirweb   /tmp/ei_files0NMhje/noname1.sol  -entries  Factorial.fact:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml         
+        \end{lstlisting}
+
 
         \subsubsection{Ricorsione Indiretta}
         
+        Il seguente programma contiene uno schema di ricorsione \emph{indiretta}: il primo metodo, \verb|uno(uint n)| esegue una chiamata del secondo, \verb|due(uint n)|, che a sua volta richiama direttamente il primo.\newline
+        
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        ​​//ricorsione-indiretta.sol
+
+        pragma solidity ^0.4.19;
+
+        contract ricorsione_indiretta {
+
+            function uno(uint n) returns (uint m){
+                if (n < 1) {
+                    return 1;
+                } 
+                else {
+                    return due(n - 1); // chiamata di due 
+                }
+            }
+
+            function due(uint n) returns (uint m){
+                if (n < 0) {
+                    return 0;
+                }
+                else {
+                    return uno(n/2); // chiamata di uno 
+                }
+            }
+        }
+        \end{lstlisting}
+        \end{minipage}
+        
+        Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+        
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        ======= ricorsione-indiretta.sol:ricorsione_indiretta =======
+        Gas estimation:
+        construction:
+        117 + 68600 = 68717
+        external:
+        due(uint256):	infinite
+        uno(uint256):	infinite
+        \end{lstlisting}
+        \end{minipage}
+
+        e
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        GASTAP: ../../bin/ethirweb   /tmp/ei_filesa6ppD5/noname1.sol  -entries  ricorsione_indiretta.uno:uint256 ricorsione_indiretta.due:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml         
+        \end{lstlisting}
+        \end{minipage}
+
         \subsubsection{Ricorsione Multipla}
+        
+        Il seguente programma contiene un metodo, \verb|fib(uint x)| che calcola il numero di Fibonacci del parametro \verb|x|. Tale metodo implementa una ricorsione \emph{multipla} in quanto contiene più chiamate a sé stesso.\newline
+        
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        //ricorsione-multipla.sol
+
+        pragma solidity ^0.4.19;
+
+        contract Fibonacci {
+
+            function fib(uint x) returns (uint y) {
+            
+                if (x == 1 || x == 2) {
+                return 1;
+                }
+                
+                else {
+                return fib(x-1)+fib(x-2);
+                }
+            }
+        }
+        \end{lstlisting}
+        \end{minipage}
+        
+        Gli output ottenuti con solc e GASTAP sono, rispettivamente:
+        
+        \begin{minipage}{\linewidth}
+        \begin{lstlisting}
+        ======= ricorsione-multipla.sol:Fibonacci =======
+        Gas estimation:
+        construction:
+        99 + 46200 = 46299
+        external:
+        fib(uint256):	infinite
+        \end{lstlisting}
+        \end{minipage}
+
+        e
     
-\section{Risultati}
+        \begin{lstlisting}
+        GASTAP: ../../bin/ethirweb   /tmp/ei_filesVQtMmj/noname1.sol  -entries  Fibonacci.fib:uint256 -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml         
+        \end{lstlisting}
+        
+     
+    \newpage
+     
+    \subsection{Caso di studio: four-function.sol}
+    
+    Questo contratto contiene quattro funzioni pubbliche che si richiamano a vicenda. 
+    
+    \begin{minipage}{\linewidth}
+    \begin{lstlisting}
+    //four-function.sol
+
+    pragma solidity ^0.4.11;
+
+    contract Sum {
+
+        function suma () returns (uint sol) {
+            sol = 0;
+            for(uint i = 0; i < 5; i++)
+                    sol = sol+11;
+            hola();
+            adios(10);
+        }
+
+        function hola() {
+            uint i = 0;
+            i = i+15;
+        }
+
+        function adios(uint m) {
+            uint c = 14;
+            c = c+m;
+            comer(c);   
+        }
+
+        function comer(uint x) {
+            x = x*x;
+            hola();
+        }
+
+    }
+    \end{lstlisting}
+    \end{minipage}
+    
+    La Tabella \ref{tab:four-function-outputs} mostra i risultati di solc e GASTAP a confronto. Nonostante il programma contenga delle chiamate ad altri metodi, si differenzia dal caso precedente dove era presente la ricorsione multipla. In questo caso non si verificano cicli nel grafo delle chiamate di funzione, dunque \verb|four-function.sol| non è ricorsivo.
+    
+    \begin{table}[h]
+    \begin{center}
+    \begin{tabular}{p{5cm}cp{6cm}}  
+    \hline \hline
+    \bf metodo & \bf solc & \bf GASTAP \\
+    \hline
+    adios(uint256) & 314 & 9+305\\
+    comer(uint256) & 302 & 9+293\\
+    hola() & 226 & 9+217\\
+    suma() & infinite & 15+802\\
+    \hline \hline
+    \end{tabular}
+    \caption[Analisi di four-function.sol]{Risultati dell'analisi del contratto four-function.sol}\label{tab:four-function-outputs}
+    \end{center}
+    \end{table}
+    
+    Ciò che emerge è che nel caso di bound costanti i risultati dei due tool sono uguali. \`E da notare il caso della funzione \verb|suma()|: solc non è in grado di produrre un bound. Questo è dovuto alla presenza del ciclo for all'interno del corpo della funzione, insieme alla chiamata della funzione \verb|adios()|. Rimuovendo le relative linee di codice riusciamo infatti ad ottenere un bound.\newline
+    
+
+        \noindent
+    \begin{minipage}[t]{.5\linewidth}
+    \begin{lstlisting}
+    //four-function.sol:suma()
+        
+    function suma () returns (uint sol) {
+        sol = 0;
+        //for(uint i = 0; i < 5; i++)
+        //        sol = sol+11;
+        hola();
+        //adios(10);
+    }
+    \end{lstlisting}
+    \end{minipage}
+    \begin{minipage}[t]{.5\linewidth}
+    \begin{lstlisting}
+    === four-functions.sol:Sum ===
+    Gas estimation:
+    construction:
+    123 + 74600 = 74723
+    external:
+    adios(uint256):	314
+    comer(uint256):	302
+    hola():	226
+    suma():	275
+    \end{lstlisting}
+    \end{minipage}
 

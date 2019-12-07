@@ -28,12 +28,26 @@ Elvira Albert, Pablo Gordillo, Albert Rubio, and Ilya Sergey.
 \newblock Gastap: A gas analyzer for smart contracts.
 \newblock {\em CoRR}, abs/1811.10403, 2018.
 
+\bibitem{ausiello2003linguaggi}
+Giorgio Ausiello, Fabrizio d'Amore, and Giorgio Gambosi.
+\newblock {\em Linguaggi modelli complessit{\`a}}.
+\newblock F. Angeli, 2003.
+
+\bibitem{ethir-repository}
+costa group.
+\newblock Ethir: A framework for high-level analysis of ethereum bytecode,
+  2018.
+
 \bibitem{dai2017bitcoin}
 Fangfang Dai, Yue Shi, Nan Meng, Liang Wei, and Zhiguo Ye.
 \newblock From bitcoin to cybersecurity: A comparative study of blockchain
   application and security issues.
 \newblock In {\em 2017 4th International Conference on Systems and Informatics
   (ICSAI)}, pages 975--979. IEEE, 2017.
+
+\bibitem{infinite-gas-github-issue}
+denisglotov (https://github.com/denisglotov).
+\newblock Gas estimates infinite, 2018.
 
 \bibitem{ernst-ijcai97}
 Michael~D. Ernst, Todd~D. Millstein, and Daniel~S. Weld.
@@ -49,6 +63,11 @@ Ethereum.
 \bibitem{ethereum/solidity_2019}
 ethereum.
 \newblock The solidity contract-oriented programming language, 2019.
+
+\bibitem{gabbrielli2011linguaggi}
+Maurizio Gabbrielli and Simone Martini.
+\newblock {\em Linguaggi di programmazione: Principi e Paradigmi}.
+\newblock McGraw-Hill, 2011.
 
 \bibitem{grech2018madmax}
 Neville Grech, Michael Kong, Anton Jurisevic, Lexi Brent, Bernhard Scholz, and
@@ -70,15 +89,31 @@ Everett Hildenbrandt, Manasvi Saxena, Xiaoran Zhu, Nishant Rodrigues, Philip
 \newblock Kevm: A complete semantics of the ethereum virtual machine.
 \newblock Technical report, 2017.
 
+\bibitem{gas-costs-stack-exchange}
+Sergey~Potekhin (https://ethereum.stackexchange.com/users/4406/sergey
+  potekhin).
+\newblock How to get the cost (in gas) of the non-constant function call?,
+  2017.
+
 \bibitem{iansiti_lakhani_2017}
 Marco Iansiti and Karim~R Lakhani.
 \newblock The truth about blockchain.
 \newblock {\em Harvard Business Review}, 95(1):118--127, 2017.
 
+\bibitem{johnson2013don}
+Brittany Johnson, Yoonki Song, Emerson Murphy-Hill, and Robert Bowdidge.
+\newblock Why don't software developers use static analysis tools to find bugs?
+\newblock In {\em Proceedings of the 2013 International Conference on Software
+  Engineering}, pages 672--681. IEEE Press, 2013.
+
 \bibitem{KHAN2018395}
 Minhaj~Ahmad Khan and Khaled Salah.
 \newblock Iot security: Review, blockchain solutions, and open challenges.
 \newblock {\em Future Generation Computer Systems}, 82:395 -- 411, 2018.
+
+\bibitem{infinite-gas-stack-exchange}
+medvedev1088 (https://ethereum.stackexchange.com/users/18932/medvedev1088).
+\newblock Infinite gas estimation from solc for simple function, 2018.
 
 \bibitem{melastone-sc}
 melastone.

@@ -6,46 +6,51 @@
 \citation{dai2017bitcoin}
 \citation{iansiti_lakhani_2017}
 \@writefile{toc}{\contentsline {chapter}{Introduzione}{1}}
+\citation{daian2016dao}
 \citation{iansiti_lakhani_2017}
 \citation{nakamoto2008bitcoin}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Background}{5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Blockchain}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}La piattaforma Ethereum}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}La Ethereum Virtual Machine}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Gli smart contract}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Ethereum, gli Smart Contract e la EVM}{6}}
 \citation{ethereum/solidity_2019}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Ethereum, gli Smart Contract e la EVM}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Unit\IeC {\`a} di conto di Ethereum}}{7}}
+\newlabel{tab:eth-units}{{1.1}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Il ruolo del gas}{7}}
 \citation{wood2014ethereum}
-\@writefile{toc}{\contentsline {section}{\numberline {1.6}Il ruolo del gas}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces legenda elenco tabelle}}{8}}
-\newlabel{tab:gas-costs}{{1.1}{8}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Costi delle istruzioni della EVM}}{9}}
+\newlabel{tab:gas-costs}{{1.2}{9}}
+\citation{johnson2013don}
 \citation{ernst-ijcai97}
+\citation{ausiello2003linguaggi}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Analisi Statica}{11}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Analisi Statica vs. Analisi Dinamica}{11}}
 \citation{analisi-statica-unina}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Tecniche di Analisi Statica in Informatica}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}La compilazione}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Code Reading}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Code Reviews}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Walktrough}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Control Flow Analysis}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Data Flow Analysis}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}Esecuzione Simbolica}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Analisi Statica di Smart Contract}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Analisi Statica vs. Analisi Dinamica}{12}}
+\citation{gabbrielli2011linguaggi}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Tecniche di Analisi Statica in Informatica}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}La compilazione}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Tecniche Manuali}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{Code Reading}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{Code Reviews}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{Walktrough}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Tecniche Automatizzabili}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{Control Flow Analysis}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{Data Flow Analysis}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{Esecuzione Simbolica}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Analisi Statica di Smart Contract}{15}}
 \citation{grishchenko2018foundations}
 \citation{grech2018madmax}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Tool per l'Analisi}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Verificare le Propriet\IeC {\`a} di Sicurezza}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Tool per l'Analisi}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Verificare le Propriet\IeC {\`a} di Sicurezza}{16}}
 \citation{hildenbrandt2017kevm}
 \citation{albert2018ethir}
 \citation{}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Rappresentare il bytecode EVM}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Stimare i consumi di GAS}{17}}
 \citation{solidity-docs}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Rappresentare il bytecode EVM}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Stimare i consumi di GAS}{16}}
 \citation{DBLP:journals/corr/abs-1811-10403}
 \citation{solidity-docs}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Risultati Sperimentali}{19}}
@@ -54,59 +59,71 @@
 \citation{wood2014ethereum}
 \citation{ethereum/solidity_2019}
 \citation{grech2018madmax}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Il Problema del gas}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Stimare i Consumi di gas}{20}}
 \citation{DBLP:journals/corr/abs-1811-10403}
 \citation{melonproject/oyente}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Caratteristiche del Tool GASTAP}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Struttura del TOOL}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Struttura del Tool}{22}}
 \citation{albert2018ethir}
 \citation{10.1007/978-3-642-54862-8_46}
 \citation{wood2014ethereum}
 \citation{albert2008automatic}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Architettura di GASTAP}}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Struttura interna di GASTAP}}{23}}
 \newlabel{fig:gstp-struct}{{3.1}{23}}
+\citation{infinite-gas-github-issue,infinite-gas-stack-exchange,gas-costs-stack-exchange}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Interfaccia Web}{24}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Interfaccia di GASTAP}}{24}}
 \newlabel{fig:gstp-example}{{3.2}{24}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Compilatore solc}{25}}
 \citation{melastone-sc}
+\citation{ethir-repository}
 \citation{solidity-docs}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Test Condotti}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Caso di Studio: CryptoPhoenix.sol}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Operazioni di Assegnamento}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Costrutto for}{28}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Cicli for Annidati}{31}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces legenda elenco tabelle}}{32}}
-\newlabel{tab:nested-outputs}{{3.1}{32}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces nested15.sol in GASTAP}}{32}}
-\newlabel{fig:gstp-nested15}{{3.3}{32}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.5}Costrutto while}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{while.sol}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{sqrt.sol}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.6}Ricorsione}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{Ricorsione Diretta}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{Ricorsione Indiretta}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{Ricorsione Multipla}{33}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Risultati}{33}}
-\@writefile{toc}{\contentsline {chapter}{Conclusioni}{35}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Test Condotti}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Operazioni di Assegnamento}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Costrutto for}{27}}
+\@writefile{toc}{\contentsline {subsubsection}{loop1.sol}{28}}
+\@writefile{toc}{\contentsline {subsubsection}{loop2.sol}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Cicli for Annidati}{30}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Analisi di nested*.sol}}{31}}
+\newlabel{tab:nested-outputs}{{3.1}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces nested15.sol in GASTAP}}{31}}
+\newlabel{fig:gstp-nested15}{{3.3}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Costrutto while}{32}}
+\@writefile{toc}{\contentsline {subsubsection}{while1.sol}{32}}
+\@writefile{toc}{\contentsline {subsubsection}{while2.sol}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.5}Ricorsione}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{Ricorsione Diretta}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{Ricorsione Indiretta}{36}}
+\@writefile{toc}{\contentsline {subsubsection}{Ricorsione Multipla}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.6}Caso di studio: four-function.sol}{40}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Analisi di four-function.sol}}{42}}
+\newlabel{tab:four-function-outputs}{{3.2}{42}}
+\@writefile{toc}{\contentsline {chapter}{Conclusioni}{43}}
 \bibdata{bibliografia}
 \bibcite{10.1007/978-3-642-54862-8_46}{1}
 \bibcite{albert2008automatic}{2}
 \bibcite{albert2018ethir}{3}
 \bibcite{DBLP:journals/corr/abs-1811-10403}{4}
-\bibcite{dai2017bitcoin}{5}
-\bibcite{ernst-ijcai97}{6}
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{37}}
-\bibcite{solidity-docs}{7}
-\bibcite{ethereum/solidity_2019}{8}
-\bibcite{grech2018madmax}{9}
-\bibcite{grishchenko2018foundations}{10}
-\bibcite{hildenbrandt2017kevm}{11}
-\bibcite{iansiti_lakhani_2017}{12}
-\bibcite{KHAN2018395}{13}
-\bibcite{melastone-sc}{14}
-\bibcite{melonproject/oyente}{15}
-\bibcite{nakamoto2008bitcoin}{16}
-\bibcite{analisi-statica-unina}{17}
-\bibcite{wood2014ethereum}{18}
+\bibcite{ausiello2003linguaggi}{5}
+\bibcite{ethir-repository}{6}
+\bibcite{dai2017bitcoin}{7}
+\bibcite{infinite-gas-github-issue}{8}
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{45}}
+\bibcite{ernst-ijcai97}{9}
+\bibcite{solidity-docs}{10}
+\bibcite{ethereum/solidity_2019}{11}
+\bibcite{gabbrielli2011linguaggi}{12}
+\bibcite{grech2018madmax}{13}
+\bibcite{grishchenko2018foundations}{14}
+\bibcite{hildenbrandt2017kevm}{15}
+\bibcite{gas-costs-stack-exchange}{16}
+\bibcite{iansiti_lakhani_2017}{17}
+\bibcite{johnson2013don}{18}
+\bibcite{KHAN2018395}{19}
+\bibcite{infinite-gas-stack-exchange}{20}
+\bibcite{melastone-sc}{21}
+\bibcite{melonproject/oyente}{22}
+\bibcite{nakamoto2008bitcoin}{23}
+\bibcite{analisi-statica-unina}{24}
+\bibcite{wood2014ethereum}{25}
 \bibstyle{plain}

@@ -6,45 +6,45 @@ Database file #1: bibliografia.bib
 Warning--I didn't find a database entry for ""
 Warning--empty institution in hildenbrandt2017kevm
 Warning--empty journal in nakamoto2008bitcoin
-You've used 18 entries,
+You've used 25 entries,
             2118 wiz_defined-function locations,
-            597 strings with 7225 characters,
-and the built_in function-call counts, 6650 in all, are:
-= -- 651
-> -- 347
-< -- 6
-+ -- 138
-- -- 118
-* -- 437
-:= -- 1078
-add.period$ -- 55
-call.type$ -- 18
-change.case$ -- 111
+            630 strings with 8292 characters,
+and the built_in function-call counts, 8498 in all, are:
+= -- 821
+> -- 429
+< -- 7
++ -- 171
+- -- 144
+* -- 524
+:= -- 1376
+add.period$ -- 73
+call.type$ -- 25
+change.case$ -- 143
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 245
-empty$ -- 505
-format.name$ -- 118
-if$ -- 1422
+cite$ -- 27
+duplicate$ -- 320
+empty$ -- 678
+format.name$ -- 144
+if$ -- 1826
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 12
-newline$ -- 89
-num.names$ -- 38
-pop$ -- 143
+int.to.str$ -- 25
+missing$ -- 17
+newline$ -- 120
+num.names$ -- 52
+pop$ -- 208
 preamble$ -- 1
-purify$ -- 92
+purify$ -- 119
 quote$ -- 0
-skip$ -- 201
+skip$ -- 264
 stack$ -- 0
-substring$ -- 361
-swap$ -- 74
-text.length$ -- 6
+substring$ -- 428
+swap$ -- 91
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 96
 warning$ -- 2
-while$ -- 61
-width$ -- 20
-write$ -- 191
+while$ -- 78
+width$ -- 27
+write$ -- 255
 (There were 3 warnings)

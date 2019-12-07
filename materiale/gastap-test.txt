@@ -94,13 +94,12 @@
   Che cosa accade incrementando il livello di annidamento?
     solc: infinito (per ogni liv > 0)
     GASTAP:
+      - liv == 1 -> 15+ (20508+70*nat(a))
       - liv == 2 -> 15+ (20548+70*nat(a)+20276*nat(a))
       - liv == 3 -> 15+ (20588+70*nat(a)+20276*nat(a)+20276*nat(a))
       - liv == 4 -> 15+ (20628+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))
       ....
       - liv == 10 -> 15+ (20908+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))
-        N.B. se lanciamo GASTAP direttamente su un programma che contiene 10 cicli non determina alcun bound.
-        Produce il seguente output:  ../../bin/ethirweb   /tmp/ei_files9WLXVu/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
       ...
       - liv == 14 -> 15+ (21028+70*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a)+20276*nat(a))
       - liv == 15 -> null
@@ -109,8 +108,36 @@
 }
 
 
+
+% ciclo while
+/ while1.sol {
+
+GASTAP: 9+ (209+20271*nat(a))
+solc: 5093 + 37600 = 42693 (construction)
+
+~init(uint256)
+GASTAP: 9+ (209+20271*nat(a))
+solc:	infinite
+
+}
+
+
+
+% ciclo while
+/ while2.sol  {
+  calcola la radice quadrata.
+  While. Sconsigliano l'uso in quanto consuma elevate qtà di gas!
+
+  GASTAP: Exception: error(existence_error(procedure,evm_solver:non_terminating/2),context(evm_solver:print_ub/4,_G28))
+  solc: infinite
+
+}
+
+
+
+
   % ricorsione diretta
-/ factorial.sol {
+/ ricorsione-diretta.sol {
 
   GASTAP: ../../bin/ethirweb   /tmp/ei_filessNlmMy/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
   solc: 93 + 42200 = 42293 (construction)
@@ -143,7 +170,7 @@
 
 
   % ricorsione multipla
-/ fibonacci-mul.sol {
+/ ricorsione-multipla.sol {
 
   GASTAP: ../../bin/ethirweb   /tmp/ei_filesBg9Aac/noname1.sol  -entries  -type_file  solidity  > /dev/null ; cat /tmp/costabs/output.xml
   solc: 99 + 45600 = 45699 (construction)
@@ -170,31 +197,6 @@
 
 }
 
-
-
-  % ciclo while
-/ sqrt.sol  {
-  calcola la radice quadrata.
-  While. Sconsigliano l'uso in quanto consuma elevate qtà di gas!
-
-  GASTAP: Exception: error(existence_error(procedure,evm_solver:non_terminating/2),context(evm_solver:print_ub/4,_G28))
-  solc: infinite
-
-}
-
-
-
-  % ciclo while
-/ while.sol {
-
-  GASTAP: 9+ (209+20271*nat(a))
-  solc: 5093 + 37600 = 42693 (construction)
-
-  ~init(uint256)
-  GASTAP: 9+ (209+20271*nat(a))
-  solc:	infinite
-
-}
 
 
   % caso di studio

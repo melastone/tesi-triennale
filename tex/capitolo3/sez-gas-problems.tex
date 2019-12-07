@@ -1,4 +1,4 @@
-\section{Il Problema del gas}
+\section{Stimare i Consumi di gas}
 
 
 	\textbf{Perchè stimare i consumi di gas è importante?}\newline
@@ -9,15 +9,15 @@
 	ad es. Solidity \cite{ethereum/solidity_2019}), è difficile per lo sviluppatore conoscere i 
 	costi del proprio programma durante la fase di sviluppo. Per di più la traduzione 
 	dei costrutti di alto livello in bytecode fa sì che stimare i constumi tramite l'analisi 
-	statica sia una sfida non triviale. Tuttavia l'impiego dell'analisi statica si rende indispensabile, in quanto il costo totale in gas richiesto per eseguire un programma dipende anche da altri fattori.\newline
+	statica sia una sfida non triviale. L'impiego dell'analisi statica si rende indispensabile, in quanto il costo totale in gas richiesto per eseguire un programma dipende anche da altri fattori.\newline
 	\indent Semplificando potremmo dire che i costi totali dipendono da:
 	\begin{enumerate}
 	\item il costo intrinseco di ciascuna istruzione di basso livello; questi valori sono fissati (vedi Tabella \ref{tab:gas-costs}).
-	\item i costi determinati dalla creazione di un contratto o dalla chiamata di un altro programma. Questi sono determinati dalle istruzioni CREATE , CALL and CALLCODE.
+	\item i costi determinati dalla creazione di un contratto o dalla chiamata di un altro programma. Questi sono determinati dalle istruzioni \texttt{CREATE} , \texttt{CALL} and \texttt{CALLCODE}.
 	\item eventuali costi aggiunti, che vengono addebitati nel caso in cui la memoria richiesta dal programma superi una certa soglia.
 	\end{enumerate}
 
-	Mentre alcuni di questi valori possono essere facilmente previsti, altri possono essere determinati soltanto durante l'esecuzione del contratto. A sopperire a questa difficoltà entra in gioco l'analisi statica: soltanto delle tecniche precise ci permettono di stimare questi valori, poichè ci permettono di calcolare in anticipo quali ``sorprese'' riserverà il codice durante la sua esecuzione.\newline
+	Mentre alcuni di questi valori possono essere facilmente stimati, altri possono essere determinati soltanto durante l'esecuzione del contratto. Un modo per sopperire a questa difficoltà è l'analisi statica: soltanto delle tecniche precise ci permettono di stimare questi valori, poichè ci permettono di calcolare in anticipo quali ``sorprese'' riserverà il codice durante la sua esecuzione.\newline
 	\indent Dal momento che il gas viene pagato anticipatamente, può succedere che durante la sua
 	esecuzione un programma ecceda la quantità che ha a disposizione. Come conseguenza, la EVM
 	sollleva un'eccezione di tipo \textit{out-of-gas} e abortisce la transazione. Un contratto
@@ -28,9 +28,8 @@
 	blocco della transazione: la computazione non giunge a termine, l'utente non ottiene il
 	risultato desiderato e l'ether pagato per il gas va perso.\newline
 	\indent Un altro limite all'esecuzione dei contratti è dovuto al protocollo adottato da Ethereum.
-	Questo infatti impone un limite superiore alla quantità di gas che è possibile consumare
-	a ciascun blocco creato. Dal momento che le transazioni vengono raggruppate in blocchi,
-	tale limite influenza anche l'esecuzione dei singoli programmi. Può succedere infatti che
+	Questo infatti pone un limite superiore alla quantità di gas che ciascun blocco può consumare. Dal momento che le transazioni vengono raggruppate in blocchi,
+	tale limite influenza anche queste: il costo di ciascuna transazione non può superare il limite superiore del blocco al quale appartiene. Può succedere infatti che
 	se l'esecuzione di una certa funzione aumenta nel tempo, ad un certo punto non sia
 	più possibile portarla avanti a causa del superamento del limite massimo di gas.
 	Conoscere a priori i consumi può aiutare anche ad evitare questo tipo di errori.\newline

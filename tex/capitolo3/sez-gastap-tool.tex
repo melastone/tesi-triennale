@@ -6,20 +6,20 @@ GASTAP (acronimo per Gas-Aware Smart contracT Analysis Platform ~\cite{DBLP:jour
 Dal punto di vista degli sviluppatori e dei proprietari un buon tool di analisi serve a conoscere la quantità di gas necessaria per eseguire in modo \textit{sicuro} il programma, garantendone la proprietà di liveness. Un altro beneficio è quello di poter determinare quante unità di gas investire per eseguire con successo una callback nei casi in cui uno smart contract si appoggi ad un servizio esterno.
 Dal punto di vista degli attaccanti invece è possibile stimare quanto Ether è necessario investire per eseguire un attacco DoS, sebbene tali quantità siano svantaggiose dal punto di vista economico, rendendo poco invitante l'alternativa di compromettere uno smart contract.\newline
 
-    \subsection{Struttura del TOOL}
+    \subsection{Struttura del Tool}
     
-    Per implementare ciascuna dele operazioni elencate sopra GASTAP si appoggia ad altri tool open-source. Questi, grazie a degli adattamenti, vengono utilizzati in sequenza al fine di realizzare l'architettura rappresentata in figura \ref{fig:gstp-struct}.\newline 
+    Per implementare ciascuna dele operazioni elencate sopra GASTAP si appoggia ad altri tool open-source. Questi, grazie a degli adattamenti, vengono utilizzati in sequenza al fine di realizzare l'architettura rappresentata in Figura \ref{fig:gstp-struct}.\newline 
     
     \begin{figure}[h]
         \centering
         \includegraphics[scale=0.5]{GASTAP-structure.png}
-        \caption{Architettura di GASTAP}
+        \caption[Struttura interna di GASTAP]{Architettura di GASTAP}
         \label{fig:gstp-struct}
     \end{figure}
     
     \begin{enumerate}
-        \item \textbf{costruzione dei grafi control-flow (CFG)}: tale passaggio è realizzato con \textsc{oyente*}, un'estensione di ~\cite{melonproject/oyente}.
-        \item \textbf{decompilazione del codice di basso livello}: in questa fase il bytecode viene tradotto in una RBR (\textit{Rule-Based Representation}) grazie ad \textsc{ethir*}, estensione del già citato ~\cite{albert2018ethir}.
+        \item \textbf{costruzione dei grafi control-flow (CFG)}: tale passaggio è realizzato con \textsc{oyente*}, un'estensione dell'omonimo tool \textsc{oyente} ~\cite{melonproject/oyente}.
+        \item \textbf{decompilazione del codice di basso livello}: in questa fase il bytecode viene tradotto in una RBR (\textit{Rule-Based Representation}) grazie ad \textsc{ethir*}, estensione del già citato \textsc{ethir} ~\cite{albert2018ethir}.
         \item \textbf{deduzione delle relazioni di grandezza}: questo passaggio consiste nell'associare a ciascuna delle istruzioni in forma RBR le dimensioni dei dati con i quali interagisce. Quest'operazione è indispensabile per poter costruire le equazioni necessarie a calcolare i bound, e viene realizzata dal tool SACO ~\cite{10.1007/978-3-642-54862-8_46}, che produce le così dette SR (\textit{Size Relations}).
         \item \textbf{generazione delle equazioni di gas}: costituisce il core di GASTAP. Al fine di produrre le equazioni, il tool utilizza le SR insieme alla codifica dei costi delle istruzioni EVM, secondo le specifiche di \cite{wood2014ethereum}. Questi vengono suddivisi tra i costi richiesti dall'esecuzione del bytcode (\textit{Opcode Gas Cost}) e quelli richiesti per l'uso della memoria (\textit{Memory Gas Cost}). 
         \item \textbf{risoluzione delle equazioni fino a formare un bound}: per produrre il risultato finale GASTAP utilizza il solver PUBS ~\cite{albert2008automatic}, che risolve le GE (\textit{Gas Equations}) producendo una formula chiusa dei costi in termini di gas. 
@@ -33,7 +33,7 @@ Dal punto di vista degli attaccanti invece è possibile stimare quanto Ether è 
     \begin{figure}[h]
         \centering
         \includegraphics[scale=0.3]{GASTAP-example.png}
-        \caption{Interfaccia di GASTAP}
+        \caption[Interfaccia di GASTAP]{Interfaccia di GASTAP}
         \label{fig:gstp-example}
     \end{figure}
     

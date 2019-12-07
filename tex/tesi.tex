@@ -101,13 +101,15 @@ Corso di Laurea in Informatica }}
 \end{center}
 \vspace{15mm}
 \begin{center}
-{\LARGE{\bf Stimare i Consumi di Gas}}\\
+{\LARGE{\bf Analisi Statica }}\\
 \vspace{3mm}
-{\LARGE{\bf nell'Esecuzione di Smart Contract}}\\
+{\LARGE{\bf di Smart Contract in Ethereum:}}\\
 \vspace{3mm}
-{\LARGE{\bf in Ethereum}}\\
+{\LARGE{\bf Stimare i Consumi di Gas }}\\
 \end{center}
 \vspace{40mm}
+
+  
 
 \par
 \noindent
@@ -121,7 +123,9 @@ Ugo Dal Lago}}
 {\large{\bf Presentata da:\\
 Melania Ghelli}}
 \end{minipage}
+
 \vspace{20mm}
+
 \begin{center}
 {\large{\bf Sessione II\\%inserire il numero della sessione in cui ci si laurea
 Anno Accademico 2018-2019 }}%inserire l'anno accademico a cui si è iscritti
@@ -153,13 +157,14 @@ anche nulla \ldots  %\ldots lascia tre puntini
 
 \tableofcontents                        %crea l'indice
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%imposta l'intestazione di pagina
+%imposta l'intestazione di pagina
 \rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries
 INDICE}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
-\clearpage{\pagestyle{empty}\cleardoublepage}
+\listoffigures                     %crea l'elenco delle figure
+
+\listoftables                      %crea l'elenco delle tabelle
 
 
 \chapter*{Introduzione}            
@@ -202,63 +207,6 @@ INTRODUZIONE}}
 
 \input{./capitolo3/capitolo3}
 
-%\listoffigures                          %crea l'elenco delle figure
-
-%\listoftables                           %crea l'elenco delle tabelle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
-%\clearpage{\pagestyle{empty}\cleardoublepage}
-
-
-%\begin{figure}[h]                       %crea l'ambiente figura; [h] sta
-                                        %   per here, cioè la figura va qui
-%\begin{center}                          %centra nel mezzo della pagina
-                                        %   la figura
-%\includegraphics[width=5cm]{figura.eps}%inserisce una figura larga 5cm
-                                        %se si vuole usare va scommentata
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%inserisce la legenda ed etichetta
-                                        %   la figura con \label{fig:prima}
-%\caption[legenda elenco figure]{legenda sotto la figura}\label{fig:prima}
-%\end{center}
-%\end{figure}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ELENCHI
-
-%Ora vediamo un elenco numerato:         %crea un elenco numerato
-%\begin{enumerate}
-%\item primo oggetto
-%\item secondo oggetto
-%\item terzo oggetto
-%\item quarto oggetto
-%\end{enumerate}
-
-%Ora vediamo un elenco puntato:
-%\begin{itemize}                         %crea un elenco puntato
-%\item primo oggetto
-%\item secondo oggetto
-%\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%crea una sottosezione
-%\subsection{Altra SottoSezione}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%crea una sottosottosezione
-%\subsubsection{SottoSottoSezione}Questa sottosottosezione non viene
-%numerata, ma \`e solo scritta in grassetto.
-
-%\section{Altra Sezione}                 %crea una sottosezione
-
-%\section{Altra Sezione}\label{sec:prova}%posso mettere le label anche
-                                        %   alle section
-%\subsection{Listati dei programmi}
-%\subsubsection{Primo Listato}
-%\begin{verbatim}
-%        In questo ambiente     posso scrivere      come voglio,
-%lasciare gli spazi che voglio e non % commentare quando voglio
-%e ci sarà scritto tutto.
-%Quando lo uso è meglio che disattivi il Wrap del WinEdt
-%\end{verbatim}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
@@ -283,6 +231,7 @@ CONCLUSIONI}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
+\end{chapter}
 
 %\appendix                               %imposta le appendici
 
