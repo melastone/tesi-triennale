@@ -1,6 +1,6 @@
 
 Lo scopo di questo capitolo è quello di riassumere gli esperimenti condotti e illustrare i relativi risultati.\newline
-\indent Una volta individuati i tool capaci di determinare bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per studiare la potenza espressiva del software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
+\indent Una volta individuati i tool capaci di determinare bound espliciti ai consumi di gas si è testato il loro comportamento su input diversi. Per studiare la potenza espressiva dei software, i programmi in input sono stati scelti in modo da testare diversi costrutti base messi a disposizione dal linguaggio Solidity.\newline
 \indent I test sono stati condotti con il tool GASTAP e con il compilatore solc, ad oggi gli unici capaci di produrre dei bound ai consumi di gas per gli smart contract di Ethereum. Per quanto riguarda il primo gli sviluppatori hanno fornito i dettagli della sua implementazione, documentando in che modo venga condotta la loro analisi. Conoscere le tecniche utilizzate ha permesso di dedurre alcune proprietà del tool e dell'analisi di smart contract in generale. Dall'altro lato la documentazione  del compilatore solc ~\cite{solidity-docs} tratta l'analisi del gas in modo superficiale. Tuttavia il suo impiego nei test condotti ci ha permesso di confrontare i risultati di GASTAP, in modo da considerare l'analisi degli smart contract in chiave critica.\newline
 
 \newpage
@@ -22,6 +22,7 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \subsection{Operazioni di Assegnamento}
     
     I programmi \verb|assignment*.sol| implementano dei contratti che contengono un numero arbitrario di operazioni di assegnamento.
+    
     
     \noindent
     \begin{minipage}[t]{.5\linewidth}
@@ -82,7 +83,7 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \end{center}
 
     
-    Tale incremento è dato dalla presenza nel codice EVM dell'istruzione SSTORE (vedi Tabella \ref{tab:gas-costs}. Si evince dunque che la semplice operazione di settare il valore di una variabile da 0 ad uno diverso da 0 ha un impatto notevole sulla performance del programma in termini di costi. Un caso simile si era verificato nel caso del programma \verb|example.sol|.
+    Tale incremento è dato dalla presenza nel codice EVM dell'istruzione \texttt{SSTORE} (vedi Tabella \ref{tab:gas-costs}). Si evince dunque che la semplice operazione di settare il valore di una variabile da 0 ad uno diverso da 0 ha un impatto notevole sulla performance del programma in termini di costi. Un caso simile si era verificato nel caso del programma \verb|example.sol|.
 
     \subsection{Costrutto for}
     
@@ -292,9 +293,10 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \end{minipage}
 
     
-    e
-    
-    \verb|GASTAP: 9+ (209+20271*nat(a))|
+    e 
+    \begin{lstlisting} 
+    GASTAP: 9+ (209+20271*nat(a))
+    \end{lstlisting}
     
     \subsubsection{while2.sol}
     
@@ -336,10 +338,12 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
     \end{minipage}
 
     
-    e
-    
-    \verb|GASTAP: evm_solver:non_terminating|
+    e 
+    \begin{lstlisting} 
+    GASTAP: evm_solver:non_terminating
+    \end{lstlisting}
 
+    
     \newpage
 
     \subsection{Ricorsione}
@@ -398,7 +402,7 @@ La nostra analisi è stata condotta su un insieme di programmi scritti in Solidi
         
         \begin{minipage}{\linewidth}
         \begin{lstlisting}
-        ​​//ricorsione-indiretta.sol
+        //ricorsione-indiretta.sol
 
         pragma solidity ^0.4.19;
 

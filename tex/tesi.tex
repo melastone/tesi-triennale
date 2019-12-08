@@ -43,12 +43,13 @@
 %libreria per inserire il codice
 \usepackage{listings, xcolor}
 
-\lstdefinestyle{cmd-line}{
+\lstset{
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,         
-    breaklines=true,
-    escapeinside={(*@}{@*)}
+    breaklines=true
 }
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%libreria per utilizzare font particolari ad esempio  \textsc{}
 %\usepackage{newlfont}
@@ -134,24 +135,24 @@ Anno Accademico 2018-2019 }}%inserire l'anno accademico a cui si è iscritti
 \end{titlepage}
 
 %scrivo la dedica
-\begin{titlepage}   %ambiente libero da vincoli
+%\begin{titlepage}   %ambiente libero da vincoli
 
 
-\thispagestyle{empty}   %elimina il numero della pagina
-\topmargin=6.5cm 
-\raggedleft %incolonna la scrittura a destra
-\large  %aumenta la grandezza del carattere a 14pt
-\em %emfatizza (corsivo) il carattere
+%\thispagestyle{empty}   %elimina il numero della pagina
+%\topmargin=6.5cm 
+%\raggedleft %incolonna la scrittura a destra
+%\large  %aumenta la grandezza del carattere a 14pt
+%\em %emfatizza (corsivo) il carattere
 
-Questa \`e la \textsc{Dedica}:\\
-ognuno pu\`o scrivere quello che vuole, \\
-anche nulla \ldots  %\ldots lascia tre puntini
+%Questa \`e la \textsc{Dedica}:\\
+%ognuno pu\`o scrivere quello che vuole, \\
+%anche nulla \ldots  %\ldots lascia tre puntini
 
-\newpage
+%\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage{\pagestyle{empty}\cleardoublepage}
-\end{titlepage}
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+%\end{titlepage}
 
 \pagenumbering{roman}                   %serve per mettere i numeri romani
 
@@ -164,8 +165,13 @@ INDICE}}
 
 \listoffigures                     %crea l'elenco delle figure
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \listoftables                      %crea l'elenco delle tabelle
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \chapter*{Introduzione}            
 \pagenumbering{arabic}
@@ -222,7 +228,9 @@ CONCLUSIONI}]{\fancyplain{}{\bfseries\thepage}}
 CONCLUSIONI}}
 
 %aggiunge la voce Conclusioni nell'indice
-\addcontentsline{toc}{chapter}{Conclusioni} 
+\addcontentsline{toc}{chapter}{Conclusioni}
+
+\input{./conclusioni/conclusioni}
 
 %imposta l'intestazione di pagina
 %\renewcommand{\chaptermark}[1]{\markright{\thechapter \ #1}{}}
@@ -230,8 +238,6 @@ CONCLUSIONI}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%non numera l'ultima pagina sinistra
 \clearpage{\pagestyle{empty}\cleardoublepage}
-
-\end{chapter}
 
 %\appendix                               %imposta le appendici
 
@@ -257,8 +263,8 @@ CONCLUSIONI}}
 %{\fancyplain{}{\bfseries\thepage}}
 
 
-\rhead[\fancyplain{}{\bfseries \leftmark}]{\fancyplain{}{\bfseries
-\thepage}}
+\rhead[\fancyplain{}{\leftmark}]{\fancyplain{}{\thepage}}
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\rightmark}}
 
 %aggiunge la voce Bibliografia nell'indice
 \addcontentsline{toc}{chapter}{Bibliografia}

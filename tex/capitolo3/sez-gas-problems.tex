@@ -17,7 +17,7 @@
 	\item eventuali costi aggiunti, che vengono addebitati nel caso in cui la memoria richiesta dal programma superi una certa soglia.
 	\end{enumerate}
 
-	Mentre alcuni di questi valori possono essere facilmente stimati, altri possono essere determinati soltanto durante l'esecuzione del contratto. Un modo per sopperire a questa difficoltà è l'analisi statica: soltanto delle tecniche precise ci permettono di stimare questi valori, poichè ci permettono di calcolare in anticipo quali ``sorprese'' riserverà il codice durante la sua esecuzione.\newline
+	Mentre alcuni di questi valori possono essere facilmente stimati, altri possono essere determinati soltanto durante l'esecuzione del contratto. Un modo per sopperire a questa difficoltà è l'analisi statica: soltanto delle tecniche precise ci permettono di stimare questi valori, poichè consentono di calcolare in anticipo quali ``sorprese'' riserverà il codice durante la sua esecuzione.\newline
 	\indent Dal momento che il gas viene pagato anticipatamente, può succedere che durante la sua
 	esecuzione un programma ecceda la quantità che ha a disposizione. Come conseguenza, la EVM
 	sollleva un'eccezione di tipo \textit{out-of-gas} e abortisce la transazione. Un contratto
@@ -35,7 +35,7 @@
 	Conoscere a priori i consumi può aiutare anche ad evitare questo tipo di errori.\newline
 	\indent Va inoltre considerato che se l'utente della rete ha modo di conoscere il costo
 	di una computazione nel suo caso pessimo, ha anche modo di confrontare fra di loro dei programmi
-	semanticamente equivalenti, al fine di prediligere quello che consuma meno gas.  In questo 
+	semanticamente equivalenti, al fine di prediligere quello che consuma meno.  In questo 
 	senso la stima dei costi di gas costituirebbe l'uinica fonte di risparmio: considerato
 	che le transazioni sotto una certa soglia di \textit{gasPrice} rischiano di non essere 
 	accettate dai miner, i committenti non hanno margine di risparmio.\newline

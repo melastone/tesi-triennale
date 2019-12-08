@@ -2,7 +2,7 @@ L'analisi statica è un processo di valutazione della correttezza dei programmi 
 \indent L'analisi statica solitamente è il primo controllo che viene effettuato sul codice durante lo sviluppo del programma.
 % Perchè l'analisi statica non è common practice?
 I vantaggi apportati da questo tipo di controllo del codice sono numerosi. I bug possono essere individuati per tempo, evitando comportamenti inaspettati da parte dei programmi. Inoltre, a seconda del tool utilizzato, è possibile migliorare il codice dal punto di vista della leggibilità, della strutturazione o della performance.\newline
-\indent Tuttavia l'analisi statica resta una pratica poco diffusa tra gli sviluppatori \cite{johnson2013don}. Le principali cause sono da ricondursi agli output prodotti dai tool di analisi: l'elevato numero di warning così come la presenza di falsi positivi rendono gli strumenti meno affidabili. Oltre a questo gran parte degli informatici afferma di non utilizzare questi tool di verifica a causa del sovraccarico di lavoro: spesso i ritmi di lavoro così come la scarsa collaborazione dei team di sviluppo fanno sì che non ci siano i presupposti per dedicare spazio sufficiente all'analisi del codice.\newline
+\indent Tuttavia l'analisi statica resta una pratica poco diffusa tra gli sviluppatori \cite{johnson2013don}. Le principali cause sono da ricondursi agli output prodotti dai tool di analisi: l'elevato numero di warning così come la presenza di falsi positivi rendono gli strumenti meno affidabili. Oltre a questo, gran parte degli informatici afferma di non utilizzare questi tool di verifica a causa del sovraccarico di lavoro: spesso i ritmi aziendali così come la scarsa collaborazione dei team di sviluppo fanno sì che non ci siano i presupposti per dedicare spazio sufficiente all'analisi del codice.\newline
 
 
 \section{Analisi Statica vs. Analisi Dinamica}
@@ -14,7 +14,7 @@ Rientrano in questa categoria la verifica formale dei programmi e le ottimizzazi
 % - le proprietà sono indecidibili
 % - vogliamo la soundness
 La ragione di questo comportamento è legata alle proprietà che ci poniamo di verificare: la terminazione di un programma, ad esempio, è di per sè una proprietà indecidibile. \'E dimostrato matematicamente che non esiste alcun metodo di analisi statica che sia al tempo stesso \emph{corretto} e \emph{completo} e che non sia limitato dalle risorse che utilizza (es. memoria, tempo)\footnote{Questo risultato è dato dal Teorema di Rice} ~\cite{ausiello2003linguaggi}. Dunque, per ottenere degli strumenti realmente utili, siamo costretti a rinunciare alla completezza dell'analisi, preferendo dei risultati che siano corretti. Ci accontentiamo di strumenti che producono risultati approssimati, talvolta anche diversi da quelli attesi.\newline
-\indent Dall'altro lato l'analisi dinamica identifica quei controlli che possono essere effettuati sul programma soltanto durante la sua esecuzione, che sia su un processore reale o virtuale. Il software testing rientra in questa categoria. Per condurre questo tipo di controllo è necessario fornire un input ben preciso e analizzare poi il comportamento del programma. Occorre inoltre stabilire a priori \emph{che cosa} si vuole misurare. Sebbene questa analisi sia più veloce rispetto alla prima, non garantisce la stessa correttezza. Per essere rigorosa infatti l'analisi dinamica dovrebbe coprire ogni possibile configurazione del programma.\\
+\indent L'analisi dinamica identifica quei controlli che possono essere effettuati sul programma soltanto durante la sua esecuzione, che sia su un processore reale o virtuale. Il software testing rientra in questa categoria. Per condurre questo tipo di controllo è necessario fornire un input ben preciso e analizzare poi il comportamento del programma. Occorre inoltre stabilire a priori \emph{che cosa} si vuole misurare. Sebbene questa analisi sia più veloce rispetto alla prima, non garantisce la stessa correttezza. Per essere rigorosa infatti l'analisi dinamica dovrebbe coprire ogni possibile configurazione del programma.\\
 
 
 \section{Tecniche di Analisi Statica in Informatica}
@@ -24,13 +24,13 @@ Le tecniche di analisi possono essere suddivise in due tipologie in base ai risu
 % Espandiamo la sezione
 % Differenziamo le tecniche manuali da quelle automatizzabili
 
-    \subsection{La compilazione}
+    \subsection{La Compilazione}
     
     % Spieghiamo in dettaglio che per essere eseguita la compilazione richiede un po' di analisi
 
-    Tutti i compilatori per eseguire la traduzione del codice dorgente in codice oggetto applicano l'analisi statica. L'operazione di compilazione, intesa come \emph{traduzione automatica}, può essere suddivisa in due macro-fasi: dal codice sorgente alla generazione della forma intermedia, e dalla forma intermedia al codice oggetto, il prodotto finale. La prima fase è quella che fa più utilizzo di analisi statica; il compilatore esegue in sequenza delle trasformazioni sul codice, chiamate analisi lessicale, sintattica e semantica. \`E durante quest'ultimo passaggio che il programma viene sottoposto ai controlli relativi ai vincoli del linguaggio ~\cite{gabbrielli2011linguaggi}: si controllano le dichiarazioni delle variabili, la coerenza dei tipi, il numero dei parametri delle funzioni ecc. 
+    Tutti i compilatori per eseguire la traduzione del codice dorgente in codice oggetto applicano l'analisi statica. L'operazione di compilazione, intesa come \emph{traduzione automatica}, può essere suddivisa in due macro-fasi: dal codice sorgente alla generazione della forma intermedia, e dalla forma intermedia al codice oggetto, cioè il prodotto finale. La prima fase è quella che fa più utilizzo di analisi statica; il compilatore esegue in sequenza delle trasformazioni sul codice, chiamate analisi lessicale, sintattica e semantica. \`E durante quest'ultimo passaggio che il programma viene sottoposto ai controlli relativi ai vincoli del linguaggio ~\cite{gabbrielli2011linguaggi}: si controllano le dichiarazioni delle variabili, la coerenza dei tipi, il numero dei parametri delle funzioni ecc. 
     In generale questi controlli variano a seconda del linguaggio di programmazione.\newline
-    La compilazione dunque non costituisce una vera e propria tecnica, ma piuttosto un tipo di controllo sul codice che non può essere risparmiato.\newline
+    \indent La compilazione dunque non costituisce una vera e propria tecnica, ma piuttosto un tipo di controllo sul codice che non può essere risparmiato.\newline
     
     \subsection{Tecniche Manuali}
     
@@ -46,7 +46,7 @@ Le tecniche di analisi possono essere suddivise in due tipologie in base ai risu
 
         \subsubsection{Walktrough}
 
-        Molto simile alla tecnica di precedente nelle modalità in cui viene effettuata, poiché prevede la riunione di un gruppo di persone. Differisce negli obiettivi: cerca di trovare dei difetti nel comportamento del programma, e per farlo simula l'esecuzione del codice a mano.\newline
+        Molto simile alla tecnica precedente per le modalità in cui viene effettuata, poiché prevede la riunione di un gruppo di persone. Differisce negli obiettivi: cerca di trovare dei difetti nel comportamento del programma, e per farlo simula l'esecuzione del codice a mano.\newline
         
     \subsection{Tecniche Automatizzabili}
     
@@ -54,7 +54,7 @@ Le tecniche di analisi possono essere suddivise in due tipologie in base ai risu
 
         \subsubsection{Control Flow Analysis}
 
-        Prevede la rappresentazione del codice attraverso un grafo chiamato CFG (\textit{Control Flow Graph}, dove ciascun nodo rappresenta un'istruzione o un predicato, mentre gli archi il passaggio del flusso di controllo.
+        Prevede la rappresentazione del codice attraverso un grafo chiamato CFG (\textit{Control Flow Graph}), dove ciascun nodo rappresenta un'istruzione o un predicato, mentre gli archi il passaggio del flusso di controllo.
         Successivamente il grafo viene analizzato, al fine di rilevare anomalie nel programma quali non strutturazione o iraggiungibilità del codice.\newline
         
         \subsubsection{Data Flow Analysis}
@@ -70,8 +70,7 @@ Le tecniche di analisi possono essere suddivise in due tipologie in base ai risu
 \section{Analisi Statica di Smart Contract}
 
 L'impiego delle tecniche di analisi statica per la verifica degli smart contract non è molto diffuso. Principalmente perchè data la dimensione limitata di questi programmi non si ritiene necessario il suo impiego.\newline
-\indent In parte l'impopolarità dell'analisi statica è dovuta anche alla difficile rappresentazione del bytecode EVM. Decompilare le istruzioni di basso livello al fine di ottenere una rappresentazione migliore che funga da base per una buona analisi richiede un notevole sforzo.\\
-\indent Un altro fattore a rendere poco appetibile l'applicazione di queste tecniche al mondo degli smart contract è il rischio di ottenere falsi positivi.\newline
+\indent In parte l'impopolarità dell'analisi statica è dovuta anche alla difficile rappresentazione del bytecode EVM. Decompilare le istruzioni di basso livello al fine di ottenere una rappresentazione migliore che funga da base per una buona analisi richiede un notevole sforzo. Un altro fattore a rendere poco appetibile l'applicazione di queste tecniche al mondo degli smart contract è il rischio di ottenere falsi positivi.\newline
 
 \section{Tool per l'Analisi}
 Durante questo lavoro è stato preso in considerazione un certo numero di software che implementano tecniche di analisi statica orientata alla verifica degli smart contract. Di seguito ne vedremo alcuni.
@@ -91,7 +90,7 @@ I seguenti software sono stati pensati per verificare la sicurezza dei programmi
 
 \end{description}
 
-\subsection{Rappresentare il bytecode EVM}
+\subsection{Rappresentare il Bytecode EVM}
 
 I prossimi tool utilizzano tecniche di analisi statica per fornire una miglior rappresentazione del bytecode. I risultati che si ottengono dalla loro esecuzione possono essere utilizzati per un'analisi statica volta alla verifica delle proprietà del codice.\newline
 
@@ -99,14 +98,14 @@ I prossimi tool utilizzano tecniche di analisi statica per fornire una miglior r
 
     \item[KEVM] ~\cite{hildenbrandt2017kevm} produce una semantica formale per la EVM. Gli autori del programma sottolineano che la loro rappresentazione del byteocode si presta facilmente all'applicazione di tecniche di analisi, e forniscono come esempio un tool per stimare i consumi di gas degli smart contract.\newline
 
-    \item[EthIR] ~\cite{albert2018ethir} è un framework di analisi del bytecode di EVM. A partire dalle istruzioni di basso livello, che vengono rappresentate tramite grafi CFG dal tool Oyente ~\cite{}, EthIR produce una rappresentazione \textit{Ruled Based} (RB). Tale modellizzazione può essere utilizzata per desumere proprietà del bytecode, applicando delle ulteriori tecniche di analisi statica.\newline
+    \item[EthIR] ~\cite{albert2018ethir} è un framework di analisi del bytecode di EVM. A partire dalle istruzioni di basso livello, che vengono rappresentate tramite grafi CFG dal tool Oyente ~\cite{melonproject/oyente}, EthIR produce una rappresentazione \textit{Ruled Based} (RB). Tale modellizzazione può essere utilizzata per desumere proprietà del bytecode, applicando delle ulteriori tecniche di analisi statica.\newline
     
 \end{description}
 
 \subsection{Stimare i consumi di GAS}
 
-L'ultima categoria di software che vedremo è la più interessante dal punto di vista della ricerca condotta. Si tratta di programmi che tramite la combinazione di tecniche di analisi statica rilevano e forniscono un bound ai consumi di gas dei programmi esaminati.\newline
-\indent Li citeremo per completezza di questo elenco, per poi trattarli in modo più dettagliato nei capitoli successivi.\newline
+L'ultima categoria di software che vedremo è la più interessante dal punto di vista della ricerca che abbiamo condotto. Si tratta di programmi che tramite la combinazione di tecniche di analisi statica rilevano e forniscono un bound ai consumi di gas dei programmi esaminati.\newline
+\indent Li citeremo per completezza, per poi trattarli in modo più dettagliato nei capitoli successivi.\newline
 
 \begin{description}
 

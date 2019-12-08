@@ -4,13 +4,12 @@ Lo scopo di questo capitolo è quello di fornire una panoramica dei concetti chi
 \section{Blockchain}
 
 Il termine Blockchain - in italiano ``catena di blocchi'' - identifica un registro distribuito e sicuro. In questo senso si può pensare alla blockchain come ad una struttura di dati in continua evoluzione, dove le informazioni sono raggruppate in blocchi collegati fra loro.\newline
-\indent Ciascun blocco codifica una sequenza di transazioni individuale, e viene concatenato a quello precedente in ordine cronologico, usando una \textit{funzione crittografica di hash}, vale a dire un algoritmo che mappa dati di dimensione arbitrari in una stringa di dimensione finita. Per definizione le funzioni hash sono unidirezionali: dall'output è molto difficile risalire all'input. Per essere definite tali, queste funzioni devono rispettare delle specifiche proprietà di sicurezza.
-La concatenazione tra i blocchi è irreversibile: ciascun nuovo blocco contiene l'hash del suo predecessore. In questo modo, modificare un blocco implicherebbe l'invalidazione di \emph{tutta} la catena successiva.\newline  
-\indent La peculiarità di questa struttura risiede nel fatto che sia condivisa: ogni nodo che compone la rete mantiene una copia del registro aggiornata. Per poter aggiungere un blocco è dunque necessario validare l'intera catena, ed ottenere un consenso da parte degli altri nodi della rete. Una volta ottenuto, il nuovo blocco viene trasmesso agli altri componenti in modo tale da aggiornare lo stato della blockchain.\newline
+\indent Ciascun blocco codifica una sequenza di transazioni individuale, e viene concatenato a quello precedente in ordine cronologico, usando una \textit{funzione crittografica di hash}, vale a dire un algoritmo che mappa dati di dimensione arbitraria in una stringa di dimensione finita. Per definizione le funzioni hash sono unidirezionali: dall'output è molto difficile risalire all'input. Per essere definite tali, queste funzioni devono rispettare delle specifiche proprietà di sicurezza.
+La concatenazione tra i blocchi è dunque irreversibile: ciascun nuovo blocco contiene l'hash del suo predecessore. In questo modo, modificare un blocco implicherebbe l'invalidazione di \emph{tutta} la catena successiva.\newline  
+\indent La peculiarità di questa struttura risiede nel fatto che sia condivisa: ogni nodo che compone la rete mantiene una copia del registro aggiornata. Per poter aggiungere un blocco è necessario validare l'intera catena, ed ottenere un consenso da parte degli altri nodi della rete. Una volta ottenuto, il nuovo blocco viene trasmesso agli altri componenti in modo tale da aggiornare lo stato della blockchain.\newline
 \indent Il processo di validazione dei nuovi blocchi viene chiamato \textit{mining}, e viene realizzato da membri del network la cui mansione è limitata a questo. Tali personaggi sono chiamati \textit{miner}, ed il loro compito è quello di verificare le transazioni proposte per poi fare in modo che il nuovo blocco venga linkato alla blockchain. Per fare questo i miner sono chiamati a risolvere un algoritmo proof-of-work, un puzzle crittografico che richiede un significativo costo computazionale per essere risolto.\newline
 \indent Questo sistema permette di raggiungere il consenso senza la necessità di un'autorità centrale che faccia da garante. \`E il concetto chiave delle tecnologie basate su blockchain: la possibilità di implementare servizi sicuri senza appoggiarsi a banche, istituzioni pubbliche, ecc.\newline
-\indent Questa nuova tecnologia può essere integrata in diverse aree ~\cite{iansiti_lakhani_2017}, trovando applicazioni che spaziano dai sistemi di voto, alla difesa della proprietà intellettuale, o addirittura ai sistemi di crowfunding.\newline
-Ad oggi l'uso della blockchain più conosciuto è quello nei sistemi di pagamento che impiegano crittovalute; il dato non è poi così sorprendente: la prima blockchain nasce grazie a Satoshi Nakamoto assieme al Bitcoin ~\cite{nakamoto2008bitcoin}. In questo senso il Bitcoin è una piattaforma di pagamenti, dove la catena di blocchi funge da storico di tutte le transazioni avvenute: una sorta di conto corrente condiviso.\newline
+\indent Questa nuova tecnologia può essere integrata in diverse aree ~\cite{iansiti_lakhani_2017}, trovando applicazioni che spaziano dai sistemi di voto, alla difesa della proprietà intellettuale, o addirittura ai sistemi di crowfunding. Ad oggi tuttavia l'uso della blockchain più conosciuto è quello nei sistemi di pagamento che impiegano crittovalute; il dato non è poi così sorprendente: la prima blockchain nasce grazie a Satoshi Nakamoto assieme al Bitcoin ~\cite{nakamoto2008bitcoin}. In questo senso il Bitcoin è una piattaforma di pagamenti, dove la catena di blocchi funge da storico di tutte le transazioni avvenute: una sorta di conto corrente condiviso.\newline
 
 %\section{La piattaforma Ethereum}
 
@@ -20,7 +19,7 @@ Ad oggi l'uso della blockchain più conosciuto è quello nei sistemi di pagament
 
 \section{Ethereum, gli Smart Contract e la EVM}
 
-All'interno di quest'elaborato verrà presa in considerazione solo il network Ethereum, una piattaforma decentralizzata basata su una blockchain, che come Bitcoin possiede una propria valuta: l'\textit{ether}. Conosciuta anche con la sigla ETH, l'ether è suddivisa in unità di conto, tra le quali la più piccola e più conosciuta è il Wei; 1 Wei equivale a $10^{-18}$ Ether. Le altre sottounità sono mostrate nella Tabella \ref{tab:eth-units}.
+All'interno di quest'elaborato verrà preso in considerazione solo il network Ethereum, una piattaforma decentralizzata basata su una blockchain, che come Bitcoin possiede una propria valuta: l'\textit{ether}. Conosciuta anche con la sigla ETH, l'ether è suddivisa in unità di conto, tra le quali la più piccola e più conosciuta è il Wei; 1 Wei equivale a $10^{-18}$ Ether. Le altre sottounità sono mostrate nella Tabella \ref{tab:eth-units}.
 
 \begin{table}[h]                        
 \begin{center}  
@@ -46,16 +45,16 @@ All'interno di quest'elaborato verrà presa in considerazione solo il network Et
 Per \textit{gas} si intende l'unità di misura dello sforzo computazionale richiesto dalla EVM per eseguire ciascuna istruzione. Ogni computazione eseguita dal network è 
 soggetta ad una tassazione, il cui importo è espresso in
 unità di gas. In questo senso il gas può essere inteso come
-un carburante, che serve alla EVM per poter portare avanti ciascuna transazione; è necessario acquistarne una quantità adeguata \textit{prima} che l'operazione venga eseguita, e qualora questo finisca la macchina si fermerà.\newline
-\indent Il gas viene pagato in ether dagli utenti che intendono far eseguire una \textit{transazione}, che possono essere anche esterni alla rete Ethereum. Una transazione è una semplice istruzione che viene propagata su tutto il network, processata dai miner e, se validata da questi, aggiunta alla blockchain. Esistono due tipologie di transazioni: le \textit{message call}, che prevedono il passaggio di un messaggio tra mittente e destinatario, e le \textit{contract creation}, vale a dire transazioni che danno origine alla creazione di un nuovo contratto. Per ciascuna transazione il committente è tenuto a specificare alcuni parametri tra cui:
+un carburante, che serve alla EVM per poter portare avanti ciascuna transazione; è necessario acquistarne una quantità adeguata \textit{prima} che l'operazione venga eseguita, e qualora questa finisca la macchina si fermerà.\newline
+\indent Il gas viene pagato in ether dagli utenti che intendono far eseguire una \textit{transazione}, i quali possono essere anche esterni alla rete Ethereum. Una transazione è una semplice istruzione che viene propagata su tutto il network, processata dai miner e, se validata da questi, aggiunta alla blockchain. Esistono due tipologie di transazioni: le \textit{message call}, che prevedono il passaggio di un messaggio tra mittente e destinatario, e le \textit{contract creation}, vale a dire transazioni che danno origine alla creazione di un nuovo contratto. Per ciascuna transazione il committente è tenuto a specificare alcuni parametri tra cui:
 \begin{description}
- \item \textbf{gasPrice}: corrisponde al prezzo di acquisto di ciascuna unità di gas associata alla transazione; è espresso in Wei
- \item \textbf{gasLimit}: è la massima quantità di gas che dovrebbe essere utilizzata per portare a termine la transazionepotrà consumare
+ \item \textbf{gasPrice}: corrisponde al prezzo di acquisto di ciascuna unità di gas associata alla transazione; è espresso in Wei.
+ \item \textbf{gasLimit}: è la massima quantità di gas che dovrebbe essere utilizzata per portare a termine la transazione.
 \end{description}
 
 \indent Il prezzo del gas, in modo analogo a quello dei carburanti, non ha un costo fisso. Invece che dipendere dalle oscillazioni di mercato, viene deciso direttamente dall'utente che lo acquista.
-Potrebbe sembrare una scelta poco intelligente, ma in realtà questo fattore incide molto sul destino delle transazioni: i miner sono liberi di scegliere se processare una transazione o meno sulla base del prezzo che i committenti sono disposti a pagare. Questo perchè l'ether destinato all'acquisto di gas costituisce una delle loro fonti di guadagno. Al termine della transazione infatti l'ether destinato all'acquisto del gas che non viene né utilizzato dalla computazione, né rimborsato all'utente, può essere accreditato su di un indirizzo specifico chiamato \textit{beneficiario}. Tale indirizzo viene specificato dal miner, e generalmente coincide con il suo. Quando coloro che propongono una transazione devono scegliere quanto pagare per il gas dunque, devono trovare un compromesso tra la possibilità di risparmiare e quella di aumentare la probabilità che la loro transazione venga scelta in poco tempo.\newline
-\indent La scelta di restituire il gas inutilizzato al termine delle computazioni dipende dal fatto che questo bene non abbia alcun valore al di fuori dall'esecuzione delle transazioni. Per come è stato definito, non si può pensare di \textit{possedere} gas.\newline
+Potrebbe sembrare una scelta poco intelligente, ma in realtà questo fattore incide molto sul destino delle transazioni: i miner sono liberi di scegliere se processare una transazione o meno sulla base del prezzo che i committenti sono disposti a pagare. Questo perchè l'ether destinato all'acquisto di gas costituisce una delle loro fonti di guadagno. Al termine della transazione infatti l'ether destinato all'acquisto del gas che non viene né utilizzato dalla computazione, né rimborsato all'utente, può essere accreditato su di un indirizzo specifico chiamato \textit{beneficiario}. Tale indirizzo viene specificato dal miner, e generalmente coincide con un conto sotto controllo diretto dello stesso miner. Quando coloro che propongono una transazione devono scegliere quanto pagare per il gas, devono trovare un compromesso tra la possibilità di risparmiare e quella di aumentare la probabilità che la loro transazione venga scelta in poco tempo.\newline
+\indent La scelta di restituire il gas inutilizzato al termine delle computazioni dipende dal fatto che questo bene non abbia alcun valore al di fuori dall'esecuzione delle transazioni. Per come è stato definito, non si può \textit{possedere} gas.\newline
 \indent Ciascuna istruzione di basso livello ha associato un costo fisso in gas. Per calcolare quindi il consumo totale di un programma Solidity è necessario comprendere in quali istruzioni di basso livello verrà tradotto. I costi di alcune delle istruzioni EVM ~\cite{wood2014ethereum} sono riportati nella Tabella \ref{tab:gas-costs}.
 
 \begin{table}[h]                        
@@ -66,17 +65,17 @@ Potrebbe sembrare una scelta poco intelligente, ma in realtà questo fattore inc
 Istruzione & Costo & Descrizione\\   %& separa le colonne
 \hline  %inserisce una riga orizzontale
 \bf JUMPDEST & 1 & Indica la destinazione di un'istruzione JUMP\\
-\bf POP & 2 & Rimuove un elemento dallo stack\\
-\bf PUSHn & 3 & Inserisce un elemento di n byte nello stack\\
-\bf ADD, SUB & 3 & Operatori aritmetici\\
-\bf AND, OR, NOT, XOR, ISZERO, BYTE & 3 & Operatori logici\\
-\bf MUL, DIV & 5 & Operatori aritmetici\\
-\bf JUMP & 8 & Salto semplice senza condizione\\
-\bf JUMP1 & 10 & Salto condizionale\\
+\bf \texttt{POP} & 2 & Rimuove un elemento dallo stack\\
+\bf \texttt{PUSHn} & 3 & Inserisce un elemento di n byte nello stack\\
+\bf \texttt{ADD}, \texttt{SUB} & 3 & Operatori aritmetici\\
+\bf \texttt{AND}, \texttt{OR}, \texttt{NOT}, \texttt{XOR}, \texttt{ISZERO}, \texttt{BYTE} & 3 & Operatori logici\\
+\bf \texttt{MUL}, \texttt{DIV} & 5 & Operatori aritmetici\\
+\bf \texttt{JUMP} & 8 & Salto semplice senza condizione\\
+\bf \texttt{JUMP1} & 10 & Salto condizionale\\
 \hline
-\bf CALL & 700 & Chiama una transazione\\
-\bf CALLVALUE & 9000 & Pagato per un argomento diverso da 0 dell'istruzione CALL\\
-\bf SSTORE & 20000 & Salva una parola in memoria. Si paga quando il valore precedente è uguale a 0\\
+\bf \texttt{CALL} & 700 & Chiama una transazione\\
+\bf \texttt{CALLVALUE} & 9000 & Pagato per un argomento diverso da 0 dell'istruzione CALL\\
+\bf \texttt{SSTORE} & 20000 & Salva una parola in memoria. Si paga quando il valore precedente è uguale a 0\\
 \hline \hline
 \end{tabular}
 \caption[Costi delle istruzioni della EVM]{Costi espressi in gas di alcune istruzioni della EVM}\label{tab:gas-costs}
@@ -84,7 +83,7 @@ Istruzione & Costo & Descrizione\\   %& separa le colonne
 \end{table}
 
 \indent  Il concetto del gas è stato introdotto in Ethereum con 
-l'obiettivo di difendere la rete dai possibili abusi. La ragione per cui il protocollo di Ethereum prevede di far pagare i propri utenti non è triviale. Prima di tutto impedisce loro di sovraccaricare i miner di lavoro sfruttando il potere computazionale della rete. Inoltre scoraggia gli utenti a impiegare troppa memoria, una risorsa preziosa nelle tecnologie basate su blockchain. Infine limita il numero di computazioni eseguite dalla stessa transazione. Questo difende il network intero da attacchi malevoli come i DDoS: la finitezza delle transazioni fa sì che non si possa, ad esempio, far ciclare un programma infinitamente. Per poter disabilitare la rete anche solo per pochi minuti gli hacker dovrebbero pagare delle ingenti somme.\newline
+l'obiettivo di difendere la rete dai possibili abusi. La ragione per cui il protocollo prevede di far pagare i propri utenti non è triviale. Prima di tutto impedisce loro di sovraccaricare i miner di lavoro sfruttando il potere computazionale della rete. Inoltre scoraggia gli utenti a impiegare troppa memoria, una risorsa preziosa nelle tecnologie basate su blockchain. Infine limita il numero di computazioni eseguite dalla stessa transazione. Questo difende il network intero da attacchi malevoli come i DDoS: la finitezza delle transazioni fa sì che non si possa, ad esempio, far ciclare un programma infinitamente. Per poter disabilitare la rete anche solo per pochi minuti gli hacker dovrebbero pagare delle ingenti somme.\newline
 
 
 %Dal momento che il gas viene pagato anticipatamente, può succedere che durante la sua esecuzione un programma ecceda la quantità che ha a disposizione. Questo comportamento è  indesiderato, in quanto implica spiacevoli conseguenze. La più immediata è il blocco della transazione: la computazione non giunge a termine, l'utente non ottiene il risultato desiderato e l'ether pagato per il gas va perso.\newline 

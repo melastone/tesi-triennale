@@ -1,6 +1,6 @@
 \section{Caratteristiche del Tool GASTAP}
 
-GASTAP (acronimo per Gas-Aware Smart contracT Analysis Platform ~\cite{DBLP:journals/corr/abs-1811-10403}), è un tool automatico di analisi statica per i programmi di Ethereum. La principale tecnica di analisi adottata da questo software è la Control Flow Analysis (vedi sez. 2.2.5).\newline
+GASTAP (acronimo per Gas-Aware Smart contracT Analysis Platform ~\cite{DBLP:journals/corr/abs-1811-10403}), è un tool automatico di analisi statica per i programmi di Ethereum. La principale tecnica di analisi adottata da questo software è la Control Flow Analysis (vedi Sez. 2.2.5).\newline
 \indent Dato in input uno smart contract scritto in Solidity, EVM bytecode oppure EVM disassemblato, GASTAP produce un upper bound in termini di gas per ciscuna delle funzioni pubbliche che lo compongono. Per produrre questo calcolo il tool effettua una serie di operazioni in sequenza: (1) costruzione dei grafi \textit{control-flow} (CFG), (2) decompilazione del codice di basso livello in una rappresentazione di alto livello, (3) deduzione delle relazioni di grandezza, (4) generazione delle equazioni di gas, e (5) risoluzione delle equzioni fino a formare un bound.\newline
 \indent GASTAP ha un ampio spettro di applicazioni, sia per chi sviluppa o possiede i contratti, sia per gli attaccanti, permettendo di individuare vulnerabilità nel codice e di verificare gli utilizzi di gas, eventualmente anche a scopo di debugging.
 Dal punto di vista degli sviluppatori e dei proprietari un buon tool di analisi serve a conoscere la quantità di gas necessaria per eseguire in modo \textit{sicuro} il programma, garantendone la proprietà di liveness. Un altro beneficio è quello di poter determinare quante unità di gas investire per eseguire con successo una callback nei casi in cui uno smart contract si appoggi ad un servizio esterno.
@@ -8,7 +8,7 @@ Dal punto di vista degli attaccanti invece è possibile stimare quanto Ether è 
 
     \subsection{Struttura del Tool}
     
-    Per implementare ciascuna dele operazioni elencate sopra GASTAP si appoggia ad altri tool open-source. Questi, grazie a degli adattamenti, vengono utilizzati in sequenza al fine di realizzare l'architettura rappresentata in Figura \ref{fig:gstp-struct}.\newline 
+    Per implementare ciascuna delle operazioni elencate sopra GASTAP si appoggia ad altri tool open-source. Questi, grazie a degli adattamenti, vengono utilizzati in sequenza al fine di realizzare l'architettura rappresentata in Figura \ref{fig:gstp-struct}.\newline 
     
     \begin{figure}[h]
         \centering

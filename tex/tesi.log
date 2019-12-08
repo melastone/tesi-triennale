@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  7 DEC 2019 19:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.10)  8 DEC 2019 12:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,20 +537,20 @@ LaTeX Info: Redefining \] on input line 2818.
 ) (./tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Info: Redefining \it@ocap on input line 86.
-LaTeX Info: Redefining \it@ccap on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
+LaTeX Font Info:    ... okay on input line 87.
+LaTeX Info: Redefining \it@ocap on input line 87.
+LaTeX Info: Redefining \it@ccap on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -628,17 +628,14 @@ e
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 
-] [1] [2
-
-
-] (./tesi.toc
-[1
+] (./tesi.toc [1
 
 ])
 \tf@toc=\write3
 \openout3 = `tesi.toc'.
 
- [2] (./tesi.lof)
+
+[2] (./tesi.lof)
 \tf@lof=\write4
 \openout4 = `tesi.lof'.
 
@@ -646,31 +643,38 @@ e
 
 ] [4
 
+
 ] (./tesi.lot)
 \tf@lot=\write5
 \openout5 = `tesi.lot'.
 
- [5] [6
+ [5
 
-]
-(./introduzione/introduzione.tex
+] [6
+
+
+] (./introduzione/introduzione.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1]
+ [1
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
 
  []
 
 
-LaTeX Warning: Citation `daian2016dao' on page 2 undefined on input line 24.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--25
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
 
@@ -678,13 +682,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--25
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2])
+Underfull \hbox (badness 10000) in paragraph at lines 25--189
+
+ []
+
 [3] [4
 
 
 ]
 Capitolo 1.
 (./capitolo1/capitolo1.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--15
+Underfull \hbox (badness 10000) in paragraph at lines 6--13
 
  []
 
@@ -695,16 +703,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--15
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
+Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
  []
 
 [6] [7]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 68.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 68.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
@@ -780,47 +795,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--69
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 81--83
+Underfull \hbox (badness 10000) in paragraph at lines 80--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
@@ -840,11 +855,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--15
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 16.
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [20] [21])
-(./capitolo3/sez-gastap-tool.tex
+[20] [21]) (./capitolo3/sez-gastap-tool.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--8
 
  []
@@ -854,7 +865,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-<./img/GASTAP-structure.png, id=122, 735.74875pt x 294.09875pt>
+<./img/GASTAP-structure.png, id=113, 735.74875pt x 294.09875pt>
 File: ./img/GASTAP-structure.png Graphic file (type png)
 <use ./img/GASTAP-structure.png>
 Package pdftex.def Info: ./img/GASTAP-structure.png  used on input line 15.
@@ -866,7 +877,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 2538) has occurred while \output is active []
 
  [22]
-<./img/GASTAP-example.png, id=127, 1320.935pt x 611.28375pt>
+<./img/GASTAP-example.png, id=118, 1320.935pt x 611.28375pt>
 File: ./img/GASTAP-example.png Graphic file (type png)
 <use ./img/GASTAP-example.png>
 Package pdftex.def Info: ./img/GASTAP-example.png  used on input line 35.
@@ -891,375 +902,252 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--20
  []
 
 
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 26--60
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 27--61
 [] [] 
  []
 
 [26]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 94--117
+[]$[]$ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 120--132
+[]$[]$ 
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 141--159
+[]$[]$ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 163--173
+[]$[]$ 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 182.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 93--116
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
+ [29]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 193--215
 []$[]$ 
  []
 
 
-Underfull \vbox (badness 5302) has occurred while \output is active []
-
- [27]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 119--131
-[]$[]$ 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 3989) has occurred while \output is active []
-
- [28]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 140--158
-[]$[]$ 
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 162--172
-[]$[]$ 
- []
-
-
-Overfull \hbox (332.36572pt too wide) in paragraph at lines 175--176
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[29]
-Overfull \hbox (71.57715pt too wide) in paragraph at lines 202--203
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 192--214
-[]$[]$ 
- []
-
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
-<./img/GASTAP-nested15.png, id=155, 1314.9125pt x 610.28pt>
+<./img/GASTAP-nested15.png, id=145, 1314.9125pt x 610.28pt>
 File: ./img/GASTAP-nested15.png Graphic file (type png)
 <use ./img/GASTAP-nested15.png>
-Package pdftex.def Info: ./img/GASTAP-nested15.png  used on input line 243.
+Package pdftex.def Info: ./img/GASTAP-nested15.png  used on input line 244.
 (pdftex.def)             Requested size: 394.47679pt x 183.0854pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 248--252
-[]$[]$ 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 4673) has occurred while \output is active []
-
- [31 <./img/GASTAP-nested15.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 261--282
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 249--253
 []$[]$ 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+ []
+
+[31 <./img/GASTAP-nested15.png>]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 262--283
+[]$[]$ 
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 284--294
+[]$[]$ 
+ []
+
+
+Underfull \vbox (badness 6268) has occurred while \output is active []
 
  [32]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 283--293
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 306--327
 []$[]$ 
  []
 
 
-Underfull \vbox (badness 1454) has occurred while \output is active []
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 329--339
+[]$[]$ 
+ []
 
- [33]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 304--325
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 359--378
 []$[]$ 
  []
 
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 327--337
-[]$[]$ 
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 347--350
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
-
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 355--374
-[]$[]$ 
- []
-
-[35]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 377--387
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 381--391
 []$[]$ 
  []
 
 
-Overfull \hbox (43.38379pt too wide) in paragraph at lines 391--392
-[][][][][][][][][][][][][][][][][][][][][][][]
- []
+Underfull \vbox (badness 5446) has occurred while \output is active []
 
-
-Overfull \hbox (226.64063pt too wide) in paragraph at lines 391--392
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
+ [34]
+Underfull \hbox (badness 10000) in paragraph at lines 401--402
 
  []
 
 
-! Package inputenc Error: Unicode char â\lst@FillFixed@\lst@EC€ (U+207C0)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.401         â€‹â€‹/
-                     /ricorsione-indiretta.sol
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.401         â€‹â€‹/
-                     /ricorsione-indiretta.sol
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-! Package inputenc Error: Unicode char â\lst@EC€\lst@EC‹ (U+282DCB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.401         â€‹â€‹/
-                     /ricorsione-indiretta.sol
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 399--427
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 403--431
 []$[]$ 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
-Overfull \hbox (36.33545pt too wide) in paragraph at lines 432--433
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 430--441
+ [35]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 434--445
 []$[]$ 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [37]
-Overfull \hbox (43.38379pt too wide) in paragraph at lines 445--446
-[][][][][][][][][][][][][][][][][][][][][][][]
- []
-
-
-Overfull \hbox (170.2539pt too wide) in paragraph at lines 445--446
-[][][][][][][][][][][][][][][][][][][][][][]
- []
-
-
-Overfull \hbox (25.45627pt too wide) in paragraph at lines 442--448
+Overfull \hbox (25.45627pt too wide) in paragraph at lines 446--452
 []\T1/cmr/m/n/12 e $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 453--474
+[36]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 457--478
 []$[]$ 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [38]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 477--487
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 481--491
 []$[]$ 
  []
 
-
-Overfull \hbox (43.38379pt too wide) in paragraph at lines 491--492
-[][][][][][][][][][][][][][][][][][][][][][][]
- []
-
-
-Overfull \hbox (219.59229pt too wide) in paragraph at lines 491--492
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
- []
-
-[39]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 501--536
+[37]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 505--540
 []$[]$ 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [40]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41]
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
 
-Overfull \hbox (63.98193pt too wide) in paragraph at lines 563--564
-[][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (35.78857pt too wide) in paragraph at lines 565--566
-[][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (14.64355pt too wide) in paragraph at lines 574--575
-[][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 558--585
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 562--589
 [] [] 
  []
 
-) [42] [43
+) [39] [40
 
 
+] (./conclusioni/conclusioni.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1--234
 
-] [44
+ []
+
+[41
+
+] [42
 
 
-]
-
-! LaTeX Error: \begin{document} ended by \end{chapter}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.234 \end{chapter}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.234 \end{chapter}
-                   
-Things are pretty mixed up, but I think the worst is over.
-
-(./tesi.bbl [45
+] (./tesi.bbl [43
 
 ]
-Underfull \hbox (badness 2213) in paragraph at lines 93--97
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
+[]\T1/cmr/m/n/12 Phil Da-ian.  Dao at-tack.(2016).  \T1/cmr/m/it/12 URL: http:/
+/hackingdistributed.
+ []
+
+
+Underfull \hbox (badness 2213) in paragraph at lines 105--109
 []\T1/cmr/m/n/12 Sergey Po-te-khin (https://ethereum.stackexchange.com/users/44
 06/sergey po-te-
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 93--97
+Underfull \hbox (badness 1383) in paragraph at lines 105--109
 \T1/cmr/m/n/12 khin).  How to get the co-st (in gas) of the non-constant func-t
 ion call?,
  []
 
-[46]) [47] [48
+[44]) [45] [46
 
 
-] (./tesi.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 6350 strings out of 494912
- 81842 string characters out of 6180265
- 168519 words of memory out of 5000000
- 9508 multiletter control sequences out of 15000+600000
- 24039 words of font info for 54 fonts, out of 8000000 for 9000
+ 6349 strings out of 494912
+ 81843 string characters out of 6180265
+ 212412 words of memory out of 5000000
+ 9504 multiletter control sequences out of 15000+600000
+ 22989 words of font info for 53 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 41i,17n,43p,984b,1273s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.6
-00pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt120
-0.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
-1000.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm0700.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm0800.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/lj
-four/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk
-/ljfour/jknappen/ec/eccc1440.600pk> </home/melania/.texlive2017/texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/melania/.texlive2017/texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive2017/texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive2017/texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texlive2017/tex
-mf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/feymr
-10.pfb>
-Output written on tesi.pdf (58 pages, 482917 bytes).
+ 41i,17n,43p,1502b,1149s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ectt1000.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/eccc1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1000.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecrm0700.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecrm0800.600pk> </home/melania/.texlive2017/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ectt1200.600pk> </home/melania/.texlive2017/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/melania/.texlive2017/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/melania/.texlive2017/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/melania/.texlive2017/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/melania/.texlive2017/texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/melania/.texlive2017/t
+exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/melania/.texlive201
+7/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/melania/.texlive
+2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/melania/.texl
+ive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/eu
+rosym/feymr10.pfb>
+Output written on tesi.pdf (54 pages, 492230 bytes).
 PDF statistics:
- 814 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
+ 839 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

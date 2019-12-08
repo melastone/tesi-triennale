@@ -33,6 +33,12 @@ Giorgio Ausiello, Fabrizio d'Amore, and Giorgio Gambosi.
 \newblock {\em Linguaggi modelli complessit{\`a}}.
 \newblock F. Angeli, 2003.
 
+\bibitem{chen2017under}
+Ting Chen, Xiaoqi Li, Xiapu Luo, and Xiaosong Zhang.
+\newblock Under-optimized smart contracts devour your money.
+\newblock In {\em 2017 IEEE 24th International Conference on Software Analysis,
+  Evolution and Reengineering (SANER)}, pages 442--446. IEEE, 2017.
+
 \bibitem{ethir-repository}
 costa group.
 \newblock Ethir: A framework for high-level analysis of ethereum bytecode,
@@ -44,6 +50,12 @@ Fangfang Dai, Yue Shi, Nan Meng, Liang Wei, and Zhiguo Ye.
   application and security issues.
 \newblock In {\em 2017 4th International Conference on Systems and Informatics
   (ICSAI)}, pages 975--979. IEEE, 2017.
+
+\bibitem{daian2016dao}
+Phil Daian.
+\newblock Dao attack.(2016).
+\newblock {\em URL: http://hackingdistributed.
+  com/2016/06/18/analysis-of-the-dao-exploit}, 2016.
 
 \bibitem{infinite-gas-github-issue}
 denisglotov (https://github.com/denisglotov).
@@ -110,6 +122,13 @@ Brittany Johnson, Yoonki Song, Emerson Murphy-Hill, and Robert Bowdidge.
 Minhaj~Ahmad Khan and Khaled Salah.
 \newblock Iot security: Review, blockchain solutions, and open challenges.
 \newblock {\em Future Generation Computer Systems}, 82:395 -- 411, 2018.
+
+\bibitem{marescotti2018computing}
+Matteo Marescotti, Martin Blicha, Antti~EJ Hyv{\"a}rinen, Sepideh Asadi, and
+  Natasha Sharygina.
+\newblock Computing exact worst-case gas consumption for smart contracts.
+\newblock In {\em International Symposium on Leveraging Applications of Formal
+  Methods}, pages 450--465. Springer, 2018.
 
 \bibitem{infinite-gas-stack-exchange}
 medvedev1088 (https://ethereum.stackexchange.com/users/18932/medvedev1088).
