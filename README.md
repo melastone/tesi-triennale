@@ -1,2 +1,2 @@
 # tesi-triennale
-Sviluppo della tesi triennale dal titolo 'Stimare i consumi di gas nell'esecuzione di smart contract in Ethereum' 
+Sviluppo della tesi triennale dal titolo 'Analisi statica di Smart Contract in Ethereum: stimare i consumi di gas' 
