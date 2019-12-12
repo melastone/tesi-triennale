@@ -13,7 +13,7 @@ Rientrano in questa categoria la verifica formale dei programmi e le ottimizzazi
 % Perchè vale questo? 
 % - le proprietà sono indecidibili
 % - vogliamo la soundness
-La ragione di questo comportamento è legata alle proprietà che ci poniamo di verificare: la terminazione di un programma, ad esempio, è di per sè una proprietà indecidibile. \'E dimostrato matematicamente che non esiste alcun metodo di analisi statica che sia al tempo stesso \emph{corretto} e \emph{completo} e che non sia limitato dalle risorse che utilizza (es. memoria, tempo)\footnote{Questo risultato è dato dal Teorema di Rice} ~\cite{ausiello2003linguaggi}. Dunque, per ottenere degli strumenti realmente utili, siamo costretti a rinunciare alla completezza dell'analisi, preferendo dei risultati che siano corretti. Ci accontentiamo di strumenti che producono risultati approssimati, talvolta anche diversi da quelli attesi.\newline
+La ragione di questo comportamento è legata alle proprietà che ci poniamo di verificare: la terminazione di un programma, ad esempio, è di per sé una proprietà indecidibile. \`E dimostrato matematicamente che non esiste alcun metodo di analisi statica che sia al tempo stesso \emph{corretto} e \emph{completo} e che non sia limitato dalle risorse che utilizza (es. memoria, tempo)\footnote{Questo risultato è dato dal Teorema di Rice} ~\cite{ausiello2003linguaggi}. Dunque, per ottenere degli strumenti realmente utili, siamo costretti a rinunciare alla completezza dell'analisi, preferendo dei risultati che siano corretti. Ci accontentiamo di strumenti che producono risultati approssimati, talvolta anche diversi da quelli attesi.\newline
 \indent L'analisi dinamica identifica quei controlli che possono essere effettuati sul programma soltanto durante la sua esecuzione, che sia su un processore reale o virtuale. Il software testing rientra in questa categoria. Per condurre questo tipo di controllo è necessario fornire un input ben preciso e analizzare poi il comportamento del programma. Occorre inoltre stabilire a priori \emph{che cosa} si vuole misurare. Sebbene questa analisi sia più veloce rispetto alla prima, non garantisce la stessa correttezza. Per essere rigorosa infatti l'analisi dinamica dovrebbe coprire ogni possibile configurazione del programma.\\
 
 
@@ -102,7 +102,7 @@ I prossimi tool utilizzano tecniche di analisi statica per fornire una miglior r
     
 \end{description}
 
-\subsection{Stimare i consumi di GAS}
+\subsection{Fornire un Bound al gas}
 
 L'ultima categoria di software che vedremo è la più interessante dal punto di vista della ricerca che abbiamo condotto. Si tratta di programmi che tramite la combinazione di tecniche di analisi statica rilevano e forniscono un bound ai consumi di gas dei programmi esaminati.\newline
 \indent Li citeremo per completezza, per poi trattarli in modo più dettagliato nei capitoli successivi.\newline
